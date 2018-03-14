@@ -11,7 +11,7 @@ import com.example.admin.ccb.fragment.ClassifyFragment;
 import com.example.admin.ccb.fragment.SpcFragment;
 
 public class MainActivity extends BaseActivity {
-//https://github.com/CuiChenbo/CcMall.git
+
     private FrameLayout fl;
     private RadioGroup rg;
     private Fragment HomeFm = null,SpcFm = null, OrderFm = null, MyFm = null;

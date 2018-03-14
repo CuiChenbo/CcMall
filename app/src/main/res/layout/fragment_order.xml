@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.ccb.fragment.SpcFragment">
+
+    <RelativeLayout
+        android:id="@+id/rlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp44">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16dp"
+            android:textColor="#212121"
+            android:gravity="center"
+            android:text="分类" />
+        <View
+            android:layout_alignParentBottom="true"
+            style="@style/Line_e0e0e0_Horizontal"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_below="@id/rlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/defaultBackground"
+        android:orientation="horizontal" >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff" />
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/defaultDividerLine" />
+
+        <FrameLayout
+            android:id="@+id/fmRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.0"
+            android:background="#ffffff"
+            />
+    </LinearLayout>
+</RelativeLayout>

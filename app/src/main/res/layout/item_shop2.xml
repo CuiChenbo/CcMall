@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llItem"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="@dimen/side_distance"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/qq" />
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp14"
+            android:paddingTop="@dimen/dp4"
+            android:paddingBottom="@dimen/dp5"
+            android:textColor="@color/defaultTextview"
+            android:layout_toRightOf="@id/iv"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp30"
+            tools:text="嗯嗯，就是" />
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp12"
+            android:paddingTop="@dimen/dp2"
+            android:paddingBottom="@dimen/dp5"
+            android:layout_toRightOf="@id/iv"
+            android:textColor="#666"
+            android:maxLines="2"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_below="@id/tv"
+            tools:text="嗯嗯，就是" />
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp12"
+            android:layout_toRightOf="@id/iv"
+            android:paddingTop="@dimen/dp2"
+            android:paddingBottom="@dimen/dp5"
+            android:textColor="@color/mainColor"
+            android:layout_below="@id/tv2"
+            android:layout_marginLeft="@dimen/dp5"
+            tools:text="嗯嗯，就是" />
+        <View
+            style="@style/Line_e0e0e0_Horizontal"/>
+
+</RelativeLayout>

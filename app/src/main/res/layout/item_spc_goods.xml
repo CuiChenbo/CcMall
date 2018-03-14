@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/defaultBackground"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingTop="5dp">
+        <View
+            android:layout_alignParentBottom="true"
+            style="@style/Line_e0e0e0_Horizontal"/>
+        <CheckBox
+            android:id="@+id/spc_cb_goods"
+            style="@style/spc_checkbox_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/side_distance"
+            android:paddingRight="@dimen/side_distance" />
+
+        <ImageView
+            android:id="@+id/spc_iv_page"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_toRightOf="@id/spc_cb_goods"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/default_icon" />
+
+            <TextView
+                android:id="@+id/spc_tv_shop_name_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="@dimen/side_distance"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/spc_iv_page"
+                android:lines="2"
+                android:text="title"
+                android:lineSpacingExtra="1dp"
+                android:textColor="@color/defaultTextview"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/spc_tv_pinlei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已选:28码"
+                android:layout_below="@id/spc_tv_shop_name_msg"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/spc_iv_page"
+                android:textColor="@color/defaultTextview"
+                android:textSize="11dp"
+                android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/spc_tv_zong_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥:109.89"
+                    android:layout_below="@id/spc_tv_pinlei"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/spc_iv_page"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:textColor="@color/mainColor"
+                    android:textSize="16dp" />
+
+
+        <Button
+                android:id="@+id/spc_btn_comm_count_jian"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignTop="@+id/spc_tv_pinlei"
+                android:layout_toLeftOf="@+id/spc_et_comm_count"
+                android:layout_toStartOf="@+id/spc_et_comm_count"
+                android:background="#ffffff"
+                android:text="一"
+                android:textColor="@color/defaultTextview"
+                android:textSize="16dp" />
+
+        <TextView
+                android:id="@+id/spc_et_comm_count"
+                android:layout_width="44dp"
+                android:layout_height="32dp"
+                android:layout_alignTop="@+id/spc_tv_pinlei"
+                android:layout_toLeftOf="@+id/spc_btn_comm_count_jia"
+                android:layout_toStartOf="@+id/spc_btn_comm_count_jia"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/defaultTextview"
+                android:textSize="16dp" />
+
+        <Button
+                android:id="@+id/spc_btn_comm_count_jia"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/spc_tv_pinlei"
+                android:layout_marginRight="@dimen/side_distance"
+                android:background="#ffffff"
+                android:text="+"
+                android:textColor="@color/defaultTextview"
+                android:textSize="16dp"
+                android:layout_alignRight="@+id/spc_tv_shop_name_msg"
+                android:layout_alignEnd="@+id/spc_tv_shop_name_msg" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

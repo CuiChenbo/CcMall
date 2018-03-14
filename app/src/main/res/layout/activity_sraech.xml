@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.admin.ccb.activity.SearchActivity">
+    <LinearLayout
+        android:id="@+id/home_searchs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ViewTitleHeight"
+        android:gravity="center"
+        android:visibility="visible">
+        <ImageView
+            android:id="@+id/searchBack"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/side_distance"
+            android:paddingRight="@dimen/side_distance"
+            android:src="@mipmap/nav_back_black" />
+            <EditText
+                android:id="@+id/search_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="输入鲜花名称/商户名称"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:textColorHint="#666"
+                android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@mipmap/home2_search_gray" />
+
+    </LinearLayout>
+    <View style="@style/Line_e0e0e0_Horizontal" />
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/flowlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/side_distance"
+        android:layout_marginRight="@dimen/side_distance"
+        android:layout_marginTop="5dp"
+        zhy:auto_select_effect="false"/>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tvSwitchMode"
+        android:text="普通模式"
+        android:padding="@dimen/side_distance"
+        android:background="@color/defaultBackground"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/dp2"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvSwitchState"
+        android:text="交通状况"
+        android:layout_toRightOf="@id/tvSwitchMode"
+        android:padding="@dimen/side_distance"
+        android:layout_margin="@dimen/dp2"
+        android:background="@color/defaultBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvLocation"
+        android:text="我的位置"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/dp2"
+        android:padding="@dimen/side_distance"
+        android:background="@color/defaultBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

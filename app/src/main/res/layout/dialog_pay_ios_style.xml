@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/shape_bgccfcfcfc_radius12"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp20">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp49">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="请输入支付密码"
+                android:textColor="@color/color_030303"
+                android:textSize="@dimen/dp17"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/dp46"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingRight="@dimen/dp4"
+                android:src="@mipmap/qiugou_pub_deselect" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line"
+            style="@style/Line_e0e0e0_Horizontal" />
+
+        <TextView
+            android:id="@+id/tvExplain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp9"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp16"
+            android:gravity="center"
+            android:text="充值"
+            android:textColor="@color/color_292929"
+            android:textSize="@dimen/dp16" />
+
+        <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp9"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp4"
+            android:gravity="center"
+            android:text="¥0.00"
+            android:textColor="@color/color_292929"
+            android:textSize="@dimen/dp37" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/pay_bank"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp20"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:text="选择银行卡"-->
+        <!--android:textColor="#666666"-->
+        <!--android:textSize="14dp" />-->
+
+        <com.jungly.gridpasswordview.GridPasswordView
+            android:id="@+id/gridPasswordView"
+            android:layout_width="@dimen/dp240"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp10"
+            app:gpvGridColor="#ffffff"
+            app:gpvLineColor="@color/color_e0e0e0"
+            app:gpvPasswordLength="6"
+            app:gpvPasswordType="numberPassword"
+            app:gpvTextColor="@color/emphasisTextview"
+            app:gpvTextSize="20dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.ccb.activity.GoodsDatailsActivity">
+   <include layout="@layout/titlebar"/>
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
+         <com.crazysunj.cardslideview.CardViewPager
+             android:id="@+id/cvp"
+             android:layout_width="match_parent"
+             android:layout_height="350dp"></com.crazysunj.cardslideview.CardViewPager>
+         <TextView
+             android:layout_below="@id/cvp"
+             android:text="123\n\n\n456\n\n\n456\n\n\n456\n\n\n456\n\n\n456\n\n\n456\n\n\n456\n\n\n456\n\n\n456"
+             android:paddingTop="@dimen/dp30"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" />
+      </LinearLayout>
+   </ScrollView>
+
+</LinearLayout>

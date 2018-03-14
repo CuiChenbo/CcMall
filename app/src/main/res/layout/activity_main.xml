@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.ccb.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_home"
+                style="@style/main_tab_button"
+                android:drawableTop="@drawable/rgbtn_home_select"
+                android:text="CCB"/>
+
+            <RadioButton
+                android:id="@+id/rb_shoppingcart"
+                style="@style/main_tab_button"
+                android:drawableTop="@drawable/rgbtn_gouwuche_select"
+                android:text="CAR"/>
+
+            <RadioButton
+                android:id="@+id/rb_orderfrom"
+                style="@style/main_tab_button"
+                android:drawableTop="@drawable/rgbtn_orderfrom_select"
+                android:text="LIST"/>
+
+            <RadioButton
+                android:id="@+id/rb_my"
+                style="@style/main_tab_button"
+                android:drawableTop="@drawable/rgbtn_my_select"
+                android:text="SELF"/>
+        </RadioGroup>
+        <View
+            style="@style/Line_e0e0e0_Horizontal"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rl"
+        ></FrameLayout>
+</RelativeLayout>

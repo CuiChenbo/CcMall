@@ -18,6 +18,7 @@ android {
     }
     allprojects {
         repositories {
+            google()
             jcenter()
             maven { url 'https://jitpack.io' }
         }
@@ -31,7 +32,7 @@ android {
 
 
 dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -62,13 +63,9 @@ dependencies {
     compile 'com.amap.api:search:5.0.0'
     compile 'com.crazysunj:cardslideview:1.2.1'
     compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    compile files('libs/alipaySdk-20170922.jar')
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 }
-
-
-
-
-
-
 
 
 

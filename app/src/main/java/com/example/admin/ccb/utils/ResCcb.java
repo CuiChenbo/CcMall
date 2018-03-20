@@ -2,6 +2,7 @@ package com.example.admin.ccb.utils;
 
 import com.example.admin.ccb.R;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * 　　　　update:       upAuthor:      explain:
  */
 
-public class ResCcb {
+public class ResCcb implements Serializable {
     public static String datas[] = {"对Kotlin的第一印象"
             ,"Android.Kotlin的杀手锏"
             ,"Kotlin 很简洁"

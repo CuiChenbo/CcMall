@@ -25,6 +25,7 @@
                     android:layout_height="180dp"
                     android:orientation="vertical"
                     android:background="@mipmap/shopbg"
+                    android:transitionName="TRANSITIONIMAGE"
                     >
                 </RelativeLayout>
             </LinearLayout>

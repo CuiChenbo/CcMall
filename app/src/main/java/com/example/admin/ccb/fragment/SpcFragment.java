@@ -2,6 +2,7 @@ package com.example.admin.ccb.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
+import com.bigkoo.pickerview.OptionsPickerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
@@ -33,6 +36,7 @@ public class SpcFragment extends BaseFragment {
     private SpcAdapter spcAp;
     private ShopPingCartBean spcs;
     private CheckBox cbAll;
+    private TextView jiesuan;
 
     @Override
     protected View initContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class SpcFragment extends BaseFragment {
     public void initView(View view) {
       rvShop = view.findViewById(R.id.rvShop);
       cbAll = view.findViewById(R.id.spc_cb_all);
+        jiesuan = view.findViewById(R.id.jiesuan);
       rvShop.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL, false));
         spcAp = new SpcAdapter(R.layout.item_spc_shop);
       rvShop.setAdapter(spcAp);
@@ -84,6 +89,42 @@ public class SpcFragment extends BaseFragment {
                 spcAp.notifyDataSetChanged();
             }
         });
+        jiesuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                wheel();
+            }
+        });
+    }
+
+    private void wheel() {
+        OptionsPickerView pvOptions = new  OptionsPickerView.Builder(mContext, new OptionsPickerView.OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
+                //返回的分别是三个级别的选中位置
+                String tx = "";
+            }
+        })
+                .setSubmitText("确定")//确定按钮文字
+                .setCancelText("取消")//取消按钮文字
+                .setTitleText("请选择")//标题
+                .setSubCalSize(18)//确定和取消文字大小
+                .setTitleSize(20)//标题文字大小
+                .setTitleColor(Color.BLACK)//标题文字颜色
+                .setSubmitColor(Color.BLUE)//确定按钮文字颜色
+                .setCancelColor(Color.BLUE)//取消按钮文字颜色
+                .setTitleBgColor(0xFFffffff)//标题背景颜色 Night mode
+                .setBgColor(0xFFffffff)//滚轮背景颜色 Night mode
+                .setContentTextSize(18)//滚轮文字大小
+                .setLinkage(true)//设置是否联动，默认true
+                .setCyclic(false, false, false)//循环与否
+                .setSelectOptions(0, 0, 0)  //设置默认选中项
+                .setOutSideCancelable(false)//点击外部dismiss default true
+                .isDialog(false)//是否显示为对话框样式
+                .build();
+
+        pvOptions.setPicker(spcs.shopList);//添加数据源
+        pvOptions.show();
     }
 
 

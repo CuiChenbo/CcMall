@@ -1,7 +1,11 @@
 package com.example.admin.ccb.adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -38,9 +42,11 @@ import java.util.List;
           helper.setText(R.id.title,item.title)
                   .setText(R.id.content,item.content)
           .setOnClickListener(R.id.icon, new View.OnClickListener() {
+              @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
               @Override
               public void onClick(View view) {
-                  mContext.startActivity(new Intent(mContext, ShopHomeActivity.class));
+                  mContext.startActivity(new Intent(mContext, ShopHomeActivity.class)
+                          , ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,view,"TRANSITIONIMAGE").toBundle());
               }
           });
             GlideImageUtils.Display(mContext,item.icon,(ImageView) helper.getView(R.id.icon));

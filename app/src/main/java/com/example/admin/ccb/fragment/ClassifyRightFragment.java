@@ -66,6 +66,7 @@ public class ClassifyRightFragment extends BaseFragment {
             @Override
             public void onClick() {
                 loadData();
+                rv1.scrollToPosition(0); //回到顶部 不需要可以注释
             }
         });
         ivHead.setOnClickListener(new View.OnClickListener() {

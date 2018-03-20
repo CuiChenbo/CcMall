@@ -34,6 +34,7 @@
              android:layout_height="38dp"
              android:src="@mipmap/emptyimage"
              android:scaleType="centerCrop"
+             android:transitionName="TRANSITIONIMAGE"
              />
 
             <TextView

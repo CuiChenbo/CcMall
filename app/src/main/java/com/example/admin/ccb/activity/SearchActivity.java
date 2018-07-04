@@ -21,6 +21,7 @@ public class SearchActivity extends BaseActivity {
     private EditText et;
     @Override
     protected void initView() {
+        mImmersionBar.titleBarMarginTop(R.id.home_searchs).statusBarDarkFont(true,0.2f).init();
         et = findViewById(R.id.search_content);
         findViewById(R.id.searchBack).setOnClickListener(new View.OnClickListener() {
             @Override

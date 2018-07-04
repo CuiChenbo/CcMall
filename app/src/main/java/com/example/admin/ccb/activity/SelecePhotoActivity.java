@@ -28,6 +28,7 @@ public class SelecePhotoActivity extends BaseActivity {
     private RecyclerView rv;
     @Override
     protected void initView() {
+        UpTitle(null);
       rv = findViewById(R.id.rvSelectPhoto);
       rv.setLayoutManager(new GridLayoutManager(mContext,3));
       spAp = new SelectPhotoAdapter(R.layout.item_pic);

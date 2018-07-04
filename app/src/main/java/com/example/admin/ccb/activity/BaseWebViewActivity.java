@@ -24,6 +24,7 @@ import com.example.admin.ccb.utils.ToastUtils;
 
 public class BaseWebViewActivity extends BaseActivity {
     private ProgressBar progressBar;
+    private WebView mWebView;
 
 
     @SuppressLint({"SetJavaScriptEnabled", "JavascriptInterface"})
@@ -35,21 +36,24 @@ public class BaseWebViewActivity extends BaseActivity {
    private String loadUrl;
     @Override
     public void initView() {
-
+       UpTitle(null);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        WebView webView = (WebView) findViewById(R.id.webView);
+        mWebView = (WebView) findViewById(R.id.webView);
         loadUrl = getIntent().getStringExtra("url");
         if (TextUtils.isEmpty(loadUrl)){loadUrl = "https://github.com/CuiChenbo/CcMall";}
-        webView.loadUrl(loadUrl);
+        mWebView.loadUrl(loadUrl);
         //启用支持javascript
-        WebSettings settings = webView.getSettings();
+        WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(new JavaScriptObject(this), "android"); //和h5的js调用
+        /*
+        *添加js接口，参数1是本地类名，参数2是标记；H5调用需要 "window.标记.类名中的方法名" 才能调用
+        */
+        mWebView.addJavascriptInterface(new JavaScriptObject(this), "android");
         //不使用缓存
-        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
-        webView.setWebChromeClient(new MyWebChromeClient());
-        webView.setWebViewClient(new WebViewClient(){
+        mWebView.setWebChromeClient(new MyWebChromeClient());
+        mWebView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 //返回值是true的时候控制去WebView打开，为false调用系统浏览器或第三方浏览器
@@ -75,12 +79,19 @@ public class BaseWebViewActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+           if (mWebView != null) mWebView.destroy();
+    }
+
     public class JavaScriptObject{
         public JavaScriptObject(Activity activity) {
 
         }
         @JavascriptInterface
         public void setToken(String token){
+            //token就是商品的ID，这里拿到商品的ID后直接跳转到商品详情页，并把id传递过去
         }
         @JavascriptInterface
         public void definedShare(String ShareJson){
@@ -123,3 +134,12 @@ public class BaseWebViewActivity extends BaseActivity {
         }
     }
 }
+/*
+<script type="text/javascript">
+        function s(){
+        //调用Android的setToken()方法
+        var result =window.android.setToken(goodsId);
+        document.getElementById("p").innerHTML=result;
+        }
+</script>
+*/

@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:orientation="horizontal"
+        android:background="@color/colorTransparent"
         >
         <TextView
             android:id="@+id/tvSearch"

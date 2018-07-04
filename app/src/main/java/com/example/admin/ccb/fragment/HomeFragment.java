@@ -36,6 +36,7 @@ import com.example.admin.ccb.utils.GlideImageLoader;
 import com.example.admin.ccb.utils.ResCcb;
 import com.example.admin.ccb.utils.UiUtils;
 import com.example.admin.ccb.view.UPMarqueeView;
+import com.gyf.barlibrary.ImmersionBar;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.youth.banner.Banner;
@@ -79,6 +80,8 @@ public class HomeFragment extends BaseFragment {
         menuRecyclerView = headerView.findViewById(R.id.menuRecyclerView);
         rvAp.setHeaderView(headerView);
         height = UiUtils.dp2px(mContext,200-45);
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.titleBar(llChange).statusBarDarkFont(false).init();
     }
 
     private int height;  // 滑动到什么地方完全变色

@@ -51,6 +51,7 @@ public class SpcFragment extends BaseFragment {
       rvShop.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL, false));
         spcAp = new SpcAdapter(R.layout.item_spc_shop);
       rvShop.setAdapter(spcAp);
+        isTitleBar(true,view);
     }
 
     @Override

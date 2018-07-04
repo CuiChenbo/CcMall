@@ -27,6 +27,7 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, A
     private TextView tvSwitchMode,tvSwitchState,tvLocation;
     @Override
     protected void initView() {
+        UpTitle(null);
         mMapView =  findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
         if (aMap == null) {

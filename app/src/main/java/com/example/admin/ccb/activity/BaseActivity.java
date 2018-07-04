@@ -10,6 +10,7 @@ import com.example.admin.ccb.R;
 import com.example.admin.ccb.utils.LogUtils;
 import com.example.admin.ccb.utils.ToastUtils;
 import com.google.gson.Gson;
+import com.gyf.barlibrary.ImmersionBar;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.HttpParams;
@@ -19,11 +20,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     public Context mContext;
     private Gson gson;
     public Bundle savedInstanceState;
+    public ImmersionBar mImmersionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewResource());
         this.savedInstanceState = savedInstanceState;
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.init();  //所有子类都将继承这些相同的属性
         mContext = this;
         gson = new Gson();
         initView();
@@ -36,13 +40,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initData();
     protected abstract void initList();
     public void UpTitle(String title){
+        if (findViewById(R.id.vBar) == null)return;
+        mImmersionBar.titleBar(R.id.vBar).statusBarDarkFont(true, 0.2f).init();
         findViewById(R.id.tvTitleBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-        ((TextView)findViewById(R.id.tvTitleBar)).setText(title);
+        ((TextView)findViewById(R.id.tvTitleBar)).setText(title == null?"":title);
     }
 
     public void okGetRequest(final String url){
@@ -157,4 +163,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void okResponseFinish(String flag) {
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();  //必须调用该方法，防止内存泄漏，不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
+    }
 }

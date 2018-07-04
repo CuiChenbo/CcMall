@@ -39,6 +39,7 @@ public class ClassifyFragment extends BaseFragment {
       rv.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
         leftAdapter = new LeftAdapter(R.layout.item_classify_left);
         rv.setAdapter(leftAdapter);
+        isTitleBar(true,view);
     }
 
     @Override

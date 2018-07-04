@@ -48,12 +48,13 @@ private ImageView ivBack,ivScan;
 private TextView tvName;
     @Override
     protected void initView() {
+        UpTitle("CCB家店铺");
         appBarLayout = findViewById(R.id.appBarLayout);
        indicator = findViewById(R.id.Indicator);
         mPager = this.findViewById(R.id.vp);
-        ivBack = findViewById(R.id.ivBack);
+        ivBack = findViewById(R.id.tvTitleBack);
         ivScan = findViewById(R.id.ivScan);
-        tvName = findViewById(R.id.tvName);
+        tvName = findViewById(R.id.tvTitleBar);
 
         CommonNavigator commonNavigator = new CommonNavigator(this);
         commonNavigator.setAdjustMode(true);
@@ -126,11 +127,13 @@ private TextView tvName;
                     ivScan.setImageResource(R.mipmap.home_scan);
                     tvName.setTextColor(getResources().getColor(R.color.colorWhite));
                     ivBack.setImageResource(R.mipmap.nav_back_white);
+                    mImmersionBar.statusBarDarkFont(false,0.2f).init();
                 } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
 //                // 闭合
                     ivScan.setImageResource(R.mipmap.home_scan_black);
                     tvName.setTextColor(getResources().getColor(R.color.emphasisTextview));
                     ivBack.setImageResource(R.mipmap.nav_back_black);
+                    mImmersionBar.statusBarDarkFont(true,0.2f).init();
                 } else {
                 }
             }

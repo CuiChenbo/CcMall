@@ -52,11 +52,11 @@ public class ResCcb implements Serializable {
             ,"http://img.52z.com/upload/news/image/20180209/20180209100304_34383.jpeg"
             ,"http://img.zcool.cn/community/01e6d456a6e48932f875520f751355.jpg"
             ,"http://img.zcool.cn/community/01e56557a2d8c80000012e7eff209b.jpg"};
-    public static String Goodsimages2[] = {"http://p3.wmpic.me/article/2016/01/09/1452311321_dJmOsZCE.jpg"
-    ,"http://www.wmpic.me/wp-content/uploads/2013/11/20131109220740823.jpg"
-    ,"http://www.wmpic.me/wp-content/uploads/2013/11/20131109220743873.jpg"
-    ,"http://www.wmpic.me/wp-content/uploads/2013/11/20131109220747982.jpg"
-    ,"http://www.wmpic.me/wp-content/uploads/2013/11/2013110922074961.jpg"};
+    public static String Goodsimages2[] = {"http://img003.hc360.cn/y2/M03/DF/FF/wKhQdFSkSiSECyMCAAAAAHXEJI0839.jpg"
+    ,"http://img004.hc360.cn/k1/M08/22/76/wKhQwFmYISCEPbV4AAAAAMiiYwQ956.jpg"
+    ,"http://img2.imgtn.bdimg.com/it/u=1908121152,4237511778&fm=26&gp=0.jpg"
+    ,"http://m.360buyimg.com/mobilecms/s750x750_jfs/t19687/59/417334426/304006/a20286e3/5a784fe8Na00c5b20.jpg%21q80.jpg"
+    ,"http://img14.360buyimg.com/n1/s350x449_jfs/t20146/171/580517645/463060/79e4110e/5b117504Naeadc702.jpg%21cc_350x449.jpg"};
 
     public static String searchLists[] = {"ins超火的裤子","猕猴桃 奇异果","香蕉","2018最新款牛仔裤","萌萌哒面包服","我的客服","时尚运动套装女春秋款","银丝亮边！拼接时尚运动款","谢","进口零食送女男友","脉动"};
     public static String menus[] = {"抢购","我的快递","记账本","天天有料","我的客服","智能设备","理财","奖励金","电影票","早晨"};

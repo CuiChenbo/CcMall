@@ -3,10 +3,11 @@ package com.example.admin.ccb.wxapi;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.admin.ccb.utils.LogUtils;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
+
+import www.ccb.com.common.utils.LogUtils;
 
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 

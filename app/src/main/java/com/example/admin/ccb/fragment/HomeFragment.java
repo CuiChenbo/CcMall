@@ -34,7 +34,6 @@ import com.example.admin.ccb.bean.homeMenuBean;
 import com.example.admin.ccb.utils.DialogUtils;
 import com.example.admin.ccb.utils.GlideImageLoader;
 import com.example.admin.ccb.utils.ResCcb;
-import com.example.admin.ccb.utils.UiUtils;
 import com.example.admin.ccb.view.UPMarqueeView;
 import com.gyf.barlibrary.ImmersionBar;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
@@ -47,6 +46,8 @@ import com.youth.banner.listener.OnBannerListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import www.ccb.com.common.utils.UiUtils;
 
 /**
  * CCB simple {@link Fragment} subclass.

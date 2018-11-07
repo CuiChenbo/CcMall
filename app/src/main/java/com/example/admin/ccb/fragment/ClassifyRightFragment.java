@@ -19,11 +19,12 @@ import com.example.admin.ccb.base.BaseFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
 import com.example.admin.ccb.utils.ResCcb;
-import com.example.admin.ccb.utils.ToastUtils;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
+import www.ccb.com.common.utils.ToastUtils;
 
 /**
  * Ccb simple {@link Fragment} subclass.

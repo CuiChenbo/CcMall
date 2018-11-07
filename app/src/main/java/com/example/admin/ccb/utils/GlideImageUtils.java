@@ -12,6 +12,8 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.example.admin.ccb.R;
 
+import www.ccb.com.common.utils.UiUtils;
+
 /**
  * NAME:CCB on 2016/10/13 16:27
  * Glide图片加载框架  circle

@@ -7,10 +7,11 @@ import android.widget.TextView;
 
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.utils.ResCcb;
-import com.example.admin.ccb.utils.ToastUtils;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
+
+import www.ccb.com.common.utils.ToastUtils;
 
 public class SearchActivity extends BaseActivity {
     @Override

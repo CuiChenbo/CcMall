@@ -8,6 +8,8 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
+import www.ccb.com.common.BaseApplication;
+
 /**
  * @Author cuiChenBo
  * Created by zz on 2018/3/6 11:57.
@@ -15,7 +17,7 @@ import com.uuzuche.lib_zxing.activity.ZXingLibrary;
  * 　　　　update:       upAuthor:      explain:
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends BaseApplication {
     private static MyApplication instance;
     private IWXAPI wxapi;
     public static final String APP_ID = "wxd930ea5d5a258f4f";

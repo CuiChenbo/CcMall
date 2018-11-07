@@ -16,13 +16,14 @@ import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PayResult;
 import com.example.admin.ccb.utils.PhotoDgUtils;
 import com.example.admin.ccb.utils.ResCcb;
-import com.example.admin.ccb.utils.ToastUtils;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import java.util.List;
 import java.util.Map;
+
+import www.ccb.com.common.utils.ToastUtils;
 
 public class GoodsDatailsActivity extends BaseActivity {
 

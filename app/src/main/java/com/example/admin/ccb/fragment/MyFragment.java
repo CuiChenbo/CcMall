@@ -22,10 +22,11 @@ import com.example.admin.ccb.activity.SelecePhotoActivity;
 import com.example.admin.ccb.activity.SetActivity;
 import com.example.admin.ccb.base.BaseFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
-import com.example.admin.ccb.utils.ToastUtils;
 
 import java.util.Calendar;
 import java.util.Date;
+
+import www.ccb.com.common.utils.ToastUtils;
 
 /**
  * CCB simple {@link Fragment} subclass.

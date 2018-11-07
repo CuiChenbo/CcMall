@@ -13,7 +13,8 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.utils.ToastUtils;
+
+import www.ccb.com.common.utils.ToastUtils;
 
 /**
  * @Author ccb

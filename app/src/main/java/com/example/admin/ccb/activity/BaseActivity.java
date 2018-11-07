@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.utils.LogUtils;
-import com.example.admin.ccb.utils.ToastUtils;
 import com.google.gson.Gson;
 import com.gyf.barlibrary.ImmersionBar;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.HttpParams;
+
+import www.ccb.com.common.utils.LogUtils;
+import www.ccb.com.common.utils.ToastUtils;
 
 public abstract class BaseActivity extends AppCompatActivity {
 

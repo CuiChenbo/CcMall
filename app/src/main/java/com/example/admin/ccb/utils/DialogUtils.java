@@ -22,6 +22,8 @@ import com.example.admin.ccb.R;
 import com.example.admin.ccb.view.SendCodeTextView;
 import com.jungly.gridpasswordview.GridPasswordView;
 
+import www.ccb.com.common.utils.UiUtils;
+
 public class DialogUtils {
 
     private static Dialog dialog;

@@ -34,7 +34,7 @@ public abstract class BaseFragment extends Fragment {
     public void isTitleBar(boolean is,View v){
         if (is){
             mImmersionBar = ImmersionBar.with(this);  //可以为任意view;
-            mImmersionBar.titleBar(v).statusBarDarkFont(true, 0.2f).init();
+            mImmersionBar.titleBarMarginTop(v).statusBarDarkFont(true, 0.2f).init();
         }
     }
 

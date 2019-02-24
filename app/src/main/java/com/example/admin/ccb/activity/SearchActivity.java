@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
+import com.example.admin.ccb.base.BaseActivity;
 import com.example.admin.ccb.utils.ResCcb;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;

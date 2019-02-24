@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.activity.GoodsDatailsActivity;
+import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.SearchActivity;
 import com.example.admin.ccb.adapter.HomeAdapter;
 import com.example.admin.ccb.adapter.HomeMenuAdapter;
@@ -115,7 +115,7 @@ public class HomeFragment extends BaseFragment {
         rvAp.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                startActivity(new Intent(mContext, GoodsDatailsActivity.class));
+                startActivity(new Intent(mContext, GoodsInfoActivity.class));
             }
         });
         vScan.setOnClickListener(new View.OnClickListener() {

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
+import com.example.admin.ccb.base.BaseActivity;
 import com.example.admin.ccb.fragment.ShopFragment1;
 import com.example.admin.ccb.fragment.ShopFragment2;
 import com.example.admin.ccb.view.NotConflictViewPager;

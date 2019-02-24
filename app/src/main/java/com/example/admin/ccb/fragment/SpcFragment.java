@@ -17,10 +17,10 @@ import com.bigkoo.pickerview.OptionsPickerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.activity.GoodsDatailsActivity;
+import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.ShopHomeActivity;
 import com.example.admin.ccb.base.BaseFragment;
-import com.example.admin.ccb.base.ShopPingCartBean;
+import com.example.admin.ccb.bean.ShopPingCartBean;
 import com.example.admin.ccb.utils.ResCcb;
 
 import java.util.ArrayList;
@@ -190,7 +190,7 @@ public class SpcFragment extends BaseFragment {
                    .setOnClickListener(R.id.rl, new View.OnClickListener() {
                        @Override
                        public void onClick(View view) {
-                           mContext.startActivity(new Intent(mContext, GoodsDatailsActivity.class));
+                           mContext.startActivity(new Intent(mContext, GoodsInfoActivity.class));
                        }
                    });
             helper.setImageResource(R.id.spc_iv_page,item.icon);

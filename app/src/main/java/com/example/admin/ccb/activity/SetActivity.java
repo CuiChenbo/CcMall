@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
+import com.example.admin.ccb.base.BaseActivity;
 
 public class SetActivity extends BaseActivity {
 

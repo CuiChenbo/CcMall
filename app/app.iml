@@ -91,7 +91,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
@@ -112,6 +111,7 @@
     <orderEntry type="library" name="Gradle: com.github.LuckSiege.PictureSelector:ucrop-v2.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-27.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-27.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.pinguo-zhouwei:MZBannerView-v2.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:glide-4.5.0" level="project" />
     <orderEntry type="library" name="Gradle: com.crazysunj:cardslideview-1.2.1" level="project" />
@@ -119,11 +119,11 @@
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:annotations:4.5.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.youth.banner:banner-1.4.9" level="project" />
-    <orderEntry type="library" name="Gradle: com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.6@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable-27.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-27.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.lzy.net:okrx2-2.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.3.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-26.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:rules-1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.1.1@jar" level="project" />

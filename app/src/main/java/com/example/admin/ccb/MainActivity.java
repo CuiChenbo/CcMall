@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
-import com.example.admin.ccb.activity.BaseActivity;
+import com.example.admin.ccb.base.BaseActivity;
 import com.example.admin.ccb.fragment.HomeFragment;
 import com.example.admin.ccb.fragment.MyFragment;
 import com.example.admin.ccb.fragment.ClassifyFragment;

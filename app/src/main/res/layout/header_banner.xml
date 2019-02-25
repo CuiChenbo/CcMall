@@ -9,24 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="200dp">
     </com.youth.banner.Banner>
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/colorTransparent"
-        android:translationZ="@dimen/dp0"
-        app:cardBackgroundColor="@color/colorTransparent"
-        app:cardCornerRadius="@dimen/dp6"
-        app:cardElevation="0px"
-        app:cardMaxElevation="0px"
-        app:cardUseCompatPadding="false">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@mipmap/homeimage1"
-            android:scaleType="fitXY"
-            android:layout_marginTop="2dp"
-            />
-    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/menuRecyclerView"
@@ -39,6 +21,7 @@
         android:paddingLeft="@dimen/dp5"
         android:paddingRight="@dimen/dp5"
         android:paddingTop="@dimen/dp10"
+        android:visibility="visible"
         />
 
     <com.example.admin.ccb.view.UPMarqueeView
@@ -48,5 +31,26 @@
         android:layout_height="45dp">
     </com.example.admin.ccb.view.UPMarqueeView>
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp6"
+        android:layout_marginTop="@dimen/dp2"
+        android:layout_marginLeft="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp12"
+        android:layout_marginBottom="@dimen/dp3"
+        app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivImg"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@mipmap/homeimage1"
+                android:scaleType="fitXY"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

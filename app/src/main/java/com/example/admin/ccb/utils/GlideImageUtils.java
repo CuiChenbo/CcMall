@@ -2,14 +2,20 @@ package com.example.admin.ccb.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.example.admin.ccb.R;
 
 import www.ccb.com.common.utils.UiUtils;
@@ -30,7 +36,7 @@ public class GlideImageUtils {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.loading)
-                .error(R.mipmap.default_icon);
+                .error(R.drawable.ic_default_image);
         Glide.with(context)
                 .load(url)
                 .apply(options)
@@ -200,8 +206,8 @@ public class GlideImageUtils {
     public static void DisplayCircle(final Context context, String url, final ImageView imageView) {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
-                .placeholder(R.mipmap.default_icon)
-                .error(R.mipmap.default_icon)
+                .placeholder(R.drawable.ic_default_image)
+                .error(R.drawable.ic_default_image)
                 ;
         Glide.with(context)
                 .asBitmap()
@@ -245,6 +251,31 @@ public class GlideImageUtils {
                         circularBitmapDrawable.setAntiAlias(true);
                         imageView.setImageDrawable(circularBitmapDrawable);
                     }
+                });
+    }
+
+    public static void displayGif(Context context, @DrawableRes int resId, final ImageView imageView) {
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .placeholder(R.mipmap.loading)
+                .error(R.drawable.ic_default_image)
+                ;
+        Glide.with(context)
+                .asGif()
+                .apply(options)
+                .load(resId)
+                .into(new SimpleTarget<GifDrawable>() {
+                    @Override
+                    public void onResourceReady(@NonNull GifDrawable resource, @Nullable Transition<? super GifDrawable> transition) {
+                        if (resource instanceof GifDrawable) {
+                            GifDrawable gifDrawable = (GifDrawable) resource;
+                            gifDrawable.setLoopCount(GifDrawable.LOOP_FOREVER);
+                            imageView.setImageDrawable(resource);
+                            gifDrawable.start();
+                        }
+
+                    }
+
                 });
     }
 }

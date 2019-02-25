@@ -19,6 +19,9 @@ import com.example.admin.ccb.bean.homeGoodsBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoShowDialog;
 import com.example.admin.ccb.view.AllGridView;
+import com.lzy.ninegrid.ImageInfo;
+import com.lzy.ninegrid.NineGridView;
+import com.lzy.ninegrid.preview.NineGridViewClickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +53,17 @@ import java.util.List;
               }
           });
             GlideImageUtils.Display(mContext,item.icon,(ImageView) helper.getView(R.id.icon));
-           AllGridView rv = helper.getView(R.id.rvPic);
-            PicAdapter ad =  new PicAdapter(mContext,item.images);
-           rv.setAdapter(ad);
+           NineGridView nineGrid = helper.getView(R.id.nineGrid);
+            ArrayList<ImageInfo> imageInfo = new ArrayList<>();
+                for (homeGoodsBean.Data.PicList imageDetail : item.images) {
+                    ImageInfo info = new ImageInfo();
+                    info.setThumbnailUrl(imageDetail.pic);
+                    info.setBigImageUrl(imageDetail.pic);
+                    imageInfo.add(info);
+                }
+            nineGrid.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));
+//            PicAdapter ad =  new PicAdapter(mContext,item.images);
+//           rv.setAdapter(ad);
         }
 
         class PicAdapter extends DefaultBaseAdapter<homeGoodsBean.Data.PicList>{

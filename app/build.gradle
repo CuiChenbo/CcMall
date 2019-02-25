@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -16,13 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    allprojects {
-        repositories {
-            google()
-            jcenter()
-            maven { url 'https://jitpack.io' }
-        }
-    }
+//    allprojects {
+//        repositories {
+//            google()
+//            jcenter()
+//            maven { url 'https://jitpack.io' }
+//        }
+//    }
 //    packagingOptions {
 //        exclude 'META-INF/rxjava.properties'
 //    }
@@ -69,4 +70,5 @@ dependencies {
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
     implementation project(':common')
+    compile 'com.android.support:multidex:1.0.2'
 }

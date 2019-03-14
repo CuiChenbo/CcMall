@@ -4,10 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +15,6 @@ import com.example.admin.ccb.base.BaseActivity;
 import com.example.admin.ccb.base.DefaultBaseAdapter;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PayResult;
-import com.example.admin.ccb.utils.PhotoDgUtils;
 import com.example.admin.ccb.utils.ResCcb;
 import com.example.admin.ccb.view.AllListView;
 import com.tencent.mm.opensdk.modelpay.PayReq;
@@ -29,10 +24,10 @@ import com.zhouwei.mzbanner.MZBannerView;
 import com.zhouwei.mzbanner.holder.MZHolderCreator;
 import com.zhouwei.mzbanner.holder.MZViewHolder;
 
-import java.util.List;
 import java.util.Map;
 
 import www.ccb.com.common.utils.ToastUtils;
+import www.ccb.com.common.utils.ViewSaveImageUtils;
 
 public class GoodsInfoActivity extends BaseActivity{
 
@@ -73,6 +68,15 @@ public class GoodsInfoActivity extends BaseActivity{
                     vh = (Vh) convertView.getTag();
                 }
                 vh.imageView.setImageResource(dataList.get(position));
+                final Vh finalVh = vh;
+                vh.imageView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        ViewSaveImageUtils.viewSaveToImage(finalVh.imageView);
+                        ToastUtils.showCenterToast("长按保存图片成功");
+                        return false;
+                    }
+                });
                 return convertView;
             }
             class Vh{
@@ -110,7 +114,7 @@ public class GoodsInfoActivity extends BaseActivity{
         findViewById(R.id.tvInfo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GoodsInfoActivity.this,GoodsInfoActivity.class));
+                startActivity(new Intent(GoodsInfoActivity.this,ShopHomeActivity.class));
             }
         });
 

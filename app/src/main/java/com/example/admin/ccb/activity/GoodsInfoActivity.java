@@ -72,8 +72,27 @@ public class GoodsInfoActivity extends BaseActivity{
                 vh.imageView.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
-                        ViewSaveImageUtils.viewSaveToImage(finalVh.imageView);
-                        ToastUtils.showCenterToast("长按保存图片成功");
+                        ViewSaveImageUtils.viewSaveToImage(finalVh.imageView, new ViewSaveImageUtils.OnSaveListEner() {
+                            @Override
+                            public void onStart() {
+
+                            }
+
+                            @Override
+                            public void onSucceed(String filePath) {
+                                ToastUtils.showCenterToast("长按保存图片成功"+filePath);
+                            }
+
+                            @Override
+                            public void onFailure(String error) {
+                                ToastUtils.showCenterToast("长按保存图片失败"+error);
+                            }
+
+                            @Override
+                            public void onFinish() {
+
+                            }
+                        });
                         return false;
                     }
                 });

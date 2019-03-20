@@ -13,6 +13,7 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
+import cn.jzvd.Jzvd;
 import www.ccb.com.common.BaseApplication;
 
 /**
@@ -39,7 +40,6 @@ public class MyApplication extends BaseApplication {
         } catch (NoClassDefFoundError ncdfe) {
         }
         NineGridView.setImageLoader(new GlideImageLoader());
-
     }
 
     @Override

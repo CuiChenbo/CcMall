@@ -2,6 +2,7 @@ package com.example.admin.ccb.fragment;
 
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -18,6 +19,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,6 +28,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.SearchActivity;
+import com.example.admin.ccb.activity.VideoPlayerDouActivity;
+import com.example.admin.ccb.activity.VideoPlayerListActivity;
 import com.example.admin.ccb.adapter.HomeAdapter;
 import com.example.admin.ccb.adapter.HomeMenuAdapter;
 import com.example.admin.ccb.base.BaseFragment;
@@ -48,6 +52,7 @@ import java.util.List;
 import java.util.Random;
 
 import www.ccb.com.common.utils.UiUtils;
+import www.ccb.com.common.widget.dialog.SingleSelectDialog;
 
 /**
  * CCB simple {@link Fragment} subclass.
@@ -67,6 +72,7 @@ public class HomeFragment extends BaseFragment {
     private UPMarqueeView upView;
     private RecyclerView menuRecyclerView;
     private View vScan;
+    private ImageView ivAd;
     @Override
     public void initView(View view) {
         llChange = view.findViewById(R.id.llChange);
@@ -78,6 +84,7 @@ public class HomeFragment extends BaseFragment {
         headerView = View.inflate(mContext,R.layout.header_banner,null);
         banner = headerView.findViewById(R.id.hBanner);
         upView = headerView.findViewById(R.id.upView);
+        ivAd = headerView.findViewById(R.id.ivImg);
         menuRecyclerView = headerView.findViewById(R.id.menuRecyclerView);
         rvAp.setHeaderView(headerView);
         height = UiUtils.dp2px(mContext,200-45);
@@ -152,6 +159,24 @@ public class HomeFragment extends BaseFragment {
                 startActivity(new Intent(mContext, SearchActivity.class));
             }
         });
+
+        ivAd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String[] datas = {"抖音Style","列表Style"};
+                new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                          if (i == 0){
+                              startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
+                          }else {
+                              startActivity(new Intent(mContext, VideoPlayerListActivity.class));
+                          }
+                    }
+                }).show();
+            }
+        });
+
     }
     private homeGoodsBean homeGoods;
     @Override

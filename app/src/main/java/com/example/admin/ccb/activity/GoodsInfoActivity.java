@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.alipay.sdk.app.PayTask;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.base.BaseActivity;
-import com.example.admin.ccb.base.DefaultBaseAdapter;
+import www.ccb.com.common.base.DefaultBaseAdapter;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PayResult;
 import com.example.admin.ccb.utils.ResCcb;

@@ -1,4 +1,4 @@
-package com.example.admin.ccb.base;
+package www.ccb.com.common.base;
 
 import android.content.Context;
 import android.view.View;
@@ -8,8 +8,6 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 /**
- * @Author Xi
- * Created by zz.wbkj.xi on 2016/12/5.
  */
 
 public abstract class DefaultBaseAdapter<T> extends BaseAdapter {

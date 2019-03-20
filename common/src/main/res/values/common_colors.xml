@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#43B2BF</color>
+    <color name="colorPrimaryDark">#43B2CF</color>
+    <color name="colorAccent">#43B2BF</color>
+    <color name="windowBackground">#F2F2F2</color>
+    <color name="divider_line">#E3E3E3</color>
+    <color name="item_subject_title">#222222</color>
+    <!--百分比-开头字母-->
+    <!--100% —FF-->
+    <!--95% — F2-->
+    <!--90% — E6-->
+    <!--85% — D9-->
+    <!--80% — CC-->
+    <!--75% — BF-->
+    <!--70% — B3-->
+    <!--65% — A6-->
+    <!--60% — 99-->
+    <!--55% — 8C-->
+    <!--50% — 80-->
+    <!--45% — 73-->
+    <!--40% — 66-->
+    <!--35% — 59-->
+    <!--30% — 4D-->
+    <!--25% — 40-->
+    <!--20% — 33-->
+    <!--15% — 26-->
+    <!--10% — 1A-->
+    <!--5% — 0D-->
+    <!--0% — 00-->
+    <color name="main_white">#FFFFFF</color>
+    <color name="white_alpha_80">#CCFFFFFF</color>
+    <color name="white_alpha_50">#80FFFFFF</color>
+    <color name="main_black">#111111</color>
+    <color name="main_text">#333333</color>
+    <color name="secondary_black">#404040</color>
+    <color name="main_gray">#888888</color>
+    <color name="third_gray">#666666</color>
+    <color name="secondary_gray">#999999</color>
+    <color name="main_red">#FF5F55</color>
+    <color name="main_green">#60CF7C</color>
+    <color name="secondary_green">#71C357</color>
+    <color name="second_green">#5ac998</color>
+    <color name="main_yellow">#FF9900</color>
+    <color name="F1F1F1">#f1f1f1</color>
+    <color name="e0e0e0">#e0e0e0</color>
+    <color name="d0d0d0">#d0d0d0</color>
+    <color name="service_manage">#030303</color>
+    <color name="carstatus_green">#43B2CF</color>
+    <color name="black">#000</color>
+    <color name="lovecar_background_top">#8396AE</color>
+    <color name="lovecar_background">#F8FBFC</color>
+    <color name="color_E3E3E3">#e3e3e3</color>
+    <color name="color_71C357">#71C357</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_8D99AF">#8D99AF</color>
+    <color name="color_F8F8F8">#F8F8F8</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_666666">#666666</color>
+
+    <!--ZXing color-->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="card_shadow">#20000000</color>
+    <color name="message_select_tv">#30B3C2</color>
+
+</resources>

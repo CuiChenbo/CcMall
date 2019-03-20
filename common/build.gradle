@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 
 }
 
@@ -31,6 +35,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     api 'com.github.pinguo-zhouwei:MZBannerView:v2.0.2'
     api 'com.lzy.widget:ninegridview:0.2.0'
+    api 'cn.jzvd:jiaozivideoplayer:7.0_preview'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
 }

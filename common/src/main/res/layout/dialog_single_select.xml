@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical"
+        >
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:text="TITLE"
+            android:textColor="#646161"
+            android:textSize="13sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#fefefe"
+            android:id="@+id/vLine"
+            android:visibility="gone"
+            />
+        <ListView
+            android:id="@+id/lv_single_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:divider="#fefefe"
+            android:dividerHeight="1px"
+            android:listSelector="?selectableItemBackground"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#fefefe"
+            android:id="@+id/vBottomLine"
+            android:visibility="gone"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/ivBottom"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvBottomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333"
+                tools:text="添加爱车"
+                android:layout_toRightOf="@id/ivBottom"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_white_edge_gray"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#333"
+        android:textSize="16sp" />
+
+</LinearLayout>

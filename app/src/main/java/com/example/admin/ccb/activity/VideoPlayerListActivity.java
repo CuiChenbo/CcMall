@@ -2,9 +2,7 @@ package com.example.admin.ccb.activity;
 
 import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SnapHelper;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
@@ -70,57 +68,6 @@ public class VideoPlayerListActivity extends BaseActivity {
                     JzvdStd.resetAllVideos();
                 }
             }
-        });
-
-        rvPlayer.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            int firstVisibleItem, lastVisibleItem, visibleCount;
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                switch (newState) {
-                    case SCROLL_STATE_IDLE: //滚动停止
-                        autoPlayVideo(recyclerView);
-                        break;
-                }
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-                if (layoutManager instanceof LinearLayoutManager) {
-                    LinearLayoutManager linearManager = (LinearLayoutManager) layoutManager;
-                    lastVisibleItem = linearManager.findLastVisibleItemPosition();
-                    firstVisibleItem = linearManager.findFirstVisibleItemPosition();
-                    visibleCount = lastVisibleItem - firstVisibleItem;//记录可视区域item个数
-                }
-            }
-
-            private void autoPlayVideo(RecyclerView view) {
-                //循环遍历可视区域videoview,如果完全可见就开始播放
-                for (int i = 0; i < visibleCount; i++) {
-                    if (view == null || view.getChildAt(i) == null) return;
-                    JzvdStd videoView = view.getChildAt(i).findViewById(R.id.videoplayer);
-                    if (videoView != null) {
-                        Rect rect = new Rect();
-                        videoView.getLocalVisibleRect(rect);
-                        int videoHeight = videoView.getHeight();
-                        if (rect.top == 0 && rect.bottom == videoHeight && videoView.currentState != JzvdStd.CURRENT_STATE_PLAYING) {
-                            videoView.startVideo();
-                            return;
-                        }
-                    }
-                }
-            }
-
-
-        });
-
-        rvPlayer.post(() -> {
-            //自动播放第一个
-            View view = rvPlayer.getChildAt(0);
-            JzvdStd videoView = view.findViewById(R.id.videoplayer);
-            videoView.startVideo();
         });
     }
 

@@ -30,6 +30,7 @@ import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.SearchActivity;
 import com.example.admin.ccb.activity.VideoPlayerDouActivity;
 import com.example.admin.ccb.activity.VideoPlayerListActivity;
+import com.example.admin.ccb.activity.VideoPlayerListAutoActivity;
 import com.example.admin.ccb.adapter.HomeAdapter;
 import com.example.admin.ccb.adapter.HomeMenuAdapter;
 import com.example.admin.ccb.base.BaseFragment;
@@ -37,6 +38,7 @@ import com.example.admin.ccb.bean.homeGoodsBean;
 import com.example.admin.ccb.bean.homeMenuBean;
 import com.example.admin.ccb.utils.DialogUtils;
 import com.example.admin.ccb.utils.GlideImageLoader;
+import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.ResCcb;
 import com.example.admin.ccb.view.UPMarqueeView;
 import com.gyf.barlibrary.ImmersionBar;
@@ -163,14 +165,16 @@ public class HomeFragment extends BaseFragment {
         ivAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] datas = {"抖音Style","列表Style"};
+                String[] datas = {"抖音Style","列表Style","自动播放列表Style"};
                 new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                           if (i == 0){
                               startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
-                          }else {
+                          }else if(i == 1){
                               startActivity(new Intent(mContext, VideoPlayerListActivity.class));
+                          }else {
+                              startActivity(new Intent(mContext, VideoPlayerListAutoActivity.class));
                           }
                     }
                 }).show();
@@ -199,35 +203,24 @@ public class HomeFragment extends BaseFragment {
             homeGoods.datas.add(data);
         }
         rvAp.setNewData(homeGoods.datas);
-        setBannerOneDatas(ResCcb.getBannerImages());
+        GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
+        setBannerOneDatas();
         setUpView(ResCcb.getDatas());
         setMenu(ResCcb.getMenus());
     }
 
-    private void setBannerOneDatas(List<String> advertList) {
+    private void setBannerOneDatas() {
 
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
-        if (advertList == null || advertList.size() == 0) {
-            //设置图片集合
-            List<Integer> images = new ArrayList<>();
-            images.add(R.mipmap.ic_launcher_round);
-            banner.setImages(images);
-        } else {
-            //设置图片集合
-            List<String> images = new ArrayList<>();
-            for (int i = 0; i < advertList.size(); i++) {
-                images.add(advertList.get(i));
-            }
-            banner.setImages(images);
+            banner.setImages(ResCcb.getBannerRes());
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
 
                 }
             });
-        }
         //设置banner动画效果
         banner.setBannerAnimation(Transformer.Default);
         //设置自动轮播，默认为true

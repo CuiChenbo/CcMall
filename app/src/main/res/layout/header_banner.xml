@@ -33,21 +33,21 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         app:cardCornerRadius="@dimen/dp6"
         android:layout_marginTop="@dimen/dp2"
         android:layout_marginLeft="@dimen/dp12"
         android:layout_marginRight="@dimen/dp12"
         android:layout_marginBottom="@dimen/dp3"
-        app:cardElevation="5dp">
+        app:cardElevation="2dp">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/ivImg"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@mipmap/homeimage1"
+                android:layout_height="match_parent"
+                android:src="@mipmap/banner8"
                 android:scaleType="fitXY"
                 />
         </RelativeLayout>

@@ -171,6 +171,10 @@ public class ResCcb implements Serializable {
         return Arrays.asList(bannerimages);
     }
 
+    public static List<Integer> getBannerRes() {
+        return Arrays.asList(R.mipmap.banner1,R.mipmap.banner2,R.mipmap.banner3,R.mipmap.banner4,R.mipmap.banner5,R.mipmap.banner6,R.mipmap.banner7,R.mipmap.banner8);
+    }
+
     public static List<String> getGoodsImages() {
         return Arrays.asList(goodsimages);
     }

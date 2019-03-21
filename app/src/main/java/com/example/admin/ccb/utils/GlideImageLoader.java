@@ -20,7 +20,7 @@ public class GlideImageLoader extends ImageLoader {
     public void displayImage(Context context, Object path, ImageView imageView) {
         imageView.setScaleType(scaleType);
         RequestOptions options = new RequestOptions()
-                .error(R.mipmap.ic_launcher_round);
+                .error(R.drawable.ic_default_image);
         Glide.with(context).load(path)
                 .apply(options)
                 .transition(new DrawableTransitionOptions().crossFade())

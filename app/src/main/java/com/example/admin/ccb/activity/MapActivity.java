@@ -11,7 +11,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.base.BaseActivity;
+import www.ccb.com.common.base.BaseActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

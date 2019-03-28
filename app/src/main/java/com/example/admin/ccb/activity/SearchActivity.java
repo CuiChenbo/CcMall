@@ -6,12 +6,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.base.BaseActivity;
 import com.example.admin.ccb.utils.ResCcb;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
 
+import www.ccb.com.common.base.BaseActivity;
 import www.ccb.com.common.utils.ToastUtils;
 
 public class SearchActivity extends BaseActivity {

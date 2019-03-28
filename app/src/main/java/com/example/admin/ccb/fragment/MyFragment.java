@@ -20,7 +20,7 @@ import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.activity.MapActivity;
 import com.example.admin.ccb.activity.SelecePhotoActivity;
 import com.example.admin.ccb.activity.SetActivity;
-import com.example.admin.ccb.base.BaseFragment;
+import www.ccb.com.common.base.BaseFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
 
 import java.util.Calendar;

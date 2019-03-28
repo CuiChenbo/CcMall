@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.base.BaseFragment;
+import www.ccb.com.common.base.BaseFragment;
 import com.example.admin.ccb.utils.ResCcb;
 
 /**

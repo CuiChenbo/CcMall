@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.base.BaseActivity;
+import www.ccb.com.common.base.BaseActivity;
 import com.example.admin.ccb.utils.ResCcb;
 
 import cn.jzvd.Jzvd;
@@ -20,7 +20,7 @@ import cn.jzvd.JzvdStd;
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_IDLE;
 
 /**
- * 列表式视频自动z播放
+ * 列表式视频自动播放
  */
 public class VideoPlayerListAutoActivity extends BaseActivity {
 

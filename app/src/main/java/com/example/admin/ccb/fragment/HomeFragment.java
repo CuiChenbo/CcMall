@@ -33,7 +33,7 @@ import com.example.admin.ccb.activity.VideoPlayerListActivity;
 import com.example.admin.ccb.activity.VideoPlayerListAutoActivity;
 import com.example.admin.ccb.adapter.HomeAdapter;
 import com.example.admin.ccb.adapter.HomeMenuAdapter;
-import com.example.admin.ccb.base.BaseFragment;
+import www.ccb.com.common.base.BaseFragment;
 import com.example.admin.ccb.bean.homeGoodsBean;
 import com.example.admin.ccb.bean.homeMenuBean;
 import com.example.admin.ccb.utils.DialogUtils;

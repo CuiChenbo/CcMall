@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.adapter.SelectPhotoAdapter;
-import com.example.admin.ccb.base.BaseActivity;
+import www.ccb.com.common.base.BaseActivity;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;

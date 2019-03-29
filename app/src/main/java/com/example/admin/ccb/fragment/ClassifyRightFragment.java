@@ -59,7 +59,7 @@ public class ClassifyRightFragment extends BaseFragment {
         mTitle = getArguments().getString("Name");
         rv1Adapter.setNewData(Arrays.asList(datas));
         randomPosition = new Random().nextInt(ResCcb.getBannerImages().size()-1);
-        GlideImageUtils.displayRoundCorner(mContext, ResCcb.getBannerImages().get(randomPosition),ivHead,10);
+        GlideImageUtils.DisplayRoundCorner(mContext, ResCcb.getBannerImages().get(randomPosition),ivHead,10);
     }
     @Override
     public void initListener() {

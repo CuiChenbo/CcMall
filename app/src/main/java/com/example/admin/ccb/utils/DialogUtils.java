@@ -52,7 +52,7 @@ public class DialogUtils {
         ImageView ivIcon = (ImageView) view.findViewById(R.id.ivIcon);
         ImageView ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
         ivIcon.setOnClickListener(ivIconClickListener);
-        GlideImageUtils.displayNoPlaceholder(context, imageUrl, ivIcon);
+        GlideImageUtils.DisplayNoPlaceholder(context, imageUrl, ivIcon);
         ivDelete.setOnClickListener(ivDeleteClickListener);
         popupWindow.setContentView(view);
         popupWindow.setOutsideTouchable(isCanceledOnTouchOutside);
@@ -88,7 +88,7 @@ public class DialogUtils {
         ImageView ivIcon = (ImageView) view.findViewById(R.id.ivIcon);
         ImageView ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
         ivIcon.setOnClickListener(ivIconClickListener);
-        GlideImageUtils.displayNoPlaceholder(context, imageUrl, ivIcon);
+        GlideImageUtils.DisplayNoPlaceholder(context, imageUrl, ivIcon);
         ivDelete.setOnClickListener(ivDeleteClickListener);
         dialog.setContentView(view);
         dialog.setCancelable(isCanceledOnTouchOutside);

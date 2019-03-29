@@ -19,6 +19,7 @@ import com.example.admin.ccb.view.NotConflictViewPager;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
+import net.lucode.hackware.magicindicator.buildins.UIUtil;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
@@ -39,7 +40,7 @@ public class ShopHomeActivity extends BaseActivity {
         return R.layout.activity_shop_home;
     }
 
-    private String titles[] = {"GridLayout","LinearLayout"};
+    private String titles[] = {"Grid","Linear"};
     private List<String> mDataList = Arrays.asList(titles);
     private List<Fragment> mFragmentList;
 
@@ -58,6 +59,7 @@ private TextView tvName;
         tvName = findViewById(R.id.tvTitleBar);
 
         CommonNavigator commonNavigator = new CommonNavigator(this);
+//        commonNavigator.setSkimOver(true);
         commonNavigator.setAdjustMode(true);
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
 
@@ -84,6 +86,7 @@ private TextView tvName;
             @Override
             public IPagerIndicator getIndicator(Context context) {
                 LinePagerIndicator indicator = new LinePagerIndicator(context);
+                indicator.setMode(LinePagerIndicator.MODE_WRAP_CONTENT); //下划线的长度和字体相同
                 indicator.setColors(Color.parseColor("#FF294C"));//下划线颜色
                 return indicator;
             }

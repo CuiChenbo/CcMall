@@ -52,7 +52,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void loadData() {
-        GlideImageUtils.displayCircle(mContext,"http://img4.duitang.com/uploads/item/201209/20/20120920160424_QH2jt.thumb.600_0.jpeg",ivPhoto);
+        GlideImageUtils.DisplayCircle(mContext,"http://img4.duitang.com/uploads/item/201209/20/20120920160424_QH2jt.thumb.600_0.jpeg",ivPhoto);
     }
 
     @Override

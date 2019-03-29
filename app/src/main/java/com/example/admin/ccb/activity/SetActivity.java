@@ -13,31 +13,17 @@ public class SetActivity extends BaseActivity {
     public int getContentViewResource() {
         return R.layout.activity_set;
     }
-   private TextView tv,et;
     @Override
     protected void initView() {
-     tv = findViewById(R.id.tv);
-     et = findViewById(R.id.et);
-     tv.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
     @Override
     protected void initData() {
-      et.setText("http://mp.blog.csdn.net/postedit/79460617");
+
     }
 
     @Override
     protected void initList() {
 
-    }
-
-    public void click(View view) {
-        okGetRequest(et.getText().toString().trim());
-    }
-
-    @Override
-    protected void okResponseSuccess(String whit, Object t) {
-        super.okResponseSuccess(whit, t);
-        tv.setText(t.toString());
     }
 }

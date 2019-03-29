@@ -53,8 +53,8 @@ public class DoubanActivity extends BaseActivity {
                 genres = genres + item.getGenres().get(i)+" ";
             }
             helper.setText(R.id.tv1,item.getTitle())
-//            .setText(R.id.tv2,"豆瓣评分:\t"+item.getRating().getAverage())
-            .setText(R.id.tv2,Html.fromHtml("<font color='#666666' size='26'>豆瓣评分: </font>"+"<font color='#febe01' size='42'>"+item.getRating().getAverage()+"</font>"))
+            .setText(R.id.tv2,Html.fromHtml("<font color='#666666'>豆瓣评分: </font>"))
+            .setText(R.id.tv2_,item.getRating().getAverage()+"")
             .setText(R.id.tv3,casts)
             .setText(R.id.tv4,genres);
             ImageView iv = helper.getView(R.id.iv);

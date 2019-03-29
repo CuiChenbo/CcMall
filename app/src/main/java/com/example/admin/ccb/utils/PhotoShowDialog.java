@@ -35,6 +35,11 @@ public class PhotoShowDialog extends Dialog {
     private int mPosition;
     private ViewPager vp;
     private TextView tv;
+
+    public static PhotoShowDialog get(Context context,String photo){
+        return new PhotoShowDialog(context,photo);
+    }
+
     public PhotoShowDialog(@NonNull Context context) {
         super(context);
         mContext = context;

@@ -26,6 +26,8 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.admin.ccb.R;
+import com.example.admin.ccb.activity.DoubanActivity;
+import com.example.admin.ccb.activity.GirlWelfareActivity;
 import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.SearchActivity;
 import com.example.admin.ccb.activity.VideoPlayerDouActivity;
@@ -218,7 +220,7 @@ public class HomeFragment extends BaseFragment {
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
-
+                  startActivity(new Intent(mContext,GirlWelfareActivity.class));
                 }
             });
         //设置banner动画效果
@@ -252,6 +254,7 @@ public class HomeFragment extends BaseFragment {
         menuRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 5));
         HomeMenuAdapter hap = new HomeMenuAdapter(R.layout.item_homemenu);
         menuRecyclerView.setAdapter(hap);
+        hap.setOnItemClickListener((adapter, view, position) -> start(DoubanActivity.class));
         homeMenuBean b = new homeMenuBean();
         b.datas = new ArrayList<>();
         for (int i = 0; i < ResCcb.getMenus().size(); i++) {

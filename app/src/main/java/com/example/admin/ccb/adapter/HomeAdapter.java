@@ -50,6 +50,13 @@ import java.util.List;
                   mContext.startActivity(new Intent(mContext, ShopHomeActivity.class)
                           , ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,view,"TRANSITIONIMAGE").toBundle());
               }
+          })
+          .setOnClickListener(R.id.title, new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  mContext.startActivity(new Intent(mContext, ShopHomeActivity.class)
+                          , ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,helper.getView(R.id.icon),"TRANSITIONIMAGE").toBundle());
+              }
           });
             GlideImageUtils.Display(mContext,item.icon,(ImageView) helper.getView(R.id.icon));
            NineGridView nineGrid = helper.getView(R.id.nineGrid);

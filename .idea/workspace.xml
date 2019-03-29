@@ -6,11 +6,11 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java" line="86" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java" line="106" />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -18,10 +18,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9003101-2467-467a-a5e8-ccc152dfc490" name="Default" comment="视频播放处理2；">
-      <change afterPath="$PROJECT_DIR$/common/src/main/res/mipmap/arrow_title_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/res/values/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/res/values/styles.xml" afterDir="false" />
+    <list default="true" id="f9003101-2467-467a-a5e8-ccc152dfc490" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/DoubanActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GirlWelfareActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/DoubanBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/GankBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_douban.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_girl_welfare.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_douban_top.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_girl_welfare.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/GsonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/UrlFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/dialog/CbLoadingDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/res/layout/c_progress_dialog.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -33,36 +42,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CcMall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CcMall.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/BaseWebViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/BaseWebViewActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GoodsInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GoodsInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/MapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/MapActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SearchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SearchActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SelecePhotoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SelecePhotoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SetActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SetActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/ShopHomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/ShopHomeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListAutoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListAutoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ClassifyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ClassifyFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ClassifyRightFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ClassifyRightFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/adapter/HomeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/adapter/HomeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/MyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/MyFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ShopFragment1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ShopFragment1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ShopFragment2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ShopFragment2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/SpcFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/SpcFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/titlebar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/LoopViewPager.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/LoopViewPager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoShowDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoShowDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/scale_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/anim/scale_in.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/scale_out.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/anim/scale_out.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/res/values/common_colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/res/values/common_colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/res/values/common_styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/res/values/common_styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/res/values/styles.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,111 +80,272 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SelecePhotoActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SelecePhotoActivity.java">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+            <state relative-caret-position="151">
+              <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#1383#1384#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#1915#1916#0" expanded="true" />
+                <element signature="e#2075#2076#0" expanded="true" />
+                <element signature="e#2120#2121#0" expanded="true" />
+                <element signature="e#2177#2178#0" expanded="true" />
+                <element signature="e#2222#2223#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/MapActivity.java">
+      <file leaf-file-name="DoubanActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/DoubanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="138">
+              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
+                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#1047#1048#0" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java">
+      <file leaf-file-name="BaseWebViewActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/BaseWebViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="222">
+              <caret line="141" column="30" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java">
+      <file leaf-file-name="BaseViewHolder.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.CymChad/BaseRecyclerViewAdapterHelper/2.9.30/b1cdf1d9751eb1e35fd8b05282af9b25c729725d/BaseRecyclerViewAdapterHelper-2.9.30-sources.jar!/com/chad/library/adapter/base/BaseViewHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1701">
-              <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#initListener#0;class#HomeFragment#0" />
-              </folding>
+            <state relative-caret-position="1180">
+              <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/build.gradle">
+      <file leaf-file-name="PhotoShowDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoShowDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            <state relative-caret-position="264">
+              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoopViewPager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/LoopViewPager.java">
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="128" column="49" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
+            <state relative-caret-position="141">
+              <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="scale_out.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/scale_out.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="53" column="85" selection-start-line="53" selection-start-column="85" selection-end-line="53" selection-end-column="85" />
+            <state relative-caret-position="63">
+              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bg_white_edge_gray.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/res/drawable/bg_white_edge_gray.xml">
+      <file leaf-file-name="scale_in.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/scale_in.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="42" />
+            <state relative-caret-position="63">
+              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="titlebar.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml">
+      <file leaf-file-name="DoubanBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/DoubanBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
-                <element signature="e#770#782#0" expanded="true" />
+                <element signature="e#3080#3081#0" expanded="true" />
+                <element signature="e#3108#3109#0" expanded="true" />
+                <element signature="e#3147#3148#0" expanded="true" />
+                <element signature="e#3181#3182#0" expanded="true" />
+                <element signature="e#3210#3211#0" expanded="true" />
+                <element signature="e#3238#3239#0" expanded="true" />
+                <element signature="e#3277#3278#0" expanded="true" />
+                <element signature="e#3311#3312#0" expanded="true" />
+                <element signature="e#3340#3341#0" expanded="true" />
+                <element signature="e#3368#3369#0" expanded="true" />
+                <element signature="e#3407#3408#0" expanded="true" />
+                <element signature="e#3441#3442#0" expanded="true" />
+                <element signature="e#3473#3474#0" expanded="true" />
+                <element signature="e#3501#3502#0" expanded="true" />
+                <element signature="e#3543#3544#0" expanded="true" />
+                <element signature="e#3577#3578#0" expanded="true" />
+                <element signature="e#3624#3625#0" expanded="true" />
+                <element signature="e#3655#3656#0" expanded="true" />
+                <element signature="e#3715#3716#0" expanded="true" />
+                <element signature="e#3755#3756#0" expanded="true" />
+                <element signature="e#7105#7106#0" expanded="true" />
+                <element signature="e#7142#7143#0" expanded="true" />
+                <element signature="e#7194#7195#0" expanded="true" />
+                <element signature="e#7238#7239#0" expanded="true" />
+                <element signature="e#7274#7275#0" expanded="true" />
+                <element signature="e#7310#7311#0" expanded="true" />
+                <element signature="e#7356#7357#0" expanded="true" />
+                <element signature="e#7398#7399#0" expanded="true" />
+                <element signature="e#7439#7440#0" expanded="true" />
+                <element signature="e#7483#7484#0" expanded="true" />
+                <element signature="e#7542#7543#0" expanded="true" />
+                <element signature="e#7600#7601#0" expanded="true" />
+                <element signature="e#7645#7646#0" expanded="true" />
+                <element signature="e#7690#7691#0" expanded="true" />
+                <element signature="e#7852#7853#0" expanded="true" />
+                <element signature="e#7890#7891#0" expanded="true" />
+                <element signature="e#7940#7941#0" expanded="true" />
+                <element signature="e#7986#7987#0" expanded="true" />
+                <element signature="e#8021#8022#0" expanded="true" />
+                <element signature="e#8056#8057#0" expanded="true" />
+                <element signature="e#8100#8101#0" expanded="true" />
+                <element signature="e#8140#8141#0" expanded="true" />
+                <element signature="e#8181#8182#0" expanded="true" />
+                <element signature="e#8218#8219#0" expanded="true" />
+                <element signature="e#8270#8271#0" expanded="true" />
+                <element signature="e#8314#8315#0" expanded="true" />
+                <element signature="e#8348#8349#0" expanded="true" />
+                <element signature="e#8382#8383#0" expanded="true" />
+                <element signature="e#8424#8425#0" expanded="true" />
+                <element signature="e#8462#8463#0" expanded="true" />
+                <element signature="e#8495#8496#0" expanded="true" />
+                <element signature="e#8528#8529#0" expanded="true" />
+                <element signature="e#8568#8569#0" expanded="true" />
+                <element signature="e#8604#8605#0" expanded="true" />
+                <element signature="e#8647#8648#0" expanded="true" />
+                <element signature="e#8684#8685#0" expanded="true" />
+                <element signature="e#8738#8739#0" expanded="true" />
+                <element signature="e#8782#8783#0" expanded="true" />
+                <element signature="e#8827#8828#0" expanded="true" />
+                <element signature="e#8863#8864#0" expanded="true" />
+                <element signature="e#8918#8919#0" expanded="true" />
+                <element signature="e#8960#8961#0" expanded="true" />
+                <element signature="e#9013#9014#0" expanded="true" />
+                <element signature="e#9053#9054#0" expanded="true" />
+                <element signature="e#9120#9121#0" expanded="true" />
+                <element signature="e#9170#9171#0" expanded="true" />
+                <element signature="e#9510#9511#0" expanded="true" />
+                <element signature="e#9552#9553#0" expanded="true" />
+                <element signature="e#9595#9596#0" expanded="true" />
+                <element signature="e#9641#9642#0" expanded="true" />
+                <element signature="e#9683#9684#0" expanded="true" />
+                <element signature="e#9729#9730#0" expanded="true" />
+                <element signature="e#9783#9784#0" expanded="true" />
+                <element signature="e#9837#9838#0" expanded="true" />
+                <element signature="e#9877#9878#0" expanded="true" />
+                <element signature="e#9921#9922#0" expanded="true" />
+                <element signature="e#9971#9972#0" expanded="true" />
+                <element signature="e#10021#10022#0" expanded="true" />
+                <element signature="e#10056#10057#0" expanded="true" />
+                <element signature="e#10098#10099#0" expanded="true" />
+                <element signature="e#10141#10142#0" expanded="true" />
+                <element signature="e#10187#10188#0" expanded="true" />
+                <element signature="e#10713#10714#0" expanded="true" />
+                <element signature="e#10757#10758#0" expanded="true" />
+                <element signature="e#10807#10808#0" expanded="true" />
+                <element signature="e#10857#10858#0" expanded="true" />
+                <element signature="e#10897#10898#0" expanded="true" />
+                <element signature="e#10941#10942#0" expanded="true" />
+                <element signature="e#10991#10992#0" expanded="true" />
+                <element signature="e#11041#11042#0" expanded="true" />
+                <element signature="e#11082#11083#0" expanded="true" />
+                <element signature="e#11127#11128#0" expanded="true" />
+                <element signature="e#11179#11180#0" expanded="true" />
+                <element signature="e#11231#11232#0" expanded="true" />
+                <element signature="e#11899#11900#0" expanded="true" />
+                <element signature="e#11941#11942#0" expanded="true" />
+                <element signature="e#11987#11988#0" expanded="true" />
+                <element signature="e#12033#12034#0" expanded="true" />
+                <element signature="e#12080#12081#0" expanded="true" />
+                <element signature="e#12126#12127#0" expanded="true" />
+                <element signature="e#12185#12186#0" expanded="true" />
+                <element signature="e#12239#12240#0" expanded="true" />
+                <element signature="e#12278#12279#0" expanded="true" />
+                <element signature="e#12321#12322#0" expanded="true" />
+                <element signature="e#12369#12370#0" expanded="true" />
+                <element signature="e#12417#12418#0" expanded="true" />
+                <element signature="e#12454#12455#0" expanded="true" />
+                <element signature="e#12495#12496#0" expanded="true" />
+                <element signature="e#12539#12540#0" expanded="true" />
+                <element signature="e#12583#12584#0" expanded="true" />
+                <element signature="e#13143#13144#0" expanded="true" />
+                <element signature="e#13195#13196#0" expanded="true" />
+                <element signature="e#13249#13250#0" expanded="true" />
+                <element signature="e#13307#13308#0" expanded="true" />
+                <element signature="e#13351#13352#0" expanded="true" />
+                <element signature="e#13403#13404#0" expanded="true" />
+                <element signature="e#13457#13458#0" expanded="true" />
+                <element signature="e#13515#13516#0" expanded="true" />
+                <element signature="e#13560#13561#0" expanded="true" />
+                <element signature="e#13613#13614#0" expanded="true" />
+                <element signature="e#13669#13670#0" expanded="true" />
+                <element signature="e#13729#13730#0" expanded="true" />
+                <element signature="e#14422#14423#0" expanded="true" />
+                <element signature="e#14464#14465#0" expanded="true" />
+                <element signature="e#14510#14511#0" expanded="true" />
+                <element signature="e#14556#14557#0" expanded="true" />
+                <element signature="e#14604#14605#0" expanded="true" />
+                <element signature="e#14650#14651#0" expanded="true" />
+                <element signature="e#14710#14711#0" expanded="true" />
+                <element signature="e#14764#14765#0" expanded="true" />
+                <element signature="e#14803#14804#0" expanded="true" />
+                <element signature="e#14846#14847#0" expanded="true" />
+                <element signature="e#14894#14895#0" expanded="true" />
+                <element signature="e#14942#14943#0" expanded="true" />
+                <element signature="e#14979#14980#0" expanded="true" />
+                <element signature="e#15020#15021#0" expanded="true" />
+                <element signature="e#15064#15065#0" expanded="true" />
+                <element signature="e#15108#15109#0" expanded="true" />
+                <element signature="e#15672#15673#0" expanded="true" />
+                <element signature="e#15724#15725#0" expanded="true" />
+                <element signature="e#15778#15779#0" expanded="true" />
+                <element signature="e#15836#15837#0" expanded="true" />
+                <element signature="e#15880#15881#0" expanded="true" />
+                <element signature="e#15932#15933#0" expanded="true" />
+                <element signature="e#15986#15987#0" expanded="true" />
+                <element signature="e#16044#16045#0" expanded="true" />
+                <element signature="e#16089#16090#0" expanded="true" />
+                <element signature="e#16142#16143#0" expanded="true" />
+                <element signature="e#16198#16199#0" expanded="true" />
+                <element signature="e#16258#16259#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_douban_top.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_douban_top.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common_colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/res/values/common_colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="165" column="46" selection-start-line="165" selection-start-column="46" selection-end-line="165" selection-end-column="46" />
+            <state relative-caret-position="183">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding>
+                <element signature="e#365#379#0" expanded="true" />
+                <element signature="e#557#570#0" expanded="true" />
+                <element signature="e#1341#1354#0" expanded="true" />
+                <element signature="e#1736#1749#0" expanded="true" />
+                <element signature="e#2131#2144#0" expanded="true" />
+                <element signature="e#2526#2538#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -205,24 +361,17 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GoodsDatailsActivity</find>
-      <find>DefaultBaseAdapter</find>
-      <find>com.zhouwei.mzbanner</find>
-      <find>rvShop</find>
-      <find> </find>
       <find>MOUNT_UNMOUNT_FILESYSTEMS</find>
       <find>WRITE_EXTERNAL_STORAGE</find>
       <find>imagePath=</find>
       <find>ScrollView</find>
       <find>tvInfo</find>
-      <find>BaseQuickAdapter</find>
       <find>compileOptions</find>
       <find>CURRENT_STATE_PLAYING</find>
       <find>currentState</find>
       <find>AUTOFILL_TYPE_LIST</find>
       <find>SCREEN_WINDOW_LIST</find>
       <find>mediaInterface</find>
-      <find>banner</find>
       <find>ivAd</find>
       <find>seekto</find>
       <find>compile</find>
@@ -231,13 +380,25 @@
       <find>apiimport www.ccb.com.common.base.BaseActivity</find>
       <find>import com.example.admin.ccb.base.BaseFragment</find>
       <find>divider_line</find>
+      <find>BaseQuickAdapter</find>
+      <find>banner</find>
+      <find>PhotoShowDialog</find>
+      <find>rv</find>
+      <find>setAdapter</find>
+      <find>DialogMsg</find>
+      <find>rvAp</find>
+      <find>menuRecyclerView</find>
+      <find>gson</find>
+      <find>CbLoadingDialog</find>
+      <find>httpurl + what</find>
     </findStrings>
     <replaceStrings>
       <replace>GoodsInfoActivity</replace>
       <replace>api</replace>
       <replace>apiimport www.ccb.com.common.base.BaseActivity</replace>
-      <replace>import www.ccb.com.common.base.BaseActivity</replace>
       <replace>import www.ccb.com.common.base.BaseFragment</replace>
+      <replace>import www.ccb.com.common.base.BaseActivity</replace>
+      <replace>what</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -3376,27 +3537,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_goods_datails.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GoodsDatailsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_goods_info.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/banner_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/home_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/adapter/HomeAdapter.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/AndroidUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/MainActivity.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/ViewSaveImage.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/ViewSaveImageUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GoodsInfoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_video_player.xml" />
-        <option value="$PROJECT_DIR$/jiaozivideoplayer/build.gradle" />
-        <option value="$PROJECT_DIR$/videoplayer/build.gradle" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/MyApplication.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/JZMediaIjk.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerActivity.java" />
-        <option value="$PROJECT_DIR$/common/src/main/res/values/common_styles.xml" />
         <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/ViewUtils.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/DefaultBaseAdapter.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/dialog/SingleSelectDialog.java" />
@@ -3405,28 +3546,48 @@
         <option value="$PROJECT_DIR$/common/src/main/res/layout/item_dialog_single_select.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_player.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideImageLoader.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideImageUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/header_banner.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/ResCcb.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListAutoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/SpcFragment.java" />
         <option value="$PROJECT_DIR$/common/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SearchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SetActivity.java" />
-        <option value="$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/MapActivity.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java" />
-        <option value="$PROJECT_DIR$/common/src/main/res/values/common_colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SelecePhotoActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/common/build.gradle" />
         <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/LoopViewPager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/GirlWelfaerBean.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoShowDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideImageUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/GankBean.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_girl_welfare.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_girl_welfare.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/adapter/HomeAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/DoubanBean.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/UrlFactory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml" />
+        <option value="$PROJECT_DIR$/common/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/GsonUtils.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/dialog/CbLoadingDialog.java" />
+        <option value="$PROJECT_DIR$/common/src/main/res/values/common_styles.xml" />
+        <option value="$PROJECT_DIR$/common/src/main/res/values/common_colors.xml" />
+        <option value="$PROJECT_DIR$/common/src/main/res/layout/c_progress_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GirlWelfareActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_douban.xml" />
+        <option value="$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/scale_in.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/scale_out.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_douban_top.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/DoubanActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/BaseWebViewActivity.java" />
       </list>
     </option>
   </component>
@@ -3444,25 +3605,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
-              <item name="common" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -3478,6 +3620,96 @@
             <path>
               <item name="CcMall" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="ccb" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="ccb" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="common" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="common" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="common" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="common" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="CcMall" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -3499,12 +3731,8 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Cc_Demo\CcMall\common\src\main\res\mipmap" />
-      <recent name="D:\Cc_Demo\CcMall\common\src\main\res\values" />
-      <recent name="D:\Cc_Demo\CcMall\common\src\main\res\layout" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Cc_Demo\CcMall\common\src\main\res\mipmap-xxhdpi" />
-      <recent name="D:\Cc_Demo\CcMall\app\src\main\res\layout" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="www.ccb.com.common" />
@@ -3519,7 +3747,11 @@
       <recent name="www.ccb.com.common.widget.dialog" />
       <recent name="com.example.admin.ccb.base" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Cc_Demo\CcMall\app\src\main\res\layout" />
+      <recent name="D:\Cc_Demo\CcMall\common\src\main\res\layout" />
+      <recent name="D:\Cc_Demo\CcMall\common\src\main\res\mipmap" />
+      <recent name="D:\Cc_Demo\CcMall\common\src\main\res\values" />
       <recent name="D:\Cc_Demo\CcMall\common\src\main\res\mipmap-xxhdpi" />
     </key>
   </component>
@@ -3716,11 +3948,19 @@
       <option name="project" value="LOCAL" />
       <updated>1553148578293</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="框架结构">
+      <created>1553767740996</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1553767740996</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="12" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -3733,18 +3973,17 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.29654035" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.33333334" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.28217822" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.21617162" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.33663365" />
       <window_info anchor="right" id="Gradle" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3778878" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -3752,6 +3991,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3765,307 +4005,51 @@
     <MESSAGE value="图片更新" />
     <MESSAGE value="视频播放处理；" />
     <MESSAGE value="视频播放处理2；" />
-    <option name="LAST_COMMIT_MESSAGE" value="视频播放处理2；" />
+    <MESSAGE value="框架结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="框架结构" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java</url>
-          <line>86</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java</url>
-          <line>105</line>
+          <line>125</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GirlWelfareActivity.java</url>
+          <line>92</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/DoubanActivity.java</url>
+          <line>93</line>
+          <properties method="onLoadMoreRequested">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>datas</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>item.getUrl()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/anim/dialog_exit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/common_styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="118" column="12" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/widget/ViewUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/ViewUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="118" column="7" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/DefaultBaseAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/dialog/SingleSelectDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/layout/dialog_single_select.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/layout/item_dialog_single_select.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_player_full.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_player.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/DialogUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5082">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideRoundTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideCircleTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoDgUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoShowDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1890">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/youth/banner/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.youth.banner/banner/1.4.9/f29c52e344b0ea9f9aeffd48ca1c3cb6ea4d41fc/banner-1.4.9-sources.jar!/com/youth/banner/view/BannerViewPager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.youth.banner/banner/1.4.9/f29c52e344b0ea9f9aeffd48ca1c3cb6ea4d41fc/banner-1.4.9-sources.jar!/com/youth/banner/Banner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4032">
-          <caret line="226" column="18" selection-start-line="226" selection-start-column="18" selection-end-line="226" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideImageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/mipmap-xxhdpi/banner8.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/ResCcb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3234">
-          <caret line="172" selection-start-line="172" selection-end-line="172" />
-          <folding>
-            <element signature="e#12646#12647#0" expanded="true" />
-            <element signature="e#12696#12697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListAutoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.jzvd/jiaozivideoplayer/7.0_preview/8e8977b47a0a1c0110f2ec43773f11524332fe11/jiaozivideoplayer-7.0_preview-sources.jar!/cn/jzvd/JzvdStd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2121">
-          <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header_banner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4998">
-          <caret line="256" column="33" selection-start-line="256" selection-start-column="23" selection-end-line="256" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.jzvd/jiaozivideoplayer/7.0_preview/8e8977b47a0a1c0110f2ec43773f11524332fe11/jiaozivideoplayer-7.0_preview-sources.jar!/cn/jzvd/Jzvd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16170">
-          <caret line="798" column="32" selection-start-line="798" selection-start-column="32" selection-end-line="798" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/SpcFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/base/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/titlebar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269" />
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="43" column="35" selection-end-line="151" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="49" selection-start-line="49" selection-end-line="53" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="58" selection-start-column="58" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -4087,29 +4071,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <element signature="e#770#782#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/base/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/base/BaseFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/MapActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -4120,38 +4082,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1701">
-          <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initListener#0;class#HomeFragment#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/res/drawable/bg_white_edge_gray.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="42" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/common_colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="165" column="46" selection-start-line="165" selection-start-column="46" selection-end-line="165" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -4183,6 +4117,566 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="128" column="49" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/base/CardViewpagerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PayResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideRoundTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/DialogUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoDgUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.5.0/118d48d702114278de5af81fb21844cf91666d3d/glide-4.5.0-sources.jar!/com/bumptech/glide/load/resource/drawable/DrawableTransitionOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="74" column="44" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/AndroidTool/Android/sdk/platforms/android-26/android.jar!/android/app/Dialog.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/home_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="987">
+          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/ShopFragment1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_shop1.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="39" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/GlideImageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="37" column="45" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.CymChad/BaseRecyclerViewAdapterHelper/2.9.30/b1cdf1d9751eb1e35fd8b05282af9b25c729725d/BaseRecyclerViewAdapterHelper-2.9.30-sources.jar!/com/chad/library/adapter/base/BaseQuickAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="557" column="16" selection-start-line="557" selection-start-column="16" selection-end-line="557" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/GankBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="e#5560#5561#0" expanded="true" />
+            <element signature="e#5588#5589#0" expanded="true" />
+            <element signature="e#5631#5632#0" expanded="true" />
+            <element signature="e#5665#5666#0" expanded="true" />
+            <element signature="e#5710#5711#0" expanded="true" />
+            <element signature="e#5740#5741#0" expanded="true" />
+            <element signature="e#5797#5798#0" expanded="true" />
+            <element signature="e#5835#5836#0" expanded="true" />
+            <element signature="e#6555#6556#0" expanded="true" />
+            <element signature="e#6589#6590#0" expanded="true" />
+            <element signature="e#6631#6632#0" expanded="true" />
+            <element signature="e#6669#6670#0" expanded="true" />
+            <element signature="e#6709#6710#0" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6803#6804#0" expanded="true" />
+            <element signature="e#6853#6854#0" expanded="true" />
+            <element signature="e#6888#6889#0" expanded="true" />
+            <element signature="e#6923#6924#0" expanded="true" />
+            <element signature="e#6967#6968#0" expanded="true" />
+            <element signature="e#7007#7008#0" expanded="true" />
+            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#7091#7092#0" expanded="true" />
+            <element signature="e#7149#7150#0" expanded="true" />
+            <element signature="e#7203#7204#0" expanded="true" />
+            <element signature="e#7240#7241#0" expanded="true" />
+            <element signature="e#7277#7278#0" expanded="true" />
+            <element signature="e#7325#7326#0" expanded="true" />
+            <element signature="e#7369#7370#0" expanded="true" />
+            <element signature="e#7404#7405#0" expanded="true" />
+            <element signature="e#7439#7440#0" expanded="true" />
+            <element signature="e#7483#7484#0" expanded="true" />
+            <element signature="e#7523#7524#0" expanded="true" />
+            <element signature="e#7557#7558#0" expanded="true" />
+            <element signature="e#7591#7592#0" expanded="true" />
+            <element signature="e#7633#7634#0" expanded="true" />
+            <element signature="e#7671#7672#0" expanded="true" />
+            <element signature="e#7706#7707#0" expanded="true" />
+            <element signature="e#7741#7742#0" expanded="true" />
+            <element signature="e#7786#7787#0" expanded="true" />
+            <element signature="e#7826#7827#0" expanded="true" />
+            <element signature="e#7860#7861#0" expanded="true" />
+            <element signature="e#7894#7895#0" expanded="true" />
+            <element signature="e#7936#7937#0" expanded="true" />
+            <element signature="e#7974#7975#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_girl_welfare.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/VideoPlayerDouActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2349">
+          <caret line="164" column="145" selection-start-line="164" selection-start-column="145" selection-end-line="164" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/adapter/HomeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="53" column="70" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
+          <folding>
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/UrlFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="25" column="83" selection-start-line="25" selection-start-column="83" selection-end-line="25" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/27.0.2/76f4751bc97ce7fa2362dc5a38b39089066a2c99/recyclerview-v7-27.0.2-sources.jar!/android/support/v7/widget/GridLayoutManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/res/layout/titlebar.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="e#809#821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/fragment/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2268">
+          <caret line="256" column="71" selection-start-line="256" selection-start-column="71" selection-end-line="256" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadData#0;class#HomeFragment#0" />
+            <element signature="method#setBannerOneDatas#0;class#HomeFragment#0" />
+            <element signature="method#setUpView#0;class#HomeFragment#0" />
+            <element signature="method#onActivityResult#0;class#HomeFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="184" column="58" selection-start-line="184" selection-start-column="58" selection-end-line="184" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/widget/dialog/CbLoadingDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/res/layout/c_progress_dialog.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_girl_welfare.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/common_colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/res/values/common_styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/GirlWelfareActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="93" column="46" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="46" />
+          <folding>
+            <element signature="class#WelfaerAdapter#0;class#GirlWelfareActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_douban.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/base/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1383#1384#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1915#1916#0" expanded="true" />
+            <element signature="e#2075#2076#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
+            <element signature="e#2177#2178#0" expanded="true" />
+            <element signature="e#2222#2223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/www/ccb/com/common/utils/GsonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/bean/DoubanBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#3080#3081#0" expanded="true" />
+            <element signature="e#3108#3109#0" expanded="true" />
+            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3181#3182#0" expanded="true" />
+            <element signature="e#3210#3211#0" expanded="true" />
+            <element signature="e#3238#3239#0" expanded="true" />
+            <element signature="e#3277#3278#0" expanded="true" />
+            <element signature="e#3311#3312#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#3368#3369#0" expanded="true" />
+            <element signature="e#3407#3408#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+            <element signature="e#3473#3474#0" expanded="true" />
+            <element signature="e#3501#3502#0" expanded="true" />
+            <element signature="e#3543#3544#0" expanded="true" />
+            <element signature="e#3577#3578#0" expanded="true" />
+            <element signature="e#3624#3625#0" expanded="true" />
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3715#3716#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#7105#7106#0" expanded="true" />
+            <element signature="e#7142#7143#0" expanded="true" />
+            <element signature="e#7194#7195#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
+            <element signature="e#7274#7275#0" expanded="true" />
+            <element signature="e#7310#7311#0" expanded="true" />
+            <element signature="e#7356#7357#0" expanded="true" />
+            <element signature="e#7398#7399#0" expanded="true" />
+            <element signature="e#7439#7440#0" expanded="true" />
+            <element signature="e#7483#7484#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
+            <element signature="e#7600#7601#0" expanded="true" />
+            <element signature="e#7645#7646#0" expanded="true" />
+            <element signature="e#7690#7691#0" expanded="true" />
+            <element signature="e#7852#7853#0" expanded="true" />
+            <element signature="e#7890#7891#0" expanded="true" />
+            <element signature="e#7940#7941#0" expanded="true" />
+            <element signature="e#7986#7987#0" expanded="true" />
+            <element signature="e#8021#8022#0" expanded="true" />
+            <element signature="e#8056#8057#0" expanded="true" />
+            <element signature="e#8100#8101#0" expanded="true" />
+            <element signature="e#8140#8141#0" expanded="true" />
+            <element signature="e#8181#8182#0" expanded="true" />
+            <element signature="e#8218#8219#0" expanded="true" />
+            <element signature="e#8270#8271#0" expanded="true" />
+            <element signature="e#8314#8315#0" expanded="true" />
+            <element signature="e#8348#8349#0" expanded="true" />
+            <element signature="e#8382#8383#0" expanded="true" />
+            <element signature="e#8424#8425#0" expanded="true" />
+            <element signature="e#8462#8463#0" expanded="true" />
+            <element signature="e#8495#8496#0" expanded="true" />
+            <element signature="e#8528#8529#0" expanded="true" />
+            <element signature="e#8568#8569#0" expanded="true" />
+            <element signature="e#8604#8605#0" expanded="true" />
+            <element signature="e#8647#8648#0" expanded="true" />
+            <element signature="e#8684#8685#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
+            <element signature="e#8782#8783#0" expanded="true" />
+            <element signature="e#8827#8828#0" expanded="true" />
+            <element signature="e#8863#8864#0" expanded="true" />
+            <element signature="e#8918#8919#0" expanded="true" />
+            <element signature="e#8960#8961#0" expanded="true" />
+            <element signature="e#9013#9014#0" expanded="true" />
+            <element signature="e#9053#9054#0" expanded="true" />
+            <element signature="e#9120#9121#0" expanded="true" />
+            <element signature="e#9170#9171#0" expanded="true" />
+            <element signature="e#9510#9511#0" expanded="true" />
+            <element signature="e#9552#9553#0" expanded="true" />
+            <element signature="e#9595#9596#0" expanded="true" />
+            <element signature="e#9641#9642#0" expanded="true" />
+            <element signature="e#9683#9684#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9783#9784#0" expanded="true" />
+            <element signature="e#9837#9838#0" expanded="true" />
+            <element signature="e#9877#9878#0" expanded="true" />
+            <element signature="e#9921#9922#0" expanded="true" />
+            <element signature="e#9971#9972#0" expanded="true" />
+            <element signature="e#10021#10022#0" expanded="true" />
+            <element signature="e#10056#10057#0" expanded="true" />
+            <element signature="e#10098#10099#0" expanded="true" />
+            <element signature="e#10141#10142#0" expanded="true" />
+            <element signature="e#10187#10188#0" expanded="true" />
+            <element signature="e#10713#10714#0" expanded="true" />
+            <element signature="e#10757#10758#0" expanded="true" />
+            <element signature="e#10807#10808#0" expanded="true" />
+            <element signature="e#10857#10858#0" expanded="true" />
+            <element signature="e#10897#10898#0" expanded="true" />
+            <element signature="e#10941#10942#0" expanded="true" />
+            <element signature="e#10991#10992#0" expanded="true" />
+            <element signature="e#11041#11042#0" expanded="true" />
+            <element signature="e#11082#11083#0" expanded="true" />
+            <element signature="e#11127#11128#0" expanded="true" />
+            <element signature="e#11179#11180#0" expanded="true" />
+            <element signature="e#11231#11232#0" expanded="true" />
+            <element signature="e#11899#11900#0" expanded="true" />
+            <element signature="e#11941#11942#0" expanded="true" />
+            <element signature="e#11987#11988#0" expanded="true" />
+            <element signature="e#12033#12034#0" expanded="true" />
+            <element signature="e#12080#12081#0" expanded="true" />
+            <element signature="e#12126#12127#0" expanded="true" />
+            <element signature="e#12185#12186#0" expanded="true" />
+            <element signature="e#12239#12240#0" expanded="true" />
+            <element signature="e#12278#12279#0" expanded="true" />
+            <element signature="e#12321#12322#0" expanded="true" />
+            <element signature="e#12369#12370#0" expanded="true" />
+            <element signature="e#12417#12418#0" expanded="true" />
+            <element signature="e#12454#12455#0" expanded="true" />
+            <element signature="e#12495#12496#0" expanded="true" />
+            <element signature="e#12539#12540#0" expanded="true" />
+            <element signature="e#12583#12584#0" expanded="true" />
+            <element signature="e#13143#13144#0" expanded="true" />
+            <element signature="e#13195#13196#0" expanded="true" />
+            <element signature="e#13249#13250#0" expanded="true" />
+            <element signature="e#13307#13308#0" expanded="true" />
+            <element signature="e#13351#13352#0" expanded="true" />
+            <element signature="e#13403#13404#0" expanded="true" />
+            <element signature="e#13457#13458#0" expanded="true" />
+            <element signature="e#13515#13516#0" expanded="true" />
+            <element signature="e#13560#13561#0" expanded="true" />
+            <element signature="e#13613#13614#0" expanded="true" />
+            <element signature="e#13669#13670#0" expanded="true" />
+            <element signature="e#13729#13730#0" expanded="true" />
+            <element signature="e#14422#14423#0" expanded="true" />
+            <element signature="e#14464#14465#0" expanded="true" />
+            <element signature="e#14510#14511#0" expanded="true" />
+            <element signature="e#14556#14557#0" expanded="true" />
+            <element signature="e#14604#14605#0" expanded="true" />
+            <element signature="e#14650#14651#0" expanded="true" />
+            <element signature="e#14710#14711#0" expanded="true" />
+            <element signature="e#14764#14765#0" expanded="true" />
+            <element signature="e#14803#14804#0" expanded="true" />
+            <element signature="e#14846#14847#0" expanded="true" />
+            <element signature="e#14894#14895#0" expanded="true" />
+            <element signature="e#14942#14943#0" expanded="true" />
+            <element signature="e#14979#14980#0" expanded="true" />
+            <element signature="e#15020#15021#0" expanded="true" />
+            <element signature="e#15064#15065#0" expanded="true" />
+            <element signature="e#15108#15109#0" expanded="true" />
+            <element signature="e#15672#15673#0" expanded="true" />
+            <element signature="e#15724#15725#0" expanded="true" />
+            <element signature="e#15778#15779#0" expanded="true" />
+            <element signature="e#15836#15837#0" expanded="true" />
+            <element signature="e#15880#15881#0" expanded="true" />
+            <element signature="e#15932#15933#0" expanded="true" />
+            <element signature="e#15986#15987#0" expanded="true" />
+            <element signature="e#16044#16045#0" expanded="true" />
+            <element signature="e#16089#16090#0" expanded="true" />
+            <element signature="e#16142#16143#0" expanded="true" />
+            <element signature="e#16198#16199#0" expanded="true" />
+            <element signature="e#16258#16259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/utils/PhotoShowDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/scale_in.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/scale_out.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_douban_top.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="e#365#379#0" expanded="true" />
+            <element signature="e#557#570#0" expanded="true" />
+            <element signature="e#1341#1354#0" expanded="true" />
+            <element signature="e#1736#1749#0" expanded="true" />
+            <element signature="e#2131#2144#0" expanded="true" />
+            <element signature="e#2526#2538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/DoubanActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+          <folding>
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.CymChad/BaseRecyclerViewAdapterHelper/2.9.30/b1cdf1d9751eb1e35fd8b05282af9b25c729725d/BaseRecyclerViewAdapterHelper-2.9.30-sources.jar!/com/chad/library/adapter/base/BaseViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/admin/ccb/activity/BaseWebViewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="141" column="30" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
         </state>
       </provider>
     </entry>

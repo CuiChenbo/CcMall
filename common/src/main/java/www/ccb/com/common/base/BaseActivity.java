@@ -1,8 +1,11 @@
 package www.ccb.com.common.base;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,16 +15,20 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.HttpParams;
 
+import java.util.List;
+
 import www.ccb.com.common.R;
+import www.ccb.com.common.utils.GsonUtils;
 import www.ccb.com.common.utils.LogUtils;
 import www.ccb.com.common.utils.ToastUtils;
+import www.ccb.com.common.widget.dialog.CbLoadingDialog;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
     public Context mContext;
-    private Gson gson;
     public Bundle savedInstanceState;
     public ImmersionBar mImmersionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +37,25 @@ public abstract class BaseActivity extends AppCompatActivity {
         mImmersionBar = ImmersionBar.with(this);
         mImmersionBar.init();  //所有子类都将继承这些相同的属性
         mContext = this;
-        gson = new Gson();
         initView();
         initData();
         initList();
     }
 
+    public void start(Class clazz) {
+        startActivity(new Intent(mContext, clazz));
+    }
+
     public abstract int getContentViewResource();
+
     protected abstract void initView();
+
     protected abstract void initData();
+
     protected abstract void initList();
-    public void UpTitle(String title){
-        if (findViewById(R.id.vBar) == null)return;
+
+    public void UpTitle(String title) {
+        if (findViewById(R.id.vBar) == null) return;
         mImmersionBar.titleBar(R.id.vBar).statusBarDarkFont(true, 0.2f).init();
         findViewById(R.id.tvTitleBack).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,37 +63,64 @@ public abstract class BaseActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ((TextView)findViewById(R.id.tvTitleBar)).setText(title == null?"":title);
+        ((TextView) findViewById(R.id.tvTitleBar)).setText(title == null ? "" : title);
     }
 
-    public void okGetRequest(final String url){
+    public void okGetRequest(String url) {
+        okGetRequest(null, url, null);
+    }
+
+    public void okGetRequest(String with, String url) {
+        okGetRequest(with, url, null);
+    }
+
+    public void okGetRequest(String with, String url, List<String> params) {
+        okGetRequest(with, url, params, null, null, false);
+    }
+
+    public void okGetRequest(String with, String url, List<String> params, Class clazz, String dialogMsg, boolean isDialog) {
+        if (TextUtils.isEmpty(with)) with = url;
+        String finalWith = with;
+        if (params != null) {
+            for (int i = 0; i < params.size(); i++) {
+                url = url + "/" + params.get(i);
+            }
+        }
         OkGo.<String>get(url).execute(new StringCallback() {
             @Override
             public void onStart(com.lzy.okgo.request.base.Request<String, ? extends com.lzy.okgo.request.base.Request> request) {
                 super.onStart(request);
+                if (isDialog) showProgressDialog(dialogMsg);
+                okResponseStart(finalWith);
             }
 
             @Override
             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                    okResponseSuccess(url, response.body());
+                LogUtils.out(finalWith + "请求结果:__", response.body());
+                okResponseSuccess(finalWith, response.body());
             }
 
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);
-                okResponseError(url, response.body());
+                okResponseError(finalWith, response.body());
             }
 
             @Override
             public void onFinish() {
                 super.onFinish();
-                okResponseFinish(url);
+                if (isDialog) dismissProgressDialog();
+                okResponseFinish(finalWith);
             }
         });
     }
 
+    public void okPostRequest(final String what, final String httpurl, HttpParams params, final Class clazz) {
+        okPostRequest(what, httpurl, params, clazz, null, false);
+    }
+
     /**
-     * OK网络请求 不需要传mobileLogin和JSESSIONID
+     * OK网络请求
      *
      * @param httpurl      请求URl 也用来标记
      * @param params       请求参数
@@ -87,28 +128,28 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param DialogMsg    弹出Dialog的文字消息
      * @param isShowDialog 是否弹出Dialog 默认弹出
      */
-    public void okPostRequest(final String what, final String httpurl, HttpParams params, final Class clazz, final String DialogMsg, final boolean isShowDialog) {
-        final String url = httpurl + "";
-        params.put("mobileLogin", true);
+    public void okPostRequest(String what, String httpurl, HttpParams params, final Class clazz, final String DialogMsg, final boolean isShowDialog) {
+        final String url = httpurl;
+        final String finalWhat = TextUtils.isEmpty(what) ? url : what;
         OkGo.<String>post(url).params(params).execute(new StringCallback() {
             @Override
             public void onStart(com.lzy.okgo.request.base.Request<String, ? extends com.lzy.okgo.request.base.Request> request) {
                 super.onStart(request);
-//                if (isShowDialog) showCbDialog(DialogMsg);
-                okResponseStart(httpurl + what);
+                if (isShowDialog) showProgressDialog(DialogMsg);
+                okResponseStart(finalWhat);
             }
 
             @Override
             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                LogUtils.out(httpurl + what + "请求结果:__", response.body());
+                LogUtils.out(finalWhat + "请求结果:__", response.body());
                 if (clazz == null) {
-                    okResponseSuccess(httpurl + what, response.body());
+                    okResponseSuccess(finalWhat, response.body());
                 } else {
                     try {
-                        Object bean = gson.fromJson(response.body(), clazz);
-                        okResponseSuccess(httpurl + what, bean);
+                        Object bean = GsonUtils.fromJson(response.body(), clazz);
+                        okResponseSuccess(finalWhat, bean);
                     } catch (Exception e) {
-                        okResponseSuccess(httpurl + what, null);
+                        okResponseSuccess(finalWhat, null);
                         ToastUtils.GsonExtremely();
                         LogUtils.e("异常信息：" + e.toString());
                     }
@@ -118,16 +159,16 @@ public abstract class BaseActivity extends AppCompatActivity {
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);
-                LogUtils.out(httpurl + what + "请求结果:__", response.body());
-                okResponseError(httpurl + what, response.body());
+                LogUtils.out(finalWhat + "请求结果:__", response.body());
+                okResponseError(finalWhat, response.body());
                 ToastUtils.failNetRequest();
             }
 
             @Override
             public void onFinish() {
                 super.onFinish();
-//                if (isShowDialog) dismissCbDialog();
-                okResponseFinish(httpurl + what);
+                if (isShowDialog) dismissProgressDialog();
+                okResponseFinish(finalWhat);
             }
         });
     }
@@ -152,6 +193,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * OK网络开始请求回调
+     *
      * @param flag
      */
     protected void okResponseStart(String flag) {
@@ -159,9 +201,28 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * OK网络请求完成回调
+     *
      * @param flag
      */
     protected void okResponseFinish(String flag) {
+    }
+
+    private CbLoadingDialog mProgressDialog;
+
+    public void showProgressDialog(String msg) {
+        if (this.mProgressDialog == null)
+            this.mProgressDialog = new CbLoadingDialog(mContext);
+        if (!TextUtils.isEmpty(msg)) {
+            this.mProgressDialog.setMessage(msg);
+        } else {
+            this.mProgressDialog.setMessage("");
+        }
+        this.mProgressDialog.show();
+    }
+
+    public void dismissProgressDialog() {
+        if (this.mProgressDialog != null)
+            this.mProgressDialog.dismiss();
     }
 
     @Override

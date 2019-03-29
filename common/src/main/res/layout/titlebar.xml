@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@color/colorWhite"
     xmlns:tools="http://schemas.android.com/tools">
     <View
         android:id="@+id/vBar"
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:src="@mipmap/arrow_title_back"
-        android:paddingLeft="@dimen/dp5"
+        android:padding="@dimen/dp5"
         />
     <TextView
         android:id="@+id/tvTitleBar"

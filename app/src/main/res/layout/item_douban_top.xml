@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@color/colorWhite"
+    android:layout_height="@dimen/dp160">
+    <android.support.v7.widget.CardView
+        android:layout_width="99dp"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="3dp"
+        android:layout_margin="@dimen/dp15"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/iv"
+            android:src="@mipmap/loading"
+            android:scaleType="centerCrop"
+            />
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv1"
+            tools:text="00000000000"
+            android:textColor="@color/color_212121"
+            android:lines="1"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="@dimen/dp23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv2"
+            tools:text="00000000000"
+            android:textColor="@color/third_gray"
+            android:lines="1"
+            android:textSize="13dp"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv3"
+            tools:text="00000000000"
+            android:textColor="@color/third_gray"
+            android:lines="1"
+            android:textSize="13dp"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv4"
+            tools:text="00000000000"
+            android:textColor="@color/third_gray"
+            android:lines="1"
+            android:textSize="13dp"
+            android:layout_marginTop="@dimen/dp6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <View
+            style="@style/Line_e0e0e0_Horizontal"/>
+    </LinearLayout>
+
+
+</LinearLayout>

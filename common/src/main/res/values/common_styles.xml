@@ -24,6 +24,7 @@
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
 
@@ -101,6 +102,18 @@
     <style name="TRM_ANIM_STYLE">
         <item name="android:windowEnterAnimation">@anim/trm_popup_enter</item>
         <item name="android:windowExitAnimation">@anim/trm_popup_exit</item>
+    </style>
+
+    <style name="Line_e0e0e0_Horizontal">
+        <item name="android:background">@color/defaultDividerLine</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/px1</item>
+    </style>
+
+    <style name="Line_e0e0e0_Vertical">
+        <item name="android:background">@color/color_e0e0e0</item>
+        <item name="android:layout_width">@dimen/px1</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
     <!--带输入框-->
     <style name="PINinputDialog" parent="@android:style/Theme.Holo.Light.Dialog">

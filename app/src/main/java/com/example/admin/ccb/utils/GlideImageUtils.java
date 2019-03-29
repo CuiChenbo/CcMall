@@ -27,12 +27,11 @@ import www.ccb.com.common.utils.UiUtils;
 public class GlideImageUtils {
     /**
      * 加载普通图片
-     * 居中切割、渐变
      * @param context
      * @param url
      * @param imageView
      */
-    public static void Display(Context context, String url, ImageView imageView) {
+    public static void display(Context context, String url, ImageView imageView) {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.loading)
@@ -40,18 +39,18 @@ public class GlideImageUtils {
         Glide.with(context)
                 .load(url)
                 .apply(options)
-                .transition(new DrawableTransitionOptions().crossFade())
                 .into(imageView);
     }
 
     /**
-     * 加载普通图片
+     * 加载普通图片 , 有过渡动画
      * @param context
      * @param url
      * @param imageView
      */
-    public static void displayNoCrop(Context context, String url, ImageView imageView) {
+    public static void displayTransition(Context context, String url, ImageView imageView) {
         RequestOptions options = new RequestOptions()
+                .centerCrop()
                 .placeholder(R.mipmap.loading)
                 .error(R.drawable.ic_default_image);
         Glide.with(context)
@@ -107,7 +106,7 @@ public class GlideImageUtils {
                 .into(imageView);
     }
 
-    public static void DisplayNoCropNoPlace(Context context, String url, ImageView imageView) {
+    public static void displayTransitionNoPlace(Context context, String url, ImageView imageView) {
         RequestOptions options = new RequestOptions()
                 .error(R.color.colorWhite)
                 ;

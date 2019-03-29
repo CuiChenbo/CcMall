@@ -51,7 +51,7 @@ public class ShopFragment1 extends BaseFragment {
         @Override
         protected void convert(BaseViewHolder helper, String item) {
             helper.setText(R.id.tv,"水洗小脚牛仔"+helper.getAdapterPosition()+"码");
-            GlideImageUtils.Display(mContext,item,(ImageView) helper.getView(R.id.iv));
+            GlideImageUtils.display(mContext,item,(ImageView) helper.getView(R.id.iv));
         }
     }
 }

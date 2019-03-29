@@ -58,7 +58,7 @@ public class DoubanActivity extends BaseActivity {
             .setText(R.id.tv3,casts)
             .setText(R.id.tv4,genres);
             ImageView iv = helper.getView(R.id.iv);
-            GlideImageUtils.displayNoCrop(mContext,item.getImages().getMedium(),iv);
+            GlideImageUtils.display(mContext,item.getImages().getMedium(),iv);
             iv.setOnClickListener(view -> PhotoShowDialog.get(mContext,item.getImages().getLarge()).show());
             helper.getConvertView().setOnClickListener(new View.OnClickListener() {
                 @Override

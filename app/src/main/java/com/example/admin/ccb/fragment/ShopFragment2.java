@@ -58,7 +58,7 @@ public class ShopFragment2 extends BaseFragment {
             helper.setText(R.id.tv,"水洗小脚牛仔"+helper.getAdapterPosition()+"码")
             .setText(R.id.tv2,"高腰牛仔裤女春秋2018最新款ins超火的裤子韩版近身小脚九分裤显瘦")
             .setText(R.id.tv3,"￥:"+100+helper.getAdapterPosition());
-            GlideImageUtils.Display(mContext,item,(ImageView) helper.getView(R.id.iv));
+            GlideImageUtils.display(mContext,item,(ImageView) helper.getView(R.id.iv));
         }
     }
 }

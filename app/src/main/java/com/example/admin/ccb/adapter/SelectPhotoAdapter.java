@@ -22,6 +22,6 @@ public class SelectPhotoAdapter extends BaseQuickAdapter<LocalMedia,BaseViewHold
 
     @Override
     protected void convert(BaseViewHolder helper, LocalMedia item) {
-        GlideImageUtils.Display(mContext,item.getCompressPath(),(ImageView) helper.getView(R.id.iv_pic));
+        GlideImageUtils.display(mContext,item.getCompressPath(),(ImageView) helper.getView(R.id.iv_pic));
     }
 }

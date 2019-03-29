@@ -38,7 +38,7 @@ public class GirlWelfareActivity extends BaseActivity {
         protected void convert(BaseViewHolder helper, GankBean.ResultsBean item) {
             helper.setText(R.id.tv,item.getDesc());
             ImageView iv = helper.getView(R.id.iv);
-            GlideImageUtils.displayNoCrop(mContext,item.getUrl(),iv);
+            GlideImageUtils.display(mContext,item.getUrl(),iv);
             iv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

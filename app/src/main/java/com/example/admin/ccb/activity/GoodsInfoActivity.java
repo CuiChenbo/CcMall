@@ -122,7 +122,7 @@ public class GoodsInfoActivity extends BaseActivity{
         @Override
         public void onBind(Context context, int position, String data) {
             // 数据绑定
-            GlideImageUtils.Display(context,data,mImageView);
+            GlideImageUtils.display(context,data,mImageView);
         }
     }
 
@@ -199,7 +199,7 @@ public class GoodsInfoActivity extends BaseActivity{
 //        public View onBind(final Context context, final String data, final int position, int mode) {
 //            View view = View.inflate(context, R.layout.item_goodsbanner, null);
 //            ImageView imageView = (ImageView) view.findViewById(R.id.iv);
-//            GlideImageUtils.Display(mContext,data,imageView);
+//            GlideImageUtils.display(mContext,data,imageView);
 //            view.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -233,7 +233,7 @@ public class GoodsInfoActivity extends BaseActivity{
 //        @Override
 //        public Object instantiateItem(ViewGroup container, final int position) {
 //            ImageView iv = new ImageView(context);
-//            GlideImageUtils.Display(mContext,list.get(position),iv);
+//            GlideImageUtils.display(mContext,list.get(position),iv);
 //            iv.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {

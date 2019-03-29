@@ -53,7 +53,7 @@ public class MyApplication extends BaseApplication {
 
         @Override
         public void onDisplayImage(Context context, ImageView imageView, String url) {
-            GlideImageUtils.Display(context,url,imageView);
+            GlideImageUtils.display(context,url,imageView);
         }
 
         @Override

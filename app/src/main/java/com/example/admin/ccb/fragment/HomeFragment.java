@@ -26,6 +26,7 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.admin.ccb.R;
+import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.activity.DoubanActivity;
 import com.example.admin.ccb.activity.GirlWelfareActivity;
 import com.example.admin.ccb.activity.GoodsInfoActivity;
@@ -103,6 +104,7 @@ public class HomeFragment extends BaseFragment {
     private final int MANIFESTPERMISSIONCAMERA = 17;
     @Override
     public void initListener() {
+        upView.setOnItemClickListener((position, view) -> start(BaseWebViewActivity.class));
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -163,27 +165,31 @@ public class HomeFragment extends BaseFragment {
                 startActivity(new Intent(mContext, SearchActivity.class));
             }
         });
-
         ivAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] datas = {"抖音Style","列表Style","自动播放列表Style"};
-                new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                          if (i == 0){
-                              startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
-                          }else if(i == 1){
-                              startActivity(new Intent(mContext, VideoPlayerListActivity.class));
-                          }else {
-                              startActivity(new Intent(mContext, VideoPlayerListAutoActivity.class));
-                          }
-                    }
-                }).show();
+                start(DoubanActivity.class);
             }
         });
 
     }
+
+    private void showVideoDialog() {
+        String[] datas = {"抖音Style","列表Style","自动播放列表Style"};
+        new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 0){
+                    startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
+                }else if(i == 1){
+                    startActivity(new Intent(mContext, VideoPlayerListActivity.class));
+                }else {
+                    startActivity(new Intent(mContext, VideoPlayerListAutoActivity.class));
+                }
+            }
+        }).show();
+    }
+
     private homeGoodsBean homeGoods;
     @Override
     public void loadData() {
@@ -254,7 +260,7 @@ public class HomeFragment extends BaseFragment {
         menuRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 5));
         HomeMenuAdapter hap = new HomeMenuAdapter(R.layout.item_homemenu);
         menuRecyclerView.setAdapter(hap);
-        hap.setOnItemClickListener((adapter, view, position) -> start(DoubanActivity.class));
+        hap.setOnItemClickListener((adapter, view, position) -> showVideoDialog());
         homeMenuBean b = new homeMenuBean();
         b.datas = new ArrayList<>();
         for (int i = 0; i < ResCcb.getMenus().size(); i++) {

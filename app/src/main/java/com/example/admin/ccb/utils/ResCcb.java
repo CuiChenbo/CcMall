@@ -91,28 +91,20 @@ public class ResCcb implements Serializable {
             , "http://p3.so.qhmsg.com/bdr/200_200_/t017ec6eccb7136a278.gif"
             , "http://p0.so.qhimgs1.com/bdr/_240_/t011e39a1d0df3b1660.jpg"};
 
-    public static String goodsimages[] = {"http://ent.k618.cn/ylzx/201702/W020170219339614751336.jpeg"
-            , "http://imgx.xiawu.com/xzimg/i4/i2/T1gBriFedXXXay0Ew__110720.jpg"
-            , "http://imgx.xiawu.com/xzimg/i4/i2/10063043534980002/T1djW2FctgXXXXXXXX_!!0-item_pic.jpg"
-            , "http://p4.so.qhmsg.com/bdr/_240_/t0180939e12903e61b9.jpg"
-            , "http://p0.so.qhmsg.com/bdr/_240_/t01fbf1c306595344e5.jpg"
-            , "http://img02.taobaocdn.com/imgextra/i2/729167156/T2mK4mXpNXXXXXXXXX_!!729167156.jpg"
-            , "http://p2.so.qhimgs1.com/bdr/_240_/t01f9d10c2e3fcfbdf2.jpg"
-            , "http://pic1.hebei.com.cn/0/14/36/61/14366114_938470.jpg"
-            , "http://d05.res.meilishuo.net/pic/_o/f3/4a/588b22ed8ff168725bb17336fad7_750_750.c6.jpeg"
-            , "http://p0.so.qhimgs1.com/t017d663d2b1894bc70.jpg"
-            , "http://p1.so.qhimgs1.com/bdr/_240_/t01cc1863a3ee1b97ed.jpg"
-            , "http://imgx.xiawu.com/xzimg/i4/i2/10511042027704180/T17NSHFm8bXXXXXXXX_!!0-item_pic.jpg"
-            , "http://img2.china-ef.com/news/2012/201211010251196.jpg"
-            , "http://d04.res.meilishuo.net/pic/_o/27/cf/4390bbc4f16da851747942421d4d_500_500.jpg"
-            , "http://cdnq.duitang.com/uploads/item/201505/03/20150503035125_yTuiC.jpeg"
-            , "http://npic7.fangtoo.com/cn/zixun/zh-chs/2018-01/03/424028-201801031848495331.jpg"
-            , "https://gdp.alicdn.com/imgextra/i2/263817957/TB2OtfibruWBuNjSszgXXb8jVXa-263817957.jpg"
-            , "https://img.alicdn.com/bao/uploaded/i1/1766047907/TB1rDxKetLO8KJjSZFxXXaGEVXa_!!0-item_pic.jpg_b.jpg"
-            , "https://img.alicdn.com/bao/uploaded/i1/2143439042/TB10nealBDH8KJjSszcXXbDTFXa_!!0-item_pic.jpg_b.jpg"
-            , "https://img.alicdn.com/bao/uploaded/i1/2970503593/TB1YwQjnf6H8KJjSspmXXb2WXXa_!!0-item_pic.jpg_b.jpg"
-            , "https://img.alicdn.com/bao/uploaded/i6/TB1nYsXkJfJ8KJjy0FeYXFKEXXa_M2.SS2_b.jpg"
-            , "https://img.alicdn.com/bao/uploaded/i2/2970503593/TB1tjIbhxTI8KJjSspiXXbM4FXa_!!0-item_pic.jpg_b.jpg"};
+    public static String goodsimages[] = {"https://ws1.sinaimg.cn/large/0065oQSqly1g0ajj4h6ndj30sg11xdmj.jpg"
+            ,"https://ww1.sinaimg.cn/large/0065oQSqly1ftzsj15hgvj30sg15hkbw.jpg"
+            ,"https://ww1.sinaimg.cn/large/0065oQSqgy1fu39hosiwoj30j60qyq96.jpg"
+            ,"https://ww1.sinaimg.cn/large/0065oQSqly1fu7xueh1gbj30hs0uwtgb.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fubd0blrbuj30ia0qp0yi.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fuh5fsvlqcj30sg10onjk.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fuo54a6p0uj30sg0zdqnf.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fv5n6daacqj30sg10f1dw.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fvexaq313uj30qo0wldr4.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fw0vdlg6xcj30j60mzdk7.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fw8wzdua6rj30sg0yc7gp.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqgy1fxd7vcz86nj30qo0ybqc1.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqgy1fy58bi1wlgj30sg10hguu.jpg"
+            ,"https://ws1.sinaimg.cn/large/0065oQSqly1fymj13tnjmj30r60zf79k.jpg"};
 
     private static Integer[] details = {
             R.mipmap.details1

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -43,20 +44,21 @@ public class DoubanActivity extends BaseActivity {
 
         @Override
         protected void convert(BaseViewHolder helper, DoubanBean.SubjectsBean item) {
-            String casts = "演员:\t";
+            String casts = "演员: ";
             for (int i = 0; i < item.getCasts().size(); i++) {
-                casts = casts + item.getCasts().get(i).getName()+"\t";
+                casts = casts + item.getCasts().get(i).getName()+" ";
             }
-            String genres = "类型:\t";
+            String genres = "类型: ";
             for (int i = 0; i < item.getGenres().size(); i++) {
-                genres = genres + item.getGenres().get(i)+"\t";
+                genres = genres + item.getGenres().get(i)+" ";
             }
             helper.setText(R.id.tv1,item.getTitle())
-            .setText(R.id.tv2,"豆瓣评分:\t"+item.getRating().getAverage())
+//            .setText(R.id.tv2,"豆瓣评分:\t"+item.getRating().getAverage())
+            .setText(R.id.tv2,Html.fromHtml("<font color='#666666' size='26'>豆瓣评分: </font>"+"<font color='#febe01' size='42'>"+item.getRating().getAverage()+"</font>"))
             .setText(R.id.tv3,casts)
             .setText(R.id.tv4,genres);
             ImageView iv = helper.getView(R.id.iv);
-            GlideImageUtils.Display(mContext,item.getImages().getMedium(),iv);
+            GlideImageUtils.displayNoCrop(mContext,item.getImages().getMedium(),iv);
             iv.setOnClickListener(view -> PhotoShowDialog.get(mContext,item.getImages().getLarge()).show());
             helper.getConvertView().setOnClickListener(new View.OnClickListener() {
                 @Override

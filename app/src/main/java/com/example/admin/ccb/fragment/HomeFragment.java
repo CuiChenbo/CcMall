@@ -195,7 +195,7 @@ public class HomeFragment extends BaseFragment {
             data.icon = ResCcb.getMenuImages().get(random.nextInt(ResCcb.getMenuImages().size()));
             data.content = ResCcb.getDatas1().get(i);
             data.title = ResCcb.getDatas1().get(i).substring(ResCcb.getDatas1().size()-10,ResCcb.getDatas1().size()-1);
-            int jj = random.nextInt(8)+1;
+            int jj = random.nextInt(11)+1;
             data.images = new ArrayList<>();
             for (int j = 0; j < jj+1; j++) {  //添加条目图片
                 homeGoodsBean.Data.PicList pics = new homeGoodsBean.Data.PicList();

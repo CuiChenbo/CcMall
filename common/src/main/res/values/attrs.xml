@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="HeaderViewPager">
+        <attr name="hvp_topOffset" format="dimension"/>
+    </declare-styleable>
+
     <declare-styleable name="SlideDetailsLayout">
         <!-- float value for indicate the moment of switch panel-->
         <attr name="percent" format="float"/>

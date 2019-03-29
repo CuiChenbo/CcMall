@@ -144,27 +144,28 @@ public abstract class BaseFragment extends Fragment {
      * @param DialogMsg    弹出Dialog的文字消息
      * @param isShowDialog 是否弹出Dialog 默认弹出
      */
-    public void okPostRequest(final String what, final String httpurl, HttpParams params, final Class clazz, final String DialogMsg, final boolean isShowDialog) {
-        final String url = httpurl + "";
+    public void okPostRequest(String what, String httpurl, HttpParams params, final Class clazz, final String DialogMsg, final boolean isShowDialog) {
+        final String url = httpurl;
+        final String finalWhat = TextUtils.isEmpty(what) ? url : what;
         OkGo.<String>post(url).params(params).execute(new StringCallback() {
             @Override
             public void onStart(com.lzy.okgo.request.base.Request<String, ? extends com.lzy.okgo.request.base.Request> request) {
                 super.onStart(request);
                 if (isShowDialog) showProgressDialog(DialogMsg);
-                okResponseStart(httpurl + what);
+                okResponseStart(finalWhat);
             }
 
             @Override
             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                LogUtils.out(httpurl + what + "请求结果:__", response.body());
+                LogUtils.out(finalWhat + "请求结果:__", response.body());
                 if (clazz == null) {
-                    okResponseSuccess(httpurl + what, response.body());
+                    okResponseSuccess(finalWhat, response.body());
                 } else {
                     try {
                         Object bean = GsonUtils.fromJson(response.body(), clazz);
-                        okResponseSuccess(httpurl + what, bean);
+                        okResponseSuccess(finalWhat, bean);
                     } catch (Exception e) {
-                        okResponseSuccess(httpurl + what, null);
+                        okResponseSuccess(finalWhat, null);
                         ToastUtils.GsonExtremely();
                         LogUtils.e("异常信息：" + e.toString());
                     }
@@ -174,8 +175,8 @@ public abstract class BaseFragment extends Fragment {
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);
-                LogUtils.out(httpurl + what + "请求结果:__", response.body());
-                okResponseError(httpurl + what, response.body());
+                LogUtils.out(finalWhat + "请求结果:__", response.body());
+                okResponseError(finalWhat, response.body());
                 ToastUtils.failNetRequest();
             }
 
@@ -183,7 +184,7 @@ public abstract class BaseFragment extends Fragment {
             public void onFinish() {
                 super.onFinish();
                 if (isShowDialog) dismissProgressDialog();
-                okResponseFinish(httpurl + what);
+                okResponseFinish(finalWhat);
             }
         });
     }

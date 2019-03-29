@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activity.DoubanActivity">
-    <include layout="@layout/titlebar"/>
+    <include
+        android:id="@+id/title"
+        layout="@layout/titlebar"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

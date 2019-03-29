@@ -31,7 +31,7 @@
         android:textColor="#212121"
         android:textSize="17dp"
         android:maxLength="10"
-        tools:text ="222"
+        tools:text ="TITLE"
         />
     <View
         style="@style/Line_e0e0e0_Horizontal"

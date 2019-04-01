@@ -21,10 +21,11 @@ import com.example.admin.ccb.utils.PhotoShowDialog;
 import com.lzy.okgo.model.HttpParams;
 
 import www.ccb.com.common.base.BaseActivity;
+import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.base.BaseHeadLayoutFragment;
 import www.ccb.com.common.utils.UrlFactory;
 
-public class DoubanTopFragment extends BaseHeadLayoutFragment {
+public class DoubanTopFragment extends BaseFragment {
     private RecyclerView mRv;
     private DoubanAdapter mAdapter;
 
@@ -40,11 +41,6 @@ public class DoubanTopFragment extends BaseHeadLayoutFragment {
         mRv.setLayoutManager(new LinearLayoutManager(mContext));
         mAdapter = new DoubanAdapter((R.layout.item_douban_top));
         mRv.setAdapter(mAdapter);
-    }
-
-    @Override
-    public View getScrollableView() {
-        return mRv;
     }
 
     class DoubanAdapter extends BaseQuickAdapter<DoubanBean.SubjectsBean,BaseViewHolder> {
@@ -83,12 +79,13 @@ public class DoubanTopFragment extends BaseHeadLayoutFragment {
     }
 
 
-    private int page = 0;
+    private int start = 0;
+    private int count = 20;
     @Override
     public void loadData() {
         HttpParams params = new HttpParams();
-        params.put("start",page);
-        params.put("count",10);
+        params.put("start",start);
+        params.put("count",count);
         okPostRequest("Top",UrlFactory.DoubanDataTopUrl,params,DoubanBean.class,null,true);
     }
 
@@ -98,8 +95,8 @@ public class DoubanTopFragment extends BaseHeadLayoutFragment {
              @Override
              public void onLoadMoreRequested() {
                  HttpParams params = new HttpParams();
-                 params.put("start",page);
-                 params.put("count",10);
+                 params.put("start",start);
+                 params.put("count",count);
                  okPostRequest("Top",UrlFactory.DoubanDataTopUrl,params,DoubanBean.class);
              }
          },mRv);
@@ -114,9 +111,15 @@ public class DoubanTopFragment extends BaseHeadLayoutFragment {
         try{
             DoubanBean datas = (DoubanBean) t;
             mAdapter.addData(datas.getSubjects());
-            page = page + 10;
+            start = start + count;
+            if (datas.getSubjects()!=null&&datas.getSubjects().size()>0){
+                mAdapter.loadMoreComplete();
+            }else{
+                mAdapter.loadMoreEnd();
+            }
         }catch (Exception e){
-           e.fillInStackTrace();
+            e.fillInStackTrace();
+            mAdapter.loadMoreFail();
         }
     }
 

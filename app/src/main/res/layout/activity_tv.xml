@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<www.ccb.com.common.widget.VpSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:elevation="0dp"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.CollapsingToolbarLayout
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                app:layout_collapseMode="parallax"
+                android:orientation="vertical"
+                app:layout_collapseParallaxMultiplier="0.6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp200"
+                    android:src="@mipmap/haizeiwang"
+                    android:scaleType="centerCrop"
+                    />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:background="@color/colorWhite"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:text="猜您喜欢>"
+                        android:textSize="@dimen/dp16"
+                        android:textColor="@color/defaultTextview"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp16"
+                        />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/hRv"
+                        android:layout_marginTop="@dimen/dp40"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+                </RelativeLayout>
+            </LinearLayout>
+            <android.support.v7.widget.Toolbar
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                android:elevation="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/colorTransparent"
+                    >
+
+                    <View
+                        android:id="@+id/vBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/colorTransparent"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp45">
+                        <ImageView
+                            android:id="@+id/tvTitleBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/nav_back_white"
+                            android:padding="@dimen/dp10"
+                            />
+                        <TextView
+                            android:id="@+id/tvTitleBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="CC影视"
+                            android:textSize="@dimen/dp16"
+                            android:textColor="@color/colorWhite"
+                            android:layout_centerInParent="true"
+                            />
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/Indicator"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="@dimen/dp40" />
+    <com.example.admin.ccb.view.NotConflictViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></com.example.admin.ccb.view.NotConflictViewPager>
+</LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+</www.ccb.com.common.widget.VpSwipeRefreshLayout>

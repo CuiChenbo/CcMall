@@ -17,9 +17,10 @@ import android.widget.TextView;
 import com.bigkoo.pickerview.TimePickerView;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.BaseWebViewActivity;
+import com.example.admin.ccb.activity.DoubanActivity;
 import com.example.admin.ccb.activity.MapActivity;
 import com.example.admin.ccb.activity.SelecePhotoActivity;
-import com.example.admin.ccb.activity.SetActivity;
+import com.example.admin.ccb.activity.TVShowsActivity;
 import www.ccb.com.common.base.BaseFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
 
@@ -96,7 +97,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
                 }
                 break;
             case R.id.tvSet:
-                startActivity(new Intent(mContext, SetActivity.class));
+                startActivity(new Intent(mContext, DoubanActivity.class));
                 break;
         }
     }

@@ -31,6 +31,7 @@ import com.example.admin.ccb.activity.DoubanActivity;
 import com.example.admin.ccb.activity.GirlWelfareActivity;
 import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.SearchActivity;
+import com.example.admin.ccb.activity.TVShowsActivity;
 import com.example.admin.ccb.activity.VideoPlayerDouActivity;
 import com.example.admin.ccb.activity.VideoPlayerListActivity;
 import com.example.admin.ccb.activity.VideoPlayerListAutoActivity;
@@ -168,7 +169,7 @@ public class HomeFragment extends BaseFragment {
         ivAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                start(DoubanActivity.class);
+                start(TVShowsActivity.class);
             }
         });
 

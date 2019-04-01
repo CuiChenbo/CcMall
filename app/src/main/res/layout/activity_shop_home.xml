@@ -58,7 +58,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@mipmap/nav_back_white"
-                        android:paddingLeft="@dimen/dp5"
+                        android:paddingLeft="@dimen/dp15"
+                        android:paddingRight="@dimen/dp10"
                         />
                     <TextView
                         android:id="@+id/tvTitleBar"

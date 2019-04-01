@@ -70,7 +70,7 @@
         <activity android:name=".activity.ShopHomeActivity" />
         <activity android:name=".activity.SearchActivity" />
         <activity android:name=".activity.BaseWebViewActivity" />
-        <activity android:name=".activity.SetActivity" />
+        <activity android:name=".activity.TVShowsActivity" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:enabled="true"

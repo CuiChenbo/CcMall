@@ -21,6 +21,7 @@ public class UrlFactory {
 
     /**
      * start开始数据，count请求多少条；
+     * https://api.douban.com/v2/movie/in_theaters?start=2&count=5
      */
     public static String DoubanDataIn_theatersUrl = "https://api.douban.com/v2/movie/in_theaters"; //get 豆瓣电影上映中
     public static String DoubanDataTopUrl = "https://api.douban.com/v2/movie/top250"; //get 豆瓣电影排行榜

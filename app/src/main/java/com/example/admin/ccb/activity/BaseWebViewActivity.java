@@ -2,6 +2,12 @@ package com.example.admin.ccb.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -11,8 +17,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.admin.ccb.R;
+import com.example.admin.ccb.utils.PicTureUtils;
+import com.google.gson.JsonSyntaxException;
 
 import www.ccb.com.common.base.BaseActivity;
 
@@ -83,7 +92,19 @@ public class BaseWebViewActivity extends BaseActivity {
 
     @Override
     protected void initList() {
+        mWebView.setOnLongClickListener(view -> {
+            final WebView.HitTestResult hitTestResult = mWebView.getHitTestResult();
+            if (hitTestResult.getType() == WebView.HitTestResult.IMAGE_TYPE ||
+                    hitTestResult.getType() == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
+                    PicTureUtils.saveThePicture(hitTestResult.getExtra(),mContext);
+                return true;
+            } else {
+                return true; //如果不是图片，就取消长按复制功能
+//                return false;
+            }
 
+
+        });
     }
 
     @Override
@@ -152,12 +173,3 @@ public class BaseWebViewActivity extends BaseActivity {
         }
     }
 }
-/*
-<script type="text/javascript">
-        function s(){
-        //调用Android的setToken()方法
-        var result =window.android.setToken(goodsId);
-        document.getElementById("p").innerHTML=result;
-        }
-</script>
-*/

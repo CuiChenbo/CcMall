@@ -1,7 +1,9 @@
 package com.example.admin.ccb.utils;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
@@ -38,6 +40,10 @@ public class PhotoShowDialog extends Dialog {
 
     public static PhotoShowDialog get(Context context,String photo){
         return new PhotoShowDialog(context,photo);
+    }
+
+    public static PhotoShowDialog get(Context context, List<String> photoLists, int position){
+        return new PhotoShowDialog(context,photoLists,position);
     }
 
     public PhotoShowDialog(@NonNull Context context) {
@@ -124,6 +130,21 @@ public class PhotoShowDialog extends Dialog {
                         .apply(options)
                         .transition(new DrawableTransitionOptions().crossFade())
                         .into(photoView);
+            photoView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+//                        AlertDialog.Builder alertDialog =
+                         new AlertDialog.Builder(mContext)
+                                .setMessage("保存该图片？")
+                                .setPositiveButton("好的", new OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        PicTureUtils.saveThePicture(photoLists.get(position),mContext);
+                                    }
+                                }).show();
+                        return false;
+                    }
+                });
 
             photoView.setOnPhotoTapListener(new OnPhotoTapListener() {
                 @Override

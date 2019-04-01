@@ -1,7 +1,7 @@
 package com.example.admin.ccb.fragment;
 
-
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,13 +9,19 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,27 +31,26 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.BaseWebViewActivity;
-import com.example.admin.ccb.activity.DoubanActivity;
 import com.example.admin.ccb.activity.GirlWelfareActivity;
-import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.SearchActivity;
 import com.example.admin.ccb.activity.TVShowsActivity;
 import com.example.admin.ccb.activity.VideoPlayerDouActivity;
 import com.example.admin.ccb.activity.VideoPlayerListActivity;
 import com.example.admin.ccb.activity.VideoPlayerListAutoActivity;
-import com.example.admin.ccb.adapter.HomeAdapter;
 import com.example.admin.ccb.adapter.HomeMenuAdapter;
-import www.ccb.com.common.base.BaseFragment;
-import com.example.admin.ccb.bean.homeGoodsBean;
+import com.example.admin.ccb.bean.DoubanBean;
 import com.example.admin.ccb.bean.homeMenuBean;
 import com.example.admin.ccb.utils.DialogUtils;
 import com.example.admin.ccb.utils.GlideImageLoader;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.view.NotConflictViewPager;
 import com.example.admin.ccb.view.UPMarqueeView;
 import com.gyf.barlibrary.ImmersionBar;
+import com.lzy.okgo.model.HttpParams;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.youth.banner.Banner;
@@ -53,68 +58,151 @@ import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
 
+import net.lucode.hackware.magicindicator.MagicIndicator;
+import net.lucode.hackware.magicindicator.ViewPagerHelper;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPagerTitleView;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import www.ccb.com.common.base.BaseFragment;
+import www.ccb.com.common.utils.ToastUtils;
 import www.ccb.com.common.utils.UiUtils;
+import www.ccb.com.common.utils.UrlFactory;
 import www.ccb.com.common.widget.dialog.SingleSelectDialog;
 
-/**
- * CCB simple {@link Fragment} subclass.
- */
 public class HomeFragment extends BaseFragment {
-
-    private HomeAdapter rvAp;
 
     @Override
     protected View initContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_home,container,false);
     }
-    private RecyclerView rv;
-    private View headerView;
+
+    private List<String> mDataList = Arrays.asList("微商城","娱乐八卦","新闻头条","福利满满");
+    private MagicIndicator indicator;
+    private NotConflictViewPager mPager;
+    private AppBarLayout appBarLayout;
+    private SwipeRefreshLayout swipeRefresh;
     private Banner banner;
-    private RelativeLayout llChange;
     private UPMarqueeView upView;
     private RecyclerView menuRecyclerView;
     private View vScan;
     private ImageView ivAd;
+    private RelativeLayout llChange;
+    private TextView tvSearch;
     @Override
-    public void initView(View view) {
-        llChange = view.findViewById(R.id.llChange);
-        rv = view.findViewById(R.id.rv);
-        vScan = view.findViewById(R.id.vScan);
-        rv.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL, false));
-        rvAp = new HomeAdapter(R.layout.home_item);
-        rv.setAdapter(rvAp);
-        headerView = View.inflate(mContext,R.layout.header_banner,null);
-        banner = headerView.findViewById(R.id.hBanner);
-        upView = headerView.findViewById(R.id.upView);
-        ivAd = headerView.findViewById(R.id.ivImg);
-        menuRecyclerView = headerView.findViewById(R.id.menuRecyclerView);
-        rvAp.setHeaderView(headerView);
-        height = UiUtils.dp2px(mContext,200-45);
+    public void initView(View v) {
+        appBarLayout = v.findViewById(R.id.appBarLayout);
+        indicator = v.findViewById(R.id.Indicator);
+        mPager = v.findViewById(R.id.vp);
+        swipeRefresh = v.findViewById(R.id.swipe);
+        banner = v.findViewById(R.id.hBanner);
+        upView = v.findViewById(R.id.upView);
+        ivAd = v.findViewById(R.id.ivImg);
+        vScan = v.findViewById(R.id.vScan);
+        menuRecyclerView = v.findViewById(R.id.menuRecyclerView);
+        llChange = v.findViewById(R.id.llChange);
+        tvSearch = v.findViewById(R.id.tvSearch);
+
         mImmersionBar = ImmersionBar.with(this);
         mImmersionBar.titleBar(llChange).statusBarDarkFont(false).init();
+
+        CommonNavigator commonNavigator = new CommonNavigator(mContext);
+        commonNavigator.setAdjustMode(false); //是否充满屏幕
+        commonNavigator.setAdapter(new CommonNavigatorAdapter() {
+
+            @Override
+            public int getCount() {
+                return mDataList == null ? 0 : mDataList.size();
+            }
+
+            @Override
+            public IPagerTitleView getTitleView(Context context, final int i) {
+                ClipPagerTitleView tv = new ClipPagerTitleView(context);
+                tv.setText(mDataList.get(i));
+                tv.setTextColor(Color.parseColor("#424242"));
+                tv.setClipColor(Color.parseColor("#FF294C"));
+                tv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mPager.setCurrentItem(i);
+                    }
+                });
+                return tv;
+            }
+
+            @Override
+            public IPagerIndicator getIndicator(Context context) {
+                LinePagerIndicator indicator = new LinePagerIndicator(context);
+                indicator.setMode(LinePagerIndicator.MODE_WRAP_CONTENT); //下划线的长度和字体相同
+                indicator.setColors(Color.parseColor("#FF294C"));//下划线颜色
+                return indicator;
+            }
+        });
+        indicator.setNavigator(commonNavigator);
+        ViewPagerHelper.bind(indicator,mPager);
     }
 
-    private int height;  // 滑动到什么地方完全变色
-    private int ScrollUnm = 0;  //滑动的距离总和
+    private List<BaseFragment> mFragmentList;
+    @Override
+    public void loadData() {
+        setBannerOneDatas();
+        setUpView(ResCcb.getDatas());
+        setMenu(ResCcb.getMenus());
+        GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
+        mFragmentList = new ArrayList<>();
+        mFragmentList.add(new PalFragment());
+        mFragmentList.add(new GossipFragment());
+        mFragmentList.add(new NewsTopFragment());
+        mFragmentList.add(new GirlWelfareFragment());
+        mPager.setAdapter(new Myadapter(getFragmentManager()));
+    }
 
     private final int REQUEST_CODE = 106;
     private final int MANIFESTPERMISSIONCAMERA = 17;
+    private int height;  // 滑动到什么地方完全变色
+    private int ScrollUnm = 0;  //滑动的距离总和
     @Override
     public void initListener() {
-        upView.setOnItemClickListener((position, view) -> start(BaseWebViewActivity.class));
-        rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        swipeRefresh.setColorSchemeColors(getResources().getColor(R.color.main_green),getResources().getColor(R.color.colorOrange),getResources().getColor(R.color.mainColor));
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
+            public void onRefresh() {
+
             }
+        });
+        upView.setOnItemClickListener((position, view) -> start(BaseWebViewActivity.class));
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                ScrollUnm = ScrollUnm + dy; //滑动距离总合
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                indicator.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                indicator.onPageSelected(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                indicator.onPageScrollStateChanged(state);
+            }
+        });
+        mPager.setCurrentItem(0);
+
+        height = UiUtils.dp2px(mContext,200-45);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                ScrollUnm = -verticalOffset; //滑动距离总合
                 if (ScrollUnm<=0){  //在顶部时完全透明
                     llChange.setBackgroundColor(Color.argb((int) 0, 255,41,76));
                 }else if (ScrollUnm>0&&ScrollUnm<= height){  //在滑动高度中时，设置透明度百分比（当前高度/总高度）
@@ -124,14 +212,19 @@ public class HomeFragment extends BaseFragment {
                 }else{ //滑出总高度 完全不透明
                     llChange.setBackgroundColor(Color.argb((int) 255, 255,41,76));
                 }
+                if (verticalOffset == 0) {
+                    //展开
+                    swipeRefresh.setEnabled(true);
+//                    mImmersionBar.statusBarDarkFont(false,0.2f).init();
+                } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
+//                // 闭合
+//                    mImmersionBar.statusBarDarkFont(true,0.2f).init();
+                } else {
+                    swipeRefresh.setEnabled(false);
+                }
             }
         });
-        rvAp.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                startActivity(new Intent(mContext, GoodsInfoActivity.class));
-            }
-        });
+
         vScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,7 +252,7 @@ public class HomeFragment extends BaseFragment {
                     startActivityForResult(intent, REQUEST_CODE);
                 }
             }
-            });
+        });
         llChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,50 +265,24 @@ public class HomeFragment extends BaseFragment {
                 start(TVShowsActivity.class);
             }
         });
-
     }
 
-    private void showVideoDialog() {
-        String[] datas = {"抖音Style","列表Style","自动播放列表Style"};
-        new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (i == 0){
-                    startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
-                }else if(i == 1){
-                    startActivity(new Intent(mContext, VideoPlayerListActivity.class));
-                }else {
-                    startActivity(new Intent(mContext, VideoPlayerListAutoActivity.class));
-                }
-            }
-        }).show();
-    }
 
-    private homeGoodsBean homeGoods;
-    @Override
-    public void loadData() {
-        Random random = new Random();
-        homeGoods = new homeGoodsBean();
-        homeGoods.datas = new ArrayList<>();
-        for (int i = 0; i < ResCcb.getDatas1().size(); i++) {  //添加条目
-            homeGoodsBean.Data data = new homeGoodsBean.Data();
-            data.icon = ResCcb.getMenuImages().get(random.nextInt(ResCcb.getMenuImages().size()));
-            data.content = ResCcb.getDatas1().get(i);
-            data.title = ResCcb.getDatas1().get(i).substring(ResCcb.getDatas1().size()-10,ResCcb.getDatas1().size()-1);
-            int jj = random.nextInt(11)+1;
-            data.images = new ArrayList<>();
-            for (int j = 0; j < jj+1; j++) {  //添加条目图片
-                homeGoodsBean.Data.PicList pics = new homeGoodsBean.Data.PicList();
-                pics.pic = ResCcb.getGoodsImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
-                data.images.add(pics);
-            }
-            homeGoods.datas.add(data);
+    class Myadapter extends FragmentPagerAdapter {
+
+        public Myadapter(FragmentManager fm) {
+            super(fm);
         }
-        rvAp.setNewData(homeGoods.datas);
-        GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
-        setBannerOneDatas();
-        setUpView(ResCcb.getDatas());
-        setMenu(ResCcb.getMenus());
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
     }
 
     private void setBannerOneDatas() {
@@ -223,19 +290,19 @@ public class HomeFragment extends BaseFragment {
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
-            banner.setImages(ResCcb.getBannerRes());
-            banner.setOnBannerListener(new OnBannerListener() {
-                @Override
-                public void OnBannerClick(int position) {
-                  startActivity(new Intent(mContext,GirlWelfareActivity.class));
-                }
-            });
+        banner.setImages(ResCcb.getBannerRes());
+        banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                startActivity(new Intent(mContext,GirlWelfareActivity.class));
+            }
+        });
         //设置banner动画效果
         banner.setBannerAnimation(Transformer.Default);
         //设置自动轮播，默认为true
         banner.isAutoPlay(true);
         //设置轮播时间
-        banner.setDelayTime(5000);
+        banner.setDelayTime(3000);
         //设置指示器位置（当banner模式中有指示器时）
         banner.setIndicatorGravity(BannerConfig.RIGHT);
         //banner设置方法全部调用完毕时最后调用
@@ -274,6 +341,23 @@ public class HomeFragment extends BaseFragment {
 
     }
 
+    private void showVideoDialog() {
+        String[] datas = {"抖音Style","列表Style","自动播放列表Style"};
+        new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 0){
+                    startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
+                }else if(i == 1){
+                    startActivity(new Intent(mContext, VideoPlayerListActivity.class));
+                }else {
+                    startActivity(new Intent(mContext, VideoPlayerListAutoActivity.class));
+                }
+            }
+        }).show();
+    }
+
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -306,4 +390,5 @@ public class HomeFragment extends BaseFragment {
             }
         }
     }
+
 }

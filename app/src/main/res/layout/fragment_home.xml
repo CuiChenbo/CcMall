@@ -1,41 +1,96 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<www.ccb.com.common.widget.VpSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.admin.ccb.fragment.HomeFragment">
+    android:layout_height="match_parent" >
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--app:contentScrim="@color/colorWhite"-->
+            <android.support.design.widget.CollapsingToolbarLayout
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <RelativeLayout
-        android:id="@+id/llChange"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:orientation="horizontal"
-        android:background="@color/colorTransparent"
-        >
-        <TextView
-            android:id="@+id/tvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/header_banner" />
+                <android.support.v7.widget.Toolbar
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/colorTransparent"
+                        >
+
+                        <View
+                            android:id="@+id/vBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/colorTransparent"
+                            />
+
+                        <RelativeLayout
+                            android:id="@+id/llChange"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:orientation="horizontal"
+                            android:background="@color/colorTransparent"
+                            >
+                            <TextView
+                                android:id="@+id/tvSearch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:drawableLeft="@mipmap/home2_search"
+                                android:drawableRight="@mipmap/home_scan"
+                                android:drawablePadding="@dimen/dp3"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="@dimen/side_distance"
+                                android:text="\t点击进行搜索"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
+                                android:textSize="@dimen/dp15" />
+                            <View
+                                android:id="@+id/vScan"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="@dimen/dp56"
+                                android:layout_height="match_parent"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.CollapsingToolbarLayout>
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/Indicator"
+                android:layout_width="match_parent"
+                android:background="@color/colorWhite"
+                android:layout_height="@dimen/dp40" />
+        </android.support.design.widget.AppBarLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/shap_bg33ffffff_radius2"
-            android:drawableLeft="@mipmap/home2_search"
-            android:drawableRight="@mipmap/home_scan"
-            android:drawablePadding="@dimen/dp3"
-            android:gravity="center_vertical"
-            android:paddingLeft="12dp"
-            android:paddingRight="@dimen/side_distance"
-            android:text="\t点击进行搜索"
-            android:textColor="@color/colorWhite"
-            android:textColorHint="@color/colorWhite"
-            android:textSize="@dimen/dp15" />
-        <View
-            android:id="@+id/vScan"
-            android:layout_alignParentRight="true"
-            android:layout_width="@dimen/dp56"
-            android:layout_height="match_parent"/>
-    </RelativeLayout>
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+            <com.example.admin.ccb.view.NotConflictViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                ></com.example.admin.ccb.view.NotConflictViewPager>
+        </LinearLayout>
 
-</RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</www.ccb.com.common.widget.VpSwipeRefreshLayout>

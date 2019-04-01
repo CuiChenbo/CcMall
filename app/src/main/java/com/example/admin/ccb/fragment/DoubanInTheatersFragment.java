@@ -20,11 +20,12 @@ import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoShowDialog;
 import com.lzy.okgo.model.HttpParams;
 
+import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.base.BaseHeadLayoutFragment;
 import www.ccb.com.common.utils.UrlFactory;
 
-public class DoubanInTheatersFragment extends BaseFragment {
+public class DoubanInTheatersFragment extends BaseCacheFragment {
     private RecyclerView mRv;
     private DoubanAdapter mAdapter;
 

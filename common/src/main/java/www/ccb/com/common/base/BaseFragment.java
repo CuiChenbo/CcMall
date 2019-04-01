@@ -3,6 +3,7 @@ package www.ccb.com.common.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -25,35 +26,42 @@ import www.ccb.com.common.widget.dialog.CbLoadingDialog;
 public abstract class BaseFragment extends Fragment {
 
     private boolean isVisible;                  //是否可见状态
-    private boolean isPrepared;                 //标志位，View已经初始化完成。
     protected LayoutInflater inflater;
     public ImmersionBar mImmersionBar;
     public Context mContext;
 
+    public View rootView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         this.inflater = inflater;
         mContext = getActivity();
-        View view = initContentView(inflater, container, savedInstanceState);
-        initView(view);
+        rootView = initContentView(inflater, container, savedInstanceState);
+        initView(rootView);
         loadData();
         initListener();
-        isPrepared = true;
-        return view;
+        return rootView;
     }
 
-    public void start(Class clazz){
-        startActivity(new Intent(mContext,clazz));
+    public <T extends View> T findViewById(@IdRes int ids) {
+        return rootView.findViewById(ids);
     }
 
-    public void isTitleBar(boolean is,View v){
-        if (is){
+    public void start(Class clazz) {
+        startActivity(new Intent(mContext, clazz));
+    }
+
+    public void isTitleBar(boolean is, View v) {
+        if (is) {
             mImmersionBar = ImmersionBar.with(this);  //可以为任意view;
             mImmersionBar.titleBarMarginTop(v).statusBarDarkFont(true, 0.2f).init();
         }
     }
 
-    /** 如果是与ViewPager一起使用，调用的是setUserVisibleHint */
+    /**
+     * 如果是与ViewPager一起使用，调用的是setUserVisibleHint
+     */
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -87,22 +95,32 @@ public abstract class BaseFragment extends Fragment {
 
     protected void onVisible() {
     }
+
     protected void onInvisible() {
     }
+
     protected abstract View initContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
+
     public abstract void initView(View view);
+
     public abstract void loadData();
+
     public abstract void initListener();
 
-    public void okGetRequest(String url){okGetRequest(null,url,null);}
-    public void okGetRequest(String with , String url){okGetRequest(with,url,null);}
+    public void okGetRequest(String url) {
+        okGetRequest(null, url, null);
+    }
 
-    public void okGetRequest(String with , String url , List<String> params){
-        if (TextUtils.isEmpty(with))with = url;
+    public void okGetRequest(String with, String url) {
+        okGetRequest(with, url, null);
+    }
+
+    public void okGetRequest(String with, String url, List<String> params) {
+        if (TextUtils.isEmpty(with)) with = url;
         String finalWith = with;
-        if (params!=null){
+        if (params != null) {
             for (int i = 0; i < params.size(); i++) {
-                url = url+"/"+params.get(i);
+                url = url + "/" + params.get(i);
             }
         }
         OkGo.<String>get(url).execute(new StringCallback() {
@@ -131,8 +149,8 @@ public abstract class BaseFragment extends Fragment {
         });
     }
 
-    public void okPostRequest(final String what, final String httpurl, HttpParams params, final Class clazz){
-        okPostRequest(what,httpurl,params,clazz,null,false);
+    public void okPostRequest(final String what, final String httpurl, HttpParams params, final Class clazz) {
+        okPostRequest(what, httpurl, params, clazz, null, false);
     }
 
     /**
@@ -209,6 +227,7 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * OK网络开始请求回调
+     *
      * @param flag
      */
     protected void okResponseStart(String flag) {
@@ -216,12 +235,14 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * OK网络请求完成回调
+     *
      * @param flag
      */
     protected void okResponseFinish(String flag) {
     }
 
-private CbLoadingDialog mProgressDialog;
+    private CbLoadingDialog mProgressDialog;
+
     public void showProgressDialog(String msg) {
         if (this.mProgressDialog == null)
             this.mProgressDialog = new CbLoadingDialog(mContext);
@@ -232,6 +253,7 @@ private CbLoadingDialog mProgressDialog;
         if (this.mProgressDialog != null)
             this.mProgressDialog.dismiss();
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();

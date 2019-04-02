@@ -49,11 +49,12 @@ public class GirlWelfareFragment extends BaseCacheFragment {
                 @Override
                 public void onClick(View view) {
                     ArrayList<String> photos = new ArrayList<>();
-                    for (int i = helper.getAdapterPosition()-1; i < mData.size(); i++) {
+                    for (int i = helper.getAdapterPosition(); i < mData.size(); i++) {
+                        if (i < 0) continue;
                         photos.add(mData.get(i).getUrl());
                         if (photos.size() > 9){break;}
                     }
-                    PhotoShowDialog.get(mContext,photos,1).show();
+                    PhotoShowDialog.get(mContext,photos,0).show();
                 }
             });
         }
@@ -78,6 +79,12 @@ public class GirlWelfareFragment extends BaseCacheFragment {
     @Override
     public void loadData() {
         okGetRequest("1" , UrlFactory.DataUrl,Arrays.asList("福利","20",String.valueOf(page)));
+    }
+
+    @Override
+    public void onRefresh() {
+        super.onRefresh();
+        mRv.scrollToPosition(0);
     }
 
     @Override

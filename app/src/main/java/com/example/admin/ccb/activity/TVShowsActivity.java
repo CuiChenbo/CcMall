@@ -1,6 +1,7 @@
 package com.example.admin.ccb.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
@@ -125,6 +126,14 @@ public class TVShowsActivity extends BaseActivity {
             @Override
             protected void convert(BaseViewHolder helper, DoubanBean.SubjectsBean item) {
                 helper.setText(R.id.tv,item.getTitle());
+                helper.getConvertView().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(mContext,BaseWebViewActivity.class);
+                        intent.putExtra("url",item.getAlt());
+                        startActivity(intent);
+                    }
+                });
                 GlideImageUtils.display(mContext, item.getImages().getMedium(), (ImageView) helper.getView(R.id.iv));
             }
         };

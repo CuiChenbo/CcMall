@@ -18,9 +18,10 @@ import com.example.admin.ccb.utils.ResCcb;
 import java.util.ArrayList;
 import java.util.Random;
 
+import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.base.BaseFragment;
 
-public class PalFragment extends BaseFragment {
+public class PalFragment extends BaseCacheFragment {
 
 
     private HomeAdapter homeAdapter;
@@ -37,6 +38,12 @@ public class PalFragment extends BaseFragment {
         rv.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL, false));
         homeAdapter = new HomeAdapter(R.layout.home_item);
         rv.setAdapter(homeAdapter);
+    }
+
+    @Override
+    public void onRefresh() {
+        super.onRefresh();
+        rv.scrollToPosition(0);
     }
 
     @Override

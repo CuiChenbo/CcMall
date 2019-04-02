@@ -28,4 +28,8 @@ public abstract class BaseCacheFragment extends BaseFragment {
         }
         return rootView;
     }
+
+    public void onRefresh(){
+
+    }
 }

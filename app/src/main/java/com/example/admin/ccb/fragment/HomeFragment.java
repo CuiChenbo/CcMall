@@ -72,6 +72,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.utils.ToastUtils;
 import www.ccb.com.common.utils.UiUtils;
@@ -123,6 +124,7 @@ public class HomeFragment extends BaseFragment {
                 return mDataList == null ? 0 : mDataList.size();
             }
 
+            long currentTime = 0;
             @Override
             public IPagerTitleView getTitleView(Context context, final int i) {
                 ClipPagerTitleView tv = new ClipPagerTitleView(context);
@@ -133,6 +135,12 @@ public class HomeFragment extends BaseFragment {
                     @Override
                     public void onClick(View v) {
                         mPager.setCurrentItem(i);
+
+                        if (mPager.getCurrentItem() == i && System.currentTimeMillis() - currentTime < 300){
+                            mFragmentList.get(i).onRefresh();
+                            currentTime = 0;
+                        }
+                        currentTime = System.currentTimeMillis();
                     }
                 });
                 return tv;
@@ -150,7 +158,7 @@ public class HomeFragment extends BaseFragment {
         ViewPagerHelper.bind(indicator,mPager);
     }
 
-    private List<BaseFragment> mFragmentList;
+    private List<BaseCacheFragment> mFragmentList;
     @Override
     public void loadData() {
         setBannerOneDatas();
@@ -176,6 +184,13 @@ public class HomeFragment extends BaseFragment {
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                swipeRefresh.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefresh.setRefreshing(false);
+                        ToastUtils.showCenterToast("然而什么都没有发生，哈哈哈哈嗝```");
+                    }
+                }, 3000);
 
             }
         });

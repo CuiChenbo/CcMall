@@ -51,6 +51,12 @@ public class NewsTopFragment extends BaseCacheFragment {
     }
 
     @Override
+    public void onRefresh() {
+        super.onRefresh();
+        recyclerView.scrollToPosition(0);
+    }
+
+    @Override
     public void loadData() {
         loadHttpData();
     }

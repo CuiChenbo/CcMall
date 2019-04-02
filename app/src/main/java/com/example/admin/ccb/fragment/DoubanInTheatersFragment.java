@@ -90,6 +90,12 @@ public class DoubanInTheatersFragment extends BaseCacheFragment {
     }
 
     @Override
+    public void onRefresh() {
+        super.onRefresh();
+        mRv.scrollToPosition(0);
+    }
+
+    @Override
     public void initListener() {
          mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
              @Override

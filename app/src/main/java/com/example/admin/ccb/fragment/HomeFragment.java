@@ -85,7 +85,7 @@ public class HomeFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_home,container,false);
     }
 
-    private List<String> mDataList = Arrays.asList("微商城","娱乐八卦","新闻头条","福利满满");
+    private List<String> mDataList = Arrays.asList("微商城","娱乐八卦","新闻头条","福利满满","影院上映电影ING");
     private MagicIndicator indicator;
     private NotConflictViewPager mPager;
     private AppBarLayout appBarLayout;
@@ -162,6 +162,7 @@ public class HomeFragment extends BaseFragment {
         mFragmentList.add(new GossipFragment());
         mFragmentList.add(new NewsTopFragment());
         mFragmentList.add(new GirlWelfareFragment());
+        mFragmentList.add(new DoubanInTheatersFragment());
         mPager.setAdapter(new Myadapter(getFragmentManager()));
     }
 

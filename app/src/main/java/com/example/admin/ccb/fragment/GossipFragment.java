@@ -19,6 +19,7 @@ import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.bean.NewsTopBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
+import com.google.gson.JsonSyntaxException;
 
 import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.utils.GsonUtils;
@@ -72,7 +73,13 @@ public class GossipFragment extends BaseCacheFragment {
         if (TextUtils.equals(whit,"NewsGossip")){
             start = start + count;
             String json = String.valueOf(t);
-            NewsTopBean datas = GsonUtils.fromJson(json,NewsTopBean.class);
+            NewsTopBean datas = null;
+            try{
+                datas = GsonUtils.fromJson(json,NewsTopBean.class);
+            }catch (JsonSyntaxException e){
+                e.fillInStackTrace();
+            }
+           if (datas == null)return;
             mAdapter.addData(datas.getDatasGossip());
             if (datas.getDatasGossip().size() == 0) mAdapter.loadMoreEnd();
         }

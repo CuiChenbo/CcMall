@@ -21,6 +21,7 @@ import com.example.admin.ccb.bean.NewsTopBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
 import com.example.admin.ccb.utils.ResCcb;
+import com.google.gson.JsonSyntaxException;
 
 import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.base.BaseFragment;
@@ -33,6 +34,7 @@ import www.ccb.com.common.utils.UrlFactory;
 public class NewsTopFragment extends BaseCacheFragment {
 
     private NewsTopAdapter mAdapter;
+
 
     @Override
     protected View initContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,7 +77,13 @@ public class NewsTopFragment extends BaseCacheFragment {
         if (TextUtils.equals(whit,"NewsTop")){
             start = start + count;
             String json = String.valueOf(t);
-            NewsTopBean datas = GsonUtils.fromJson(json,NewsTopBean.class);
+             NewsTopBean datas = null;
+            try{
+                datas = GsonUtils.fromJson(json,NewsTopBean.class);
+            }catch (JsonSyntaxException e){
+               e.fillInStackTrace();
+            }
+            if (datas == null)return;
             mAdapter.addData(datas.getDatasTop());
             if (datas.getDatasTop().size() == 0) mAdapter.loadMoreEnd();
         }

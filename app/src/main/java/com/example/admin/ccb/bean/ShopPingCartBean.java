@@ -6,13 +6,13 @@ import java.util.List;
 
 
 public class ShopPingCartBean {
-        public List<ShopBean> shopList;
+    public List<ShopBean> shopList;
 
 
-    public static class ShopBean implements IPickerViewData{
-                    public boolean isSelectShop;
-                    public String shopName;
-                    public List<CarListBean> carList;
+    public static class ShopBean implements IPickerViewData {
+        public boolean isSelectShop;
+        public String shopName;
+        public List<CarListBean> carList;
 
         @Override
         public String getPickerViewText() {
@@ -20,11 +20,12 @@ public class ShopPingCartBean {
         }
 
         public static class CarListBean {
-                                    public String title;
-                                    public Integer icon;
-                                    public boolean isSelectGoods;
-                                }
+            public int count = 1;
+            public String title;
+            public Integer icon;
+            public boolean isSelectGoods;
+        }
 
-                }
+    }
 
 }

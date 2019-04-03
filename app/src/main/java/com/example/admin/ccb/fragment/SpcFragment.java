@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -226,6 +227,27 @@ public class SpcFragment extends BaseFragment {
                     notifyDataSetChanged();
                 }
             });
+
+           Button btnJian = helper.getView(R.id.spc_btn_comm_count_jian);
+           Button btnJia = helper.getView(R.id.spc_btn_comm_count_jia);
+           TextView count = helper.getView(R.id.spc_et_comm_count);
+           count.setText(item.count+"");
+           btnJia.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   spcs.shopList.get(positionShop).carList.get(helper.getAdapterPosition()).count =  spcs.shopList.get(positionShop).carList.get(helper.getAdapterPosition()).count + 1;
+                notifyDataSetChanged();
+               }
+           });
+            btnJian.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (spcs.shopList.get(positionShop).carList.get(helper.getAdapterPosition()).count > 1){
+                    spcs.shopList.get(positionShop).carList.get(helper.getAdapterPosition()).count =  spcs.shopList.get(positionShop).carList.get(helper.getAdapterPosition()).count - 1;}
+                    notifyDataSetChanged();
+                }
+            });
+
         }
     }
 }

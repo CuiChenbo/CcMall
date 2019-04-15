@@ -2,6 +2,7 @@ package com.example.admin.ccb;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.widget.FrameLayout;
@@ -106,6 +107,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+
+        if(Build.VERSION.SDK_INT>=23){
+
 //动态获取内存存储权限
             int permission = ActivityCompat.checkSelfPermission(this,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -115,6 +119,7 @@ public class MainActivity extends BaseActivity {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         1);
             }
+        }
     }
 
     @Override

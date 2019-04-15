@@ -12,7 +12,7 @@ import java.util.List;
 public class homeMenuBean {
     public List<Data> datas;
     public static class  Data{
-        public String icon;
+        public int icon;
         public String title;
     }
 }

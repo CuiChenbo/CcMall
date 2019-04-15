@@ -349,7 +349,7 @@ public class HomeFragment extends BaseFragment {
         b.datas = new ArrayList<>();
         for (int i = 0; i < ResCcb.getMenus().size(); i++) {
             homeMenuBean.Data datas = new homeMenuBean.Data();
-            datas.icon = ResCcb.menuimages[i];
+            datas.icon = ResCcb.icon_lol_imangs[i];
             datas.title = ResCcb.getMenus().get(i);
             b.datas.add(datas);
         }

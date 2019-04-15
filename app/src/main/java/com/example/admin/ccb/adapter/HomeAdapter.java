@@ -58,7 +58,8 @@ import java.util.List;
                           , ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,helper.getView(R.id.icon),"TRANSITIONIMAGE").toBundle());
               }
           });
-            GlideImageUtils.display(mContext,item.icon,(ImageView) helper.getView(R.id.icon));
+            helper.setImageResource(R.id.icon,item.icon);
+//            GlideImageUtils.display(mContext,item.icon,(ImageView) helper.getView(R.id.icon));
            NineGridView nineGrid = helper.getView(R.id.nineGrid);
             ArrayList<ImageInfo> imageInfo = new ArrayList<>();
                 for (homeGoodsBean.Data.PicList imageDetail : item.images) {

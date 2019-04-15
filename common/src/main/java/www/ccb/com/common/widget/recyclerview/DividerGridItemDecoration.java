@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -23,7 +24,18 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         a.recycle();
     }
 
-    @Override
+    /**
+     * 自定义分割线
+     *
+     * @param context
+     * @param drawableId  分割线图片
+     */
+    public DividerGridItemDecoration(Context context, int drawableId) {
+        this(context);
+        mDivider = ContextCompat.getDrawable(context, drawableId);
+    }
+
+        @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         drawVertical(c, parent);
         drawHorizontal(c, parent);

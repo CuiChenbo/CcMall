@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/llItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,23 +10,26 @@
     android:paddingBottom="@dimen/dp2"
     android:paddingTop="@dimen/dp4">
 
-    <RelativeLayout
-        android:layout_width="@dimen/dp42"
-        android:layout_height="@dimen/dp42">
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        android:layout_width="@dimen/dp45"
+        android:layout_height="@dimen/dp45">
 
         <ImageView
             android:id="@+id/ivIcon"
-            android:layout_width="@dimen/dp42"
-            android:layout_height="@dimen/dp42"
-            android:src="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/qq"
             />
-    </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp6"
         android:gravity="center"
         android:maxLength="5"
         android:textColor="@color/color_424242"

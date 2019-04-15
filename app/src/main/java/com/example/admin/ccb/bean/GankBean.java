@@ -49,6 +49,7 @@ public class GankBean {
         private String url;
         private boolean used;
         private String who;
+        public int viewHeight;
 
         public String get_id() {
             return _id;

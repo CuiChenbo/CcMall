@@ -12,7 +12,7 @@ import java.util.List;
 public class homeGoodsBean {
     public List<Data> datas;
     public static class  Data{
-        public String icon;
+        public int icon;
         public String title;
         public String content;
         public List<PicList> images;

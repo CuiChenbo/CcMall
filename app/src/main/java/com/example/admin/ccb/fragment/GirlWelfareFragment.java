@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +25,10 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import www.ccb.com.common.base.BaseCacheFragment;
+import www.ccb.com.common.utils.UiUtils;
 import www.ccb.com.common.utils.UrlFactory;
 import www.ccb.com.common.widget.recyclerview.DividerGridItemDecoration;
 
@@ -44,6 +47,9 @@ public class GirlWelfareFragment extends BaseCacheFragment {
         @Override
         protected void convert(BaseViewHolder helper, GankBean.ResultsBean item) {
             ImageView iv = helper.getView(R.id.iv);
+           ViewGroup.LayoutParams layoutparams = iv.getLayoutParams();
+           layoutparams.height = UiUtils.dp2px( item.viewHeight);
+           iv.setLayoutParams(layoutparams);
             GlideImageUtils.display(mContext,item.getUrl(),iv);
             iv.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,11 +75,11 @@ public class GirlWelfareFragment extends BaseCacheFragment {
     @Override
     public void initView(View view) {
         mRv = view.findViewById(R.id.rv);
-        GridLayoutManager rlm = new GridLayoutManager(mContext,2);
+        StaggeredGridLayoutManager rlm = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         mRv.setLayoutManager(rlm);
         welfaerAdapter = new WelfaerAdapter(R.layout.item_image_h200dp);
         mRv.setAdapter(welfaerAdapter);
-        mRv.addItemDecoration(new DividerGridItemDecoration(mContext));
+        mRv.addItemDecoration(new DividerGridItemDecoration(mContext,R.drawable.recyclerview_divider));
     }
     int page = 1;
     @Override
@@ -105,6 +111,10 @@ public class GirlWelfareFragment extends BaseCacheFragment {
             try{
                 GankBean datas = new Gson().fromJson((String)t,GankBean.class);
                 if (!datas.isError()){
+                    Random random = new Random();
+                    for (int i = 0; i < datas.getResults().size(); i++) {
+                        datas.getResults().get(i).viewHeight = 200 + random.nextInt(100);
+                    }
                     welfaerAdapter.addData(datas.getResults());
                 }
             }catch (Exception e){

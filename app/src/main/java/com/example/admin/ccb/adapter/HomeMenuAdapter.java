@@ -25,7 +25,8 @@ public class HomeMenuAdapter extends BaseQuickAdapter<homeMenuBean.Data,BaseView
     @Override
     protected void convert(BaseViewHolder helper, homeMenuBean.Data item) {
          helper.setText(R.id.tvTitle,item.title);
-         GlideImageUtils.display(mContext,item.icon,(ImageView) helper.getView(R.id.ivIcon));
+        ((ImageView) helper.getView(R.id.ivIcon)).setImageResource(item.icon);
+//         GlideImageUtils.display(mContext,item.icon,(ImageView) helper.getView(R.id.ivIcon));
 
     }
 }

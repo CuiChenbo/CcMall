@@ -198,7 +198,7 @@ public class LowHomeFragment extends BaseFragment {
         homeGoods.datas = new ArrayList<>();
         for (int i = 0; i < ResCcb.getDatas1().size(); i++) {  //添加条目
             homeGoodsBean.Data data = new homeGoodsBean.Data();
-            data.icon = ResCcb.getMenuImages().get(random.nextInt(ResCcb.getMenuImages().size()));
+            data.icon = ResCcb.getIconImages().get(random.nextInt(ResCcb.getIconImages().size()));
             data.content = ResCcb.getDatas1().get(i);
             data.title = ResCcb.getDatas1().get(i).substring(ResCcb.getDatas1().size()-10,ResCcb.getDatas1().size()-1);
             int jj = random.nextInt(11)+1;
@@ -265,7 +265,7 @@ public class LowHomeFragment extends BaseFragment {
         b.datas = new ArrayList<>();
         for (int i = 0; i < ResCcb.getMenus().size(); i++) {
             homeMenuBean.Data datas = new homeMenuBean.Data();
-            datas.icon = ResCcb.menuimages[i];
+            datas.icon = ResCcb.icon_lol_imangs[i];
             datas.title = ResCcb.getMenus().get(i);
             b.datas.add(datas);
         }

@@ -16,7 +16,18 @@ android {
             abiFilters 'armeabi', 'armeabi-v7a', 'x86'
             // 还可以添加 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
         }
+
+        manifestPlaceholders = [
+                APP_ICON     : "@mipmap/ic_launcher.png",
+                APP_LABEL    : "@string/app_name",
+                JPUSH_PKGNAME: "com.example.admin.ccb",
+                JPUSH_APPKEY : "2c1c46659616a1abb5529845",
+                JPUSH_CHANNEL: "Offical",
+                qqappid      : "1106653585"
+        ]
     }
+
+
     buildTypes {
         release {
             minifyEnabled false

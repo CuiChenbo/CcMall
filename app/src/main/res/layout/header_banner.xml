@@ -18,7 +18,7 @@
         android:background="@color/colorWhite"
         android:focusable="false"
         android:focusableInTouchMode="true"
-        android:paddingBottom="@dimen/dp10"
+        android:paddingBottom="@dimen/dp5"
         android:paddingLeft="@dimen/dp5"
         android:paddingRight="@dimen/dp5"
         android:paddingTop="@dimen/dp10"

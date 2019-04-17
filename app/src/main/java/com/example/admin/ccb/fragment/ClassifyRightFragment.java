@@ -1,6 +1,7 @@
 package com.example.admin.ccb.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import www.ccb.com.common.base.BaseFragment;
+
+import com.example.admin.ccb.activity.OrderDetailsActivity;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
 import com.example.admin.ccb.utils.ResCcb;
@@ -120,7 +123,7 @@ public class ClassifyRightFragment extends BaseFragment {
              helper.setOnClickListener(R.id.iv_photo, new View.OnClickListener() {
                  @Override
                  public void onClick(View view) {
-                     ToastUtils.showToast(mContext,mTitle+rv1Position+"("+helper.getAdapterPosition()+")");
+                    startActivity(new Intent(mContext,OrderDetailsActivity.class));
                  }
              });
         }

@@ -89,7 +89,8 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.GirlWelfareActivity" />
-        <activity android:name=".activity.DoubanActivity"></activity>
+        <activity android:name=".activity.DoubanActivity" />
+        <activity android:name=".activity.OrderDetailsActivity"></activity>
     </application>
 
 </manifest>

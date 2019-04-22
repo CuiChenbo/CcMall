@@ -1,7 +1,8 @@
 # CcMall
 ## 商城项目基本框架开源<br/>
 ## APP下载地址：https://fir.im/CcMall <br/>
-    基本主界面布局：RadioGroup+Fragment,使用show和hine实现隐藏和显示
+项目我又更新了不少的东西，以下的图片和解释也都不全面，因为东西太多了，希望你去下载APP看一下效果；
+ 基本主界面布局：RadioGroup+Fragment,使用show和hine实现隐藏和显示
  标题头个根据滑动距离渐变，原理是改变透明度；<br/>
 ![image](https://github.com/CuiChenbo/CcMall/blob/master/cimags/gifhome1.gif)<br/> <br/>
 仿微信九宫格、查看大图、扫描二维码、Activity跳转动画、多列表共用一个头布局；<br/>

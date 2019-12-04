@@ -2,13 +2,8 @@ package com.example.admin.ccb.activity;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
-import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SnapHelper;
-import android.view.PointerIcon;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -16,7 +11,7 @@ import com.example.admin.ccb.R;
 
 import java.util.Arrays;
 import www.ccb.com.common.base.BaseActivity;
-import www.ccb.com.common.utils.LogUtils;
+import www.ccb.com.common.utils.L;
 
 public class OrderDetailsActivity extends BaseActivity {
 
@@ -70,11 +65,11 @@ public class OrderDetailsActivity extends BaseActivity {
                 LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();
                 // 当滚动结束时
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    LogUtils.i("getItemCount--" + manager.getItemCount());
-                    LogUtils.i("findFirstCompletelyVisibleItemPosition--" + manager.findFirstCompletelyVisibleItemPosition());
-                    LogUtils.i("findFirstVisibleItemPosition--" + manager.findFirstVisibleItemPosition());
-                    LogUtils.i("findLastCompletelyVisibleItemPosition--" + manager.findLastCompletelyVisibleItemPosition());
-                    LogUtils.i("findLastVisibleItemPosition--" + manager.findLastVisibleItemPosition());
+                    L.i("getItemCount--" + manager.getItemCount());
+                    L.i("findFirstCompletelyVisibleItemPosition--" + manager.findFirstCompletelyVisibleItemPosition());
+                    L.i("findFirstVisibleItemPosition--" + manager.findFirstVisibleItemPosition());
+                    L.i("findLastCompletelyVisibleItemPosition--" + manager.findLastCompletelyVisibleItemPosition());
+                    L.i("findLastVisibleItemPosition--" + manager.findLastVisibleItemPosition());
                     if (manager.getItemCount() != 2) return;
                     View v1 = manager.findViewByPosition(0);
                     if (v1 == null) {
@@ -84,7 +79,7 @@ public class OrderDetailsActivity extends BaseActivity {
                     }
                     int height = v1.getMeasuredHeight(); //获取第一层布局高度
                     int bottom = v1.getBottom(); //获取第一层布局距离父容器顶部的距离
-                    LogUtils.i(height + "---" + v1.getBottom());
+                    L.i(height + "---" + v1.getBottom());
                     if (height - bottom > TRIGGERDISTANCE && !isY2) { //在第一层时，滑动距离超过指定数值，就自动滑动到第二层；
                         moveToPosition(recyclerView, 1);
                         isY2 = true;
@@ -111,7 +106,7 @@ public class OrderDetailsActivity extends BaseActivity {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 //dx用来判断横向滑动方向，dy用来判断纵向滑动方向
-                LogUtils.i("dx--" + dx + ",dy--" + dy);
+                L.i("dx--" + dx + ",dy--" + dy);
             }
         });
     }

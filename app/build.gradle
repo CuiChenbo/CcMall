@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\AndroidProject\\Demo_Cc\\CcMall\\ccmall.jks')
+            storePassword 'qwer1234'
+            keyPassword 'qwer1234'
+            keyAlias = 'CcMall'
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.admin.ccb"
@@ -29,6 +37,11 @@ android {
 
 
     buildTypes {
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

@@ -18,7 +18,7 @@ import com.lzy.okgo.model.HttpParams;
 import java.util.List;
 
 import www.ccb.com.common.utils.GsonUtils;
-import www.ccb.com.common.utils.LogUtils;
+import www.ccb.com.common.utils.L;
 import www.ccb.com.common.utils.ToastUtils;
 import www.ccb.com.common.widget.dialog.CbLoadingDialog;
 
@@ -131,7 +131,7 @@ public abstract class BaseFragment extends Fragment {
 
             @Override
             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                LogUtils.out(finalWith + "请求结果:__", response.body());
+                L.out(finalWith + "请求结果:__", response.body());
                 okResponseSuccess(finalWith, response.body());
             }
 
@@ -175,7 +175,7 @@ public abstract class BaseFragment extends Fragment {
 
             @Override
             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                LogUtils.out(finalWhat + "请求结果:__", response.body());
+                L.out(finalWhat + "请求结果:__", response.body());
                 if (clazz == null) {
                     okResponseSuccess(finalWhat, response.body());
                 } else {
@@ -185,7 +185,7 @@ public abstract class BaseFragment extends Fragment {
                     } catch (Exception e) {
                         okResponseSuccess(finalWhat, null);
                         ToastUtils.GsonExtremely();
-                        LogUtils.e("异常信息：" + e.toString());
+                        L.e("异常信息：" + e.toString());
                     }
                 }
             }
@@ -193,7 +193,7 @@ public abstract class BaseFragment extends Fragment {
             @Override
             public void onError(com.lzy.okgo.model.Response<String> response) {
                 super.onError(response);
-                LogUtils.out(finalWhat + "请求结果:__", response.body());
+                L.out(finalWhat + "请求结果:__", response.body());
                 okResponseError(finalWhat, response.body());
                 ToastUtils.failNetRequest();
             }

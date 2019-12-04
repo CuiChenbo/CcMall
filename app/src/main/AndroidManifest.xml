@@ -65,7 +65,9 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="您的Key" />
+            android:value="2a68f8e2a9f7c57c29a563bf50d3051d" />
+        <!--连续定位的服务-->
+        <service android:name="com.amap.api.location.APSService"></service>
 
         <activity android:name=".activity.GoodsInfoActivity" />
         <activity android:name=".activity.ShopHomeActivity" />

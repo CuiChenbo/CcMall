@@ -20,7 +20,7 @@ public class MainActivity extends BaseActivity {
 
     private FrameLayout fl;
     private RadioGroup rg;
-    private Fragment HomeFm = null,SpcFm = null, OrderFm = null, MyFm = null;
+    private Fragment HomeFm = null, SpcFm = null, OrderFm = null, MyFm = null;
 
     private final class RadioGroupOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {
         @Override
@@ -100,23 +100,30 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-     fl = findViewById(R.id.fl);
-     rg = findViewById(R.id.rg);
+        fl = findViewById(R.id.fl);
+        rg = findViewById(R.id.rg);
 
     }
 
     @Override
     protected void initData() {
-
-        if(Build.VERSION.SDK_INT>=23){
-
 //动态获取内存存储权限
-            int permission = ActivityCompat.checkSelfPermission(this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-            if (permission != PackageManager.PERMISSION_GRANTED) {
+//Manifest.permission.ACCESS_COARSE_LOCATION,
+//Manifest.permission.ACCESS_FINE_LOCATION,
+//Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//Manifest.permission.READ_EXTERNAL_STORAGE,
+//Manifest.permission.READ_PHONE_STATE
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
                 // We don't have permission so prompt the user
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE
+                                , Manifest.permission.READ_EXTERNAL_STORAGE
+                                , Manifest.permission.ACCESS_FINE_LOCATION
+                                , Manifest.permission.ACCESS_COARSE_LOCATION
+                                , Manifest.permission.READ_PHONE_STATE
+                                , Manifest.permission.CAMERA},
                         1);
             }
         }

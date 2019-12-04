@@ -58,9 +58,9 @@ dependencies {
     //选择图片
     api 'com.contrarywind:Android-PickerView:3.2.7'
     //时间或条件联动选择器
-    api 'com.amap.api:3dmap:5.0.0'
-    api 'com.amap.api:location:3.3.0'
-    api 'com.amap.api:search:5.0.0'
+    api 'com.amap.api:3dmap:6.9.2'
+    api 'com.amap.api:location:4.7.0'
+    api 'com.amap.api:search:6.9.2'
     api 'com.crazysunj:cardslideview:1.2.1'
     api 'com.github.hackware1993:MagicIndicator:1.5.0'
     api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_white"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        tools:text="军工路"
+        android:textSize="@dimen/dp16"
+        android:padding="@dimen/dp_10"
+        android:textColor="@color/color_56ce55"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

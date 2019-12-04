@@ -38,9 +38,6 @@ public class BaseWebViewActivity extends BaseActivity {
     private ProgressBar progressBar;
     private WebView mWebView;
 
-
-    @SuppressLint({"SetJavaScriptEnabled", "JavascriptInterface"})
-
     @Override
     public int getContentViewResource() {
         return R.layout.activity_base_webview;

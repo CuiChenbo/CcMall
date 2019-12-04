@@ -59,7 +59,7 @@ public class VideoPlayerDouActivity extends BaseActivity {
             protected void convert(BaseViewHolder helper, GankBean.ResultsBean item) {
                 JzvdStd jzvdStd = helper.getView(R.id.videoplayer);
 //                jzvdStd.setUp( item,"", Jzvd.SCREEN_WINDOW_LIST,new JZMediaIjk(jzvdStd));
-                jzvdStd.setUp(item.getUrl(), "", Jzvd.SCREEN_WINDOW_LIST);
+                jzvdStd.setUp(item.getUrl(), "", Jzvd.SCREEN_FULLSCREEN);
                 Glide.with(mContext)
                         .load(item)
                         .into(jzvdStd.thumbImageView);
@@ -91,8 +91,8 @@ public class VideoPlayerDouActivity extends BaseActivity {
             @Override
             public void onChildViewDetachedFromWindow(View view) {
                 JzvdStd jzvdStd = view.findViewById(R.id.videoplayer);
-                if (jzvdStd != null && jzvdStd.CURRENT_STATE_PLAYING == jzvdStd.currentState) {
-                    JzvdStd.resetAllVideos();
+                if (jzvdStd != null && jzvdStd.STATE_PLAYING == jzvdStd.state) {
+                    JzvdStd.releaseAllVideos();
                 }
             }
         });
@@ -130,7 +130,7 @@ public class VideoPlayerDouActivity extends BaseActivity {
                         Rect rect = new Rect();
                         videoView.getLocalVisibleRect(rect);
                         int videoHeight = videoView.getHeight();
-                        if (rect.top == 0 && rect.bottom == videoHeight && videoView.currentState != JzvdStd.CURRENT_STATE_PLAYING) {
+                        if (rect.top == 0 && rect.bottom == videoHeight && videoView.state != JzvdStd.STATE_PLAYING) {
                             videoView.startVideo();
                             return;
                         }
@@ -149,7 +149,7 @@ public class VideoPlayerDouActivity extends BaseActivity {
             View view = rvPlayer.getChildAt(0);
             if (view == null) return;
             JzvdStd videoView = view.findViewById(R.id.videoplayer);
-            if (videoView == null && videoView.currentState == JzvdStd.CURRENT_STATE_PLAYING) return;
+            if (videoView == null && videoView.state == JzvdStd.STATE_PLAYING) return;
             videoView.startVideo();
         });
     }

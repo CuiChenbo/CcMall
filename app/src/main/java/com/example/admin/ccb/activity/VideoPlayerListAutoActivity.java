@@ -47,7 +47,7 @@ public class VideoPlayerListAutoActivity extends BaseActivity {
             protected void convert(BaseViewHolder helper, String item) {
                 JzvdStd jzvdStd = helper.getView(R.id.videoplayer);
 //                jzvdStd.setUp( item,"", Jzvd.SCREEN_WINDOW_LIST,new JZMediaIjk(jzvdStd));
-                jzvdStd.setUp( item,"", Jzvd.SCREEN_WINDOW_LIST);
+                jzvdStd.setUp( item,"", Jzvd.SCREEN_FULLSCREEN);
                 Glide.with(mContext)
                         .load(item)
                         .into(jzvdStd.thumbImageView);
@@ -66,8 +66,8 @@ public class VideoPlayerListAutoActivity extends BaseActivity {
             @Override
             public void onChildViewDetachedFromWindow(View view) {
                 JzvdStd jzvdStd = view.findViewById(R.id.videoplayer);
-                if (jzvdStd != null && jzvdStd.CURRENT_STATE_PLAYING == jzvdStd.currentState) {
-                    JzvdStd.resetAllVideos();
+                if (jzvdStd != null && JzvdStd.STATE_PLAYING == jzvdStd.state) {
+                    JzvdStd.releaseAllVideos();
                 }
             }
         });
@@ -105,7 +105,7 @@ public class VideoPlayerListAutoActivity extends BaseActivity {
                         Rect rect = new Rect();
                         videoView.getLocalVisibleRect(rect);
                         int videoHeight = videoView.getHeight();
-                        if (rect.top == 0 && rect.bottom == videoHeight && videoView.currentState != JzvdStd.CURRENT_STATE_PLAYING) {
+                        if (rect.top == 0 && rect.bottom == videoHeight && videoView.state != JzvdStd.STATE_PLAYING) {
                             videoView.startVideo();
                             return;
                         }

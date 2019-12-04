@@ -13,5 +13,6 @@
 仿淘宝购物车的实现：选中店铺-店铺中的商品全部选中；全选-店铺和商品全部选中；商品全部选中？店铺选中 ！店铺不选中；店铺全部选中？全选选中 ！全选不选中<br/>
 ![image](https://github.com/CuiChenbo/CcMall/blob/master/cimags/gifspc1.gif) <br/> <br/>
 分类：仿京东点击左边的条目更新右边的布局;RecyclerView+Fragment<br/>
-![image](https://github.com/CuiChenbo/CcMall/blob/master/cimags/gifclassify.gif)
+![image](https://github.com/CuiChenbo/CcMall/blob/master/cimags/gifclassify.gif)<br/>
+项目整体代码风格比较旧，具体可以参考里面的实现方式，不建议使用里面的框架；
     

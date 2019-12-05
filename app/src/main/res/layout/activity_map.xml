@@ -4,15 +4,39 @@
     android:background="@color/main_white"
     android:layout_height="match_parent">
 
-    <com.amap.api.maps.MapView
-        android:id="@+id/map"
+    <RelativeLayout
+        android:id="@+id/mapLayout"
         android:layout_width="match_parent"
-        android:layout_height="260dp" />
+        android:layout_height="@dimen/dp260">
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="260dp" />
+
+        <View
+            android:id="@+id/vCenter"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:layout_centerInParent="true"
+            android:background="@color/transparent"
+            />
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_location"
+            android:layout_width="16dp"
+            android:layout_height="20dp"
+            android:focusable="false"
+            android:layout_alignBottom="@id/vCenter"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_location_hei"
+            />
+
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/map"
+        android:layout_below="@id/mapLayout"
         android:orientation="vertical">
 
         <TextView

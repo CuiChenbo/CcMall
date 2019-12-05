@@ -10,7 +10,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         tools:text="军工路"
-        android:textSize="@dimen/dp12"
+        android:textSize="@dimen/dp13"
         android:layout_marginLeft="@dimen/dp_10"
         android:textColor="@color/main_text"
         android:layout_height="wrap_content" />

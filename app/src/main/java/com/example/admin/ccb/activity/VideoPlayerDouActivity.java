@@ -59,7 +59,7 @@ public class VideoPlayerDouActivity extends BaseActivity {
             protected void convert(BaseViewHolder helper, GankBean.ResultsBean item) {
                 JzvdStd jzvdStd = helper.getView(R.id.videoplayer);
 //                jzvdStd.setUp( item,"", Jzvd.SCREEN_WINDOW_LIST,new JZMediaIjk(jzvdStd));
-                jzvdStd.setUp(item.getUrl(), "", Jzvd.SCREEN_FULLSCREEN);
+                jzvdStd.setUp(item.getUrl(), "", Jzvd.SCREEN_NORMAL);
                 Glide.with(mContext)
                         .load(item)
                         .into(jzvdStd.thumbImageView);

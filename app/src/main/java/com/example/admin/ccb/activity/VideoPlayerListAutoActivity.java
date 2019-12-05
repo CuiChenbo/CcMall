@@ -47,7 +47,7 @@ public class VideoPlayerListAutoActivity extends BaseActivity {
             protected void convert(BaseViewHolder helper, String item) {
                 JzvdStd jzvdStd = helper.getView(R.id.videoplayer);
 //                jzvdStd.setUp( item,"", Jzvd.SCREEN_WINDOW_LIST,new JZMediaIjk(jzvdStd));
-                jzvdStd.setUp( item,"", Jzvd.SCREEN_FULLSCREEN);
+                jzvdStd.setUp( item,"", Jzvd.SCREEN_NORMAL);
                 Glide.with(mContext)
                         .load(item)
                         .into(jzvdStd.thumbImageView);

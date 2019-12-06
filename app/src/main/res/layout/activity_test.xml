@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TestActivity">
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="移动"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn1"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv1"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:src="@mipmap/qq"
+        />
+
+</RelativeLayout>

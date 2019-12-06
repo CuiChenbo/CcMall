@@ -22,6 +22,8 @@ import com.example.admin.ccb.activity.MapActivity;
 import com.example.admin.ccb.activity.SelecePhotoActivity;
 import com.example.admin.ccb.activity.TVShowsActivity;
 import www.ccb.com.common.base.BaseFragment;
+
+import com.example.admin.ccb.activity.TestActivity;
 import com.example.admin.ccb.utils.GlideImageUtils;
 
 import java.util.Calendar;
@@ -97,7 +99,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
                 }
                 break;
             case R.id.tvSet:
-                startActivity(new Intent(mContext, DoubanActivity.class));
+                startActivity(new Intent(mContext, TestActivity.class));
                 break;
         }
     }

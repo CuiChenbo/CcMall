@@ -14,5 +14,5 @@
 ![image](https://github.com/CuiChenbo/CcMall/blob/master/cimags/gifspc1.gif) <br/> <br/>
 分类：仿京东点击左边的条目更新右边的布局;RecyclerView+Fragment<br/>
 ![image](https://github.com/CuiChenbo/CcMall/blob/master/cimags/gifclassify.gif)<br/>
-项目整体代码风格比较旧，具体可以参考里面的实现方式，项目框架不建议参考；
+项目整体代码风格比较旧、年久失修，做电商或商城类的小伙伴可以参考里面的实现方式或一些效果的实现，项目框架不建议参考；有建议欢迎留言；
     

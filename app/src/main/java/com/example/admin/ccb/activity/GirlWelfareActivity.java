@@ -13,12 +13,14 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.bean.GankBean;
+import com.example.admin.ccb.bean.GankGirlV2Bean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoShowDialog;
 import com.example.admin.ccb.utils.PicTureUtils;
 import com.google.gson.Gson;
 
 import java.util.Arrays;
+import java.util.List;
 
 import www.ccb.com.common.base.BaseActivity;
 import www.ccb.com.common.utils.ToastUtils;
@@ -29,15 +31,16 @@ public class GirlWelfareActivity extends BaseActivity {
     private RecyclerView mRv;
     private WelfaerAdapter welfaerAdapter;
 
-    class WelfaerAdapter extends BaseQuickAdapter<GankBean.ResultsBean,BaseViewHolder>{
+    class WelfaerAdapter extends BaseQuickAdapter<GankGirlV2Bean.DataBean,BaseViewHolder>{
 
         public WelfaerAdapter(int layoutResId) {
             super(layoutResId);
         }
 
         @Override
-        protected void convert(BaseViewHolder helper, GankBean.ResultsBean item) {
-            helper.setText(R.id.tv,item.getDesc());
+        protected void convert(BaseViewHolder helper, GankGirlV2Bean.DataBean item) {
+            helper.setText(R.id.tv,item.getDesc())
+            .setText(R.id.tvTitle , item.getAuthor());
             ImageView iv = helper.getView(R.id.iv);
             GlideImageUtils.display(mContext,item.getUrl(),iv);
             iv.setOnClickListener(new View.OnClickListener() {
@@ -66,9 +69,10 @@ public class GirlWelfareActivity extends BaseActivity {
     }
 
     int page = 1;
+    private List<Object> params = Arrays.asList("page",page,"count","10");
     @Override
     protected void initData() {
-        okGetRequest("1" , UrlFactory.DataUrl,Arrays.asList("福利","10",String.valueOf(page)),null,null,true);
+        okGetRequest("1" , UrlFactory.GirlUrl,params,null,null,true);
     }
 
     @Override
@@ -76,7 +80,8 @@ public class GirlWelfareActivity extends BaseActivity {
      welfaerAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
          @Override
          public void onLoadMoreRequested() {
-             okGetRequest("1" , UrlFactory.DataUrl,Arrays.asList("福利","10",String.valueOf(++page)));
+             params.set(1 , ++page);
+             okGetRequest("1" , UrlFactory.GirlUrl,params,null,null,true);
          }
      },mRv);
     }
@@ -87,9 +92,9 @@ public class GirlWelfareActivity extends BaseActivity {
         if (TextUtils.equals("1",whit)){
             welfaerAdapter.loadMoreComplete();
             try{
-                GankBean datas = new Gson().fromJson((String)t,GankBean.class);
-                if (!datas.isError()){
-                    welfaerAdapter.addData(datas.getResults());
+                GankGirlV2Bean datas = new Gson().fromJson((String)t, GankGirlV2Bean.class);
+                if (datas.getData() != null){
+                    welfaerAdapter.addData(datas.getData());
                 }
             }catch (Exception e){
                 return;

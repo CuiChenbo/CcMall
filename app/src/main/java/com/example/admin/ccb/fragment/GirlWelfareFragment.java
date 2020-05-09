@@ -18,6 +18,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.bean.GankBean;
+import com.example.admin.ccb.bean.GankGirlV2Bean;
 import com.example.admin.ccb.bean.NewsTopBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoShowDialog;
@@ -25,6 +26,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import www.ccb.com.common.base.BaseCacheFragment;
@@ -38,14 +40,14 @@ import www.ccb.com.common.widget.recyclerview.DividerGridItemDecoration;
 public class GirlWelfareFragment extends BaseCacheFragment {
 
     private WelfaerAdapter welfaerAdapter;
-    class WelfaerAdapter extends BaseQuickAdapter<GankBean.ResultsBean,BaseViewHolder>{
+    class WelfaerAdapter extends BaseQuickAdapter<GankGirlV2Bean.DataBean,BaseViewHolder>{
 
         public WelfaerAdapter(int layoutResId) {
             super(layoutResId);
         }
 
         @Override
-        protected void convert(BaseViewHolder helper, GankBean.ResultsBean item) {
+        protected void convert(BaseViewHolder helper, GankGirlV2Bean.DataBean item) {
             ImageView iv = helper.getView(R.id.iv);
            ViewGroup.LayoutParams layoutparams = iv.getLayoutParams();
            layoutparams.height = UiUtils.dp2px( item.viewHeight);
@@ -82,9 +84,10 @@ public class GirlWelfareFragment extends BaseCacheFragment {
         mRv.addItemDecoration(new DividerGridItemDecoration(mContext,R.drawable.recyclerview_divider));
     }
     int page = 1;
+    private List<Object> params = Arrays.asList("page",page,"count","10");
     @Override
     public void loadData() {
-        okGetRequest("1" , UrlFactory.DataUrl,Arrays.asList("福利","20",String.valueOf(page)));
+        okGetRequest("1" , UrlFactory.GirlUrl,params);
     }
 
     @Override
@@ -98,24 +101,26 @@ public class GirlWelfareFragment extends BaseCacheFragment {
         welfaerAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
-                okGetRequest("1" , UrlFactory.DataUrl,Arrays.asList("福利","20",String.valueOf(++page)));
+                params.set(1 , ++page);
+                okGetRequest("1" , UrlFactory.GirlUrl,params);
             }
         },mRv);
     }
 
+    Random random = new Random();
     @Override
     protected void okResponseSuccess(String whit, Object t) {
         super.okResponseSuccess(whit, t);
         if (TextUtils.equals("1",whit)){
             welfaerAdapter.loadMoreComplete();
             try{
-                GankBean datas = new Gson().fromJson((String)t,GankBean.class);
-                if (!datas.isError()){
-                    Random random = new Random();
-                    for (int i = 0; i < datas.getResults().size(); i++) {
-                        datas.getResults().get(i).viewHeight = 200 + random.nextInt(100);
+                GankGirlV2Bean datas = new Gson().fromJson((String)t, GankGirlV2Bean.class);
+                if (datas.getData() != null){
+                    for (int i = 0; i < datas.getData().size(); i++) {
+                        datas.getData().get(i).viewHeight = 260 + random.nextInt(60);
                     }
-                    welfaerAdapter.addData(datas.getResults());
+                    welfaerAdapter.addData(datas.getData());
+                    if (datas.getData().size() == 0) welfaerAdapter.loadMoreEnd();
                 }
             }catch (Exception e){
                 return;

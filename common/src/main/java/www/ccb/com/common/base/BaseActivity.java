@@ -14,6 +14,8 @@ import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.HttpParams;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import www.ccb.com.common.R;
 import www.ccb.com.common.utils.GsonUtils;
@@ -72,11 +74,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         okGetRequest(with, url, null);
     }
 
-    public void okGetRequest(String with, String url, List<String> params) {
+    public void okGetRequest(String with, String url, List<Object> params) {
         okGetRequest(with, url, params, null, null, false);
     }
 
-    public void okGetRequest(String with, String url, List<String> params, Class clazz, String dialogMsg, boolean isDialog) {
+    public void okGetRequest(String with, String url, List<Object> params, Class clazz, String dialogMsg, boolean isDialog) {
         if (TextUtils.isEmpty(with)) with = url;
         String finalWith = with;
         if (params != null) {

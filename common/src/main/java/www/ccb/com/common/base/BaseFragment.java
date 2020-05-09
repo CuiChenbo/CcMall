@@ -115,7 +115,7 @@ public abstract class BaseFragment extends Fragment {
         okGetRequest(with, url, null);
     }
 
-    public void okGetRequest(String with, String url, List<String> params) {
+    public void okGetRequest(String with, String url, List<Object> params) {
         if (TextUtils.isEmpty(with)) with = url;
         String finalWith = with;
         if (params != null) {

@@ -6,7 +6,8 @@ public class UrlFactory {
      * 请求个数： 数字，大于0
      * 第几页：数字，大于0
      */
-    public static String DataUrl = "http://gank.io/api/data"; //get 分类数据
+    public static String DataUrl = "http://gank.io/api/data"; //干货集中营 GET接口
+    public static String GirlUrl = "https://gank.io/api/v2/data/category/Girl/type/Girl"; //美女福利图片
 
     /**
      * 获取最新一天的干货

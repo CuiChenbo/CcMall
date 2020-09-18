@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
@@ -20,6 +21,9 @@ import com.example.admin.ccb.bean.NewsTopBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
 import com.google.gson.JsonSyntaxException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.utils.GsonUtils;
@@ -42,7 +46,7 @@ public class GossipFragment extends BaseCacheFragment {
     public void initView(View view) {
         recyclerView = view.findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
-        mAdapter = new NewsTopAdapter(R.layout.item_newstop);
+        mAdapter = new NewsTopAdapter(new ArrayList<>());
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -97,30 +101,53 @@ public class GossipFragment extends BaseCacheFragment {
         mAdapter.loadMoreComplete();
     }
 
-    class NewsTopAdapter extends BaseQuickAdapter<NewsTopBean.DatasBean,BaseViewHolder> {
+    class NewsTopAdapter extends BaseMultiItemQuickAdapter<NewsTopBean.DatasBean,BaseViewHolder> {
 
-        public NewsTopAdapter(int layoutResId) {
-            super(layoutResId);
+        public NewsTopAdapter(List<NewsTopBean.DatasBean> data) {
+            super(data);
+            addItemType(0,  R.layout.item_newstop);
+            addItemType(1, R.layout.item_newstop_image);
+
         }
 
         @Override
         protected void convert(BaseViewHolder helper, NewsTopBean.DatasBean item) {
-            helper.setText(R.id.tv,item.getTitle())
-            .setText(R.id.tv2,item.getDigest())
-            .setText(R.id.tv3,item.getSource()+" - "+item.getMtime());
-            GlideImageUtils.display(mContext,item.getImgsrc(),(ImageView) helper.getView(R.id.iv));
-            helper.setOnClickListener(R.id.llItem, new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (TextUtils.isEmpty(item.getUrl())){
-                        PhotoDgUtils.show(mContext,item.getImgsrc());
-                        return;
-                    }
-                    Intent intent = new Intent(mContext,BaseWebViewActivity.class);
-                    intent.putExtra("url",item.getUrl());
-                    startActivity(intent);
-                }
-            });
+            switch (helper.getItemViewType()){
+                case 0:
+                    helper.setText(R.id.tv,item.getTitle())
+                            .setText(R.id.tv2,item.getDigest())
+                            .setText(R.id.tv3,item.getSource()+" - "+item.getMtime());
+                    GlideImageUtils.display(mContext,item.getImgsrc(),(ImageView) helper.getView(R.id.iv));
+                    helper.setOnClickListener(R.id.llItem, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (TextUtils.isEmpty(item.getUrl())){
+                                PhotoDgUtils.show(mContext,item.getImgsrc());
+                                return;
+                            }
+                            Intent intent = new Intent(mContext,BaseWebViewActivity.class);
+                            intent.putExtra("url",item.getUrl());
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+                case 1:
+                    GlideImageUtils.display(mContext,item.getImgsrc(),(ImageView) helper.getView(R.id.iv));
+                    helper.setText(R.id.tv , item.getTitle())
+                            .setOnClickListener(R.id.llItem, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (TextUtils.isEmpty(item.getUrl())){
+                                PhotoDgUtils.show(mContext,item.getImgsrc());
+                                return;
+                            }
+                            Intent intent = new Intent(mContext,BaseWebViewActivity.class);
+                            intent.putExtra("url",item.getUrl());
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+            }
         }
     }
 }

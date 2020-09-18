@@ -1,5 +1,9 @@
 package com.example.admin.ccb.bean;
 
+import android.text.TextUtils;
+
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+
 import java.util.List;
 
 public class NewsTopBean {
@@ -14,7 +18,7 @@ public class NewsTopBean {
         return T1348648517839;
     }
 
-    public static class DatasBean {
+    public static class DatasBean implements MultiItemEntity {
         /**
          * template : normal1
          * skipID : 00AP0001|2300774
@@ -487,6 +491,16 @@ public class NewsTopBean {
 
         public void setSpecialextra(List<SpecialextraBean> specialextra) {
             this.specialextra = specialextra;
+        }
+
+
+        @Override
+        public int getItemType() {
+            if (TextUtils.isEmpty(getDigest())){
+                return 1;
+            }else {
+                return 0;
+            }
         }
 
         public static class PicinfoBean {

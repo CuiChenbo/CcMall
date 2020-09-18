@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llItem"
+    android:layout_width="match_parent"
+    android:layout_height="168dp"
+    android:background="@color/colorWhite">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv"
+            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/side_distance"
+            android:layout_alignParentRight="true"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp5"
+            app:cardCornerRadius="@dimen/dp4"
+            app:cardElevation="@dimen/dp2"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/emptyimage" />
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/dp22"
+                    android:gravity="bottom|right"
+                    android:paddingTop="@dimen/dp4"
+                    android:paddingBottom="@dimen/dp5"
+                    android:textColor="#99EEEEEE"
+                    android:lines="1"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="嗯嗯，就是" />
+        </android.support.v7.widget.CardView>
+
+</RelativeLayout>

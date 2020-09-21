@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -21,14 +20,12 @@ import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.bean.NewsTopBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
-import com.example.admin.ccb.utils.ResCcb;
 import com.google.gson.JsonSyntaxException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import www.ccb.com.common.base.BaseCacheFragment;
-import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.utils.GsonUtils;
 import www.ccb.com.common.utils.UrlFactory;
 

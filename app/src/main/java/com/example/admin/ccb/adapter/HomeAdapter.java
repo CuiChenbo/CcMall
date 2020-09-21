@@ -63,7 +63,6 @@ import java.util.List;
               }
           });
             helper.setImageResource(R.id.icon,item.icon);
-//            GlideImageUtils.display(mContext,item.icon,(ImageView) helper.getView(R.id.icon));
            NineGridView nineGrid = helper.getView(R.id.nineGrid);
             ArrayList<ImageInfo> imageInfo = new ArrayList<>();
                 for (homeGoodsBean.Data.PicList imageDetail : item.images) {
@@ -72,8 +71,6 @@ import java.util.List;
                     imageInfo.add(info);
                 }
             nineGrid.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));
-//            PicAdapter ad =  new PicAdapter(mContext,item.images);
-//           rv.setAdapter(ad);
         }
 
         class PicAdapter extends DefaultBaseAdapter<homeGoodsBean.Data.PicList>{

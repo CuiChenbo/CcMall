@@ -73,7 +73,8 @@
              android:layout_marginTop="@dimen/side_distance"
              app:ngv_maxSize="9"
              app:ngv_gridSpacing="@dimen/dp3"
-             app:ngv_mode="fill"
+             app:ngv_mode="tile"
+             app:ngv_tileMaxHeight="200dp"
              ></com.lzy.ninegrid.NineGridView>
       </LinearLayout>
    </LinearLayout>

@@ -16,7 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import www.ccb.com.common.base.BaseFragment;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 
 /**
  * ccb simple {@link Fragment} subclass.
@@ -44,14 +44,14 @@ public class ClassifyFragment extends BaseFragment {
 
     @Override
     public void loadData() {
-        leftAdapter.setNewData(ResCcb.getClassifys());
+        leftAdapter.setNewData(ResDatas.getClassifys());
 
         //创建Fragment对象
         cf = new ClassifyRightFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction().replace(R.id.fmRight, cf);
         //通过bundle传值给Fragment
         Bundle bundle = new Bundle();
-        bundle.putString("Name",ResCcb.getClassifys().get(0));
+        bundle.putString("Name", ResDatas.getClassifys().get(0));
         cf.setArguments(bundle);
         fragmentTransaction.commit();
     }
@@ -85,7 +85,7 @@ public class ClassifyFragment extends BaseFragment {
                             mPosition = helper.getAdapterPosition();
                             notifyDataSetChanged();
                             Bundle bundle = new Bundle();
-                            bundle.putString("Name", ResCcb.getClassifys().get(mPosition));
+                            bundle.putString("Name", ResDatas.getClassifys().get(mPosition));
                             cf.setArguments(bundle);
                             onClickListeners.onClick();
                     }

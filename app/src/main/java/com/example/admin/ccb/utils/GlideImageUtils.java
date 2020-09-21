@@ -165,6 +165,31 @@ public class GlideImageUtils {
                 });
     }
 
+    /**
+     * 加载圆角图片
+     *
+     * @param context
+     * @param src
+     * @param imageView
+     */
+    public static void DisplayRoundCorner(final Context context, Integer src, final ImageView imageView,
+                                          final int dpCorner) {
+        Glide.with(context)
+                .asBitmap()
+                .load(src)
+                .apply(options)
+                .into(new BitmapImageViewTarget(imageView) {
+                    @Override
+                    protected void setResource(Bitmap resource) {
+                        RoundedBitmapDrawable circularBitmapDrawable = RoundedBitmapDrawableFactory.create(context.getResources(), resource);
+                        circularBitmapDrawable.setCircular(true);
+                        circularBitmapDrawable.setCornerRadius(UiUtils.dp2px(dpCorner));
+                        circularBitmapDrawable.setAntiAlias(true);
+                        imageView.setImageDrawable(circularBitmapDrawable);
+                    }
+                });
+    }
+
     public static void displayGif(Context context, @DrawableRes int resId, final ImageView imageView) {
         Glide.with(context)
                 .asGif()

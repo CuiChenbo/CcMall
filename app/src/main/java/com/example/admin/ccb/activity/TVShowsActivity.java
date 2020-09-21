@@ -23,7 +23,6 @@ import com.example.admin.ccb.bean.DoubanBean;
 import com.example.admin.ccb.fragment.DoubanInTheatersFragment;
 import com.example.admin.ccb.fragment.DoubanTopFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
-import com.example.admin.ccb.utils.ResCcb;
 import com.example.admin.ccb.view.NotConflictViewPager;
 import com.lzy.okgo.model.HttpParams;
 
@@ -45,7 +44,6 @@ import www.ccb.com.common.base.BaseActivity;
 import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.utils.ToastUtils;
 import www.ccb.com.common.utils.UrlFactory;
-import www.ccb.com.common.widget.VpSwipeRefreshLayout;
 
 public class TVShowsActivity extends BaseActivity {
 

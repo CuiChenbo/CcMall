@@ -1,6 +1,5 @@
 package com.example.admin.ccb.activity;
 
-import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,12 +9,10 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import www.ccb.com.common.base.BaseActivity;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;
-
-import static android.support.v7.widget.RecyclerView.SCROLL_STATE_IDLE;
 
 /**
  * 列表式视频播放
@@ -40,7 +37,7 @@ public class VideoPlayerListActivity extends BaseActivity {
     @Override
     protected void initData() {
         Jzvd.SAVE_PROGRESS = false; //视频播放器不保存播放进度
-        rvPlayer.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_player, ResCcb.getVideoDatas()) {
+        rvPlayer.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_player, ResDatas.getVideoDatas()) {
             @Override
             protected void convert(BaseViewHolder helper, String item) {
                 JzvdStd jzvdStd = helper.getView(R.id.videoplayer);

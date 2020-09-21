@@ -23,10 +23,9 @@ import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.ShopHomeActivity;
 import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.utils.UiUtils;
-import www.ccb.com.common.utils.ViewUtils;
 
 import com.example.admin.ccb.bean.ShopPingCartBean;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,15 +63,15 @@ public class SpcFragment extends BaseFragment {
         Random random = new Random();
         spcs = new ShopPingCartBean();
         spcs.shopList = new ArrayList<>();
-        for (int i = 0; i < ResCcb.getMenus().size(); i++) {   //添加店铺
+        for (int i = 0; i < ResDatas.getMenus().size(); i++) {   //添加店铺
             ShopPingCartBean.ShopBean shop = new ShopPingCartBean.ShopBean();
-            shop.shopName = ResCcb.getMenus().get(i);
+            shop.shopName = ResDatas.getMenus().get(i);
             int jj = random.nextInt(5)+1;
             shop.carList = new ArrayList<>();
             for (int j = 0; j < jj; j++) {  //添加商品
                 ShopPingCartBean.ShopBean.CarListBean goods = new ShopPingCartBean.ShopBean.CarListBean();
-                goods.title = ResCcb.getspcGoodsImages().get(random.nextInt(ResCcb.getspcGoodsImages().size()-1));
-                goods.icon = ResCcb.getSpcImages().get(random.nextInt(ResCcb.getSpcImages().size()-1));
+                goods.title = ResDatas.getspcGoodsImages().get(random.nextInt(ResDatas.getspcGoodsImages().size()-1));
+                goods.icon = ResDatas.getSpcImages().get(random.nextInt(ResDatas.getSpcImages().size()-1));
                 shop.carList.add(goods);
             }
             spcs.shopList.add(shop);

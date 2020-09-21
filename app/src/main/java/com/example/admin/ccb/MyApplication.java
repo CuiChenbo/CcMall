@@ -53,12 +53,12 @@ public class MyApplication extends BaseApplication {
 
         @Override
         public void onDisplayImage(Context context, ImageView imageView, String url) {
-            GlideImageUtils.display(context,url,imageView);
+            GlideImageUtils.DisplayRoundCorner(context,url,imageView , 5);
         }
 
         @Override
         public void onDisplayImage(Context context, ImageView imageView, Integer src) {
-            GlideImageUtils.display(context,src,imageView);
+            GlideImageUtils.DisplayRoundCorner(context,src,imageView , 5);
         }
 
         @Override

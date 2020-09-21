@@ -13,13 +13,12 @@ import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.adapter.HomeAdapter;
 import com.example.admin.ccb.bean.homeGoodsBean;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import www.ccb.com.common.base.BaseCacheFragment;
-import www.ccb.com.common.base.BaseFragment;
 
 public class PalFragment extends BaseCacheFragment {
 
@@ -51,16 +50,31 @@ public class PalFragment extends BaseCacheFragment {
         Random random = new Random();
         homeGoodsBean homeGoods = new homeGoodsBean();
         homeGoods.datas = new ArrayList<>();
-        for (int i = 0; i < ResCcb.getDatas1().size(); i++) {  //添加条目
+        for (int i = 0; i < ResDatas.getDatas1().size(); i++) {  //添加条目
             homeGoodsBean.Data data = new homeGoodsBean.Data();
-            data.icon = ResCcb.getIconImages().get(random.nextInt(ResCcb.getIconImages().size()));
-            data.content = ResCcb.getDatas1().get(i);
-            data.title = ResCcb.getDatas().get(random.nextInt(ResCcb.getDatas().size()));
-            int jj = random.nextInt(ResCcb.getGoodsImages().size());
+            data.icon = ResDatas.getIconImages().get(random.nextInt(ResDatas.getIconImages().size()));
+            data.content = ResDatas.getDatas1().get(i);
+            data.title = ResDatas.getDatas().get(random.nextInt(ResDatas.getDatas().size()));
+            int picCount;
+            switch (i){
+                case 1:
+                    picCount = 1;
+                    break;
+                case 2:
+                    picCount = 2;
+                    break;
+                case 3:
+                    picCount = 4;
+                    break;
+               default:
+                   picCount = random.nextInt(ResDatas.getGoodsImages().size());
+                    break;
+            }
+            if (picCount == 0) picCount = 1;
             data.images = new ArrayList<>();
-            for (int j = 0; j < jj+1; j++) {  //添加条目图片
+            for (int j = 0; j < picCount; j++) {  //添加条目图片
                 homeGoodsBean.Data.PicList pics = new homeGoodsBean.Data.PicList();
-                pics.src = ResCcb.getGoodsImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
+                pics.src = ResDatas.getGoodsImages().get(random.nextInt(ResDatas.getGoodsImages().size()-1));
                 data.images.add(pics);
             }
             homeGoods.datas.add(data);

@@ -15,7 +15,7 @@ import com.example.admin.ccb.R;
 import www.ccb.com.common.base.BaseActivity;
 
 import com.example.admin.ccb.bean.GankBean;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 import com.google.gson.Gson;
 
 import java.util.Arrays;
@@ -162,7 +162,7 @@ public class VideoPlayerDouActivity extends BaseActivity {
             GankBean datas = new Gson().fromJson((String)t,GankBean.class);
             if (!datas.isError()){
                 for (int i = 0; i < datas.getResults().size(); i++) {
-                    datas.getResults().get(i).setUrl(ResCcb.getVideoDatas().get(new Random().nextInt(ResCcb.getVideoDatas().size()-1)).toString());
+                    datas.getResults().get(i).setUrl(ResDatas.getVideoDatas().get(new Random().nextInt(ResDatas.getVideoDatas().size()-1)).toString());
                 }
                 adapter.addData(datas.getResults());
                 startVideo();

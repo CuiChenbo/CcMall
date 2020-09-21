@@ -42,7 +42,7 @@ import com.example.admin.ccb.bean.homeMenuBean;
 import com.example.admin.ccb.utils.DialogUtils;
 import com.example.admin.ccb.utils.GlideImageLoader;
 import com.example.admin.ccb.utils.GlideImageUtils;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 import com.example.admin.ccb.view.UPMarqueeView;
 import com.gyf.barlibrary.ImmersionBar;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
@@ -196,16 +196,16 @@ public class LowHomeFragment extends BaseFragment {
         Random random = new Random();
         homeGoods = new homeGoodsBean();
         homeGoods.datas = new ArrayList<>();
-        for (int i = 0; i < ResCcb.getDatas1().size(); i++) {  //添加条目
+        for (int i = 0; i < ResDatas.getDatas1().size(); i++) {  //添加条目
             homeGoodsBean.Data data = new homeGoodsBean.Data();
-            data.icon = ResCcb.getIconImages().get(random.nextInt(ResCcb.getIconImages().size()));
-            data.content = ResCcb.getDatas1().get(i);
-            data.title = ResCcb.getDatas1().get(i).substring(ResCcb.getDatas1().size()-10,ResCcb.getDatas1().size()-1);
+            data.icon = ResDatas.getIconImages().get(random.nextInt(ResDatas.getIconImages().size()));
+            data.content = ResDatas.getDatas1().get(i);
+            data.title = ResDatas.getDatas1().get(i).substring(ResDatas.getDatas1().size()-10, ResDatas.getDatas1().size()-1);
             int jj = random.nextInt(11)+1;
             data.images = new ArrayList<>();
             for (int j = 0; j < jj+1; j++) {  //添加条目图片
                 homeGoodsBean.Data.PicList pics = new homeGoodsBean.Data.PicList();
-                pics.pic = ResCcb.getBannerImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
+                pics.pic = ResDatas.getBannerImages().get(random.nextInt(ResDatas.getGoodsImages().size()-1));
                 data.images.add(pics);
             }
             homeGoods.datas.add(data);
@@ -213,8 +213,8 @@ public class LowHomeFragment extends BaseFragment {
         rvAp.setNewData(homeGoods.datas);
         GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
         setBannerOneDatas();
-        setUpView(ResCcb.getDatas());
-        setMenu(ResCcb.getMenus());
+        setUpView(ResDatas.getDatas());
+        setMenu(ResDatas.getMenus());
     }
 
     private void setBannerOneDatas() {
@@ -222,7 +222,7 @@ public class LowHomeFragment extends BaseFragment {
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
-            banner.setImages(ResCcb.getBannerRes());
+            banner.setImages(ResDatas.getBannerRes());
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
@@ -263,10 +263,10 @@ public class LowHomeFragment extends BaseFragment {
         hap.setOnItemClickListener((adapter, view, position) -> showVideoDialog());
         homeMenuBean b = new homeMenuBean();
         b.datas = new ArrayList<>();
-        for (int i = 0; i < ResCcb.getMenus().size(); i++) {
+        for (int i = 0; i < ResDatas.getMenus().size(); i++) {
             homeMenuBean.Data datas = new homeMenuBean.Data();
-            datas.icon = ResCcb.icon_lol_imangs[i];
-            datas.title = ResCcb.getMenus().get(i);
+            datas.icon = ResDatas.icon_lol_imangs[i];
+            datas.title = ResDatas.getMenus().get(i);
             b.datas.add(datas);
         }
         hap.setNewData(b.datas);

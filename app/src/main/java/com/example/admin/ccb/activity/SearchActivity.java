@@ -6,7 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -38,7 +38,7 @@ public class SearchActivity extends BaseActivity {
     @Override
     protected void initData() {
         //TagFlowLayout流布局的适配器
-        tagAdapter = new TagAdapter<String>(ResCcb.searchLists) {
+        tagAdapter = new TagAdapter<String>(ResDatas.searchLists) {
             @Override
             public View getView(FlowLayout parent, int position, String data) {
                 TextView tv = (TextView) LayoutInflater.from(SearchActivity.this).inflate(R.layout.item_search_flow_tv, tagFlowLayout, false);
@@ -54,8 +54,8 @@ public class SearchActivity extends BaseActivity {
         tagFlowLayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
             @Override
             public boolean onTagClick(View view, int position, FlowLayout parent) {
-                ToastUtils.showToast(mContext,"点击了条目"+position+":"+ResCcb.searchLists[position]);
-                et.setText(ResCcb.searchLists[position]);
+                ToastUtils.showToast(mContext,"点击了条目"+position+":"+ ResDatas.searchLists[position]);
+                et.setText(ResDatas.searchLists[position]);
                 return true;
             }
         });

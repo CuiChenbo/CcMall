@@ -18,10 +18,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,8 +28,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.activity.GirlWelfareActivity;
@@ -41,16 +37,14 @@ import com.example.admin.ccb.activity.VideoPlayerDouActivity;
 import com.example.admin.ccb.activity.VideoPlayerListActivity;
 import com.example.admin.ccb.activity.VideoPlayerListAutoActivity;
 import com.example.admin.ccb.adapter.HomeMenuAdapter;
-import com.example.admin.ccb.bean.DoubanBean;
 import com.example.admin.ccb.bean.homeMenuBean;
 import com.example.admin.ccb.utils.DialogUtils;
 import com.example.admin.ccb.utils.GlideImageLoader;
 import com.example.admin.ccb.utils.GlideImageUtils;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 import com.example.admin.ccb.view.NotConflictViewPager;
 import com.example.admin.ccb.view.UPMarqueeView;
 import com.gyf.barlibrary.ImmersionBar;
-import com.lzy.okgo.model.HttpParams;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.youth.banner.Banner;
@@ -70,13 +64,11 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPa
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.base.BaseFragment;
 import www.ccb.com.common.utils.ToastUtils;
 import www.ccb.com.common.utils.UiUtils;
-import www.ccb.com.common.utils.UrlFactory;
 import www.ccb.com.common.widget.dialog.SingleSelectDialog;
 
 public class HomeFragment extends BaseFragment {
@@ -162,8 +154,8 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void loadData() {
         setBannerOneDatas();
-        setUpView(ResCcb.getDatas());
-        setMenu(ResCcb.getMenus());
+        setUpView(ResDatas.getDatas());
+        setMenu(ResDatas.getMenus());
         GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new PalFragment());
@@ -306,7 +298,7 @@ public class HomeFragment extends BaseFragment {
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
-        banner.setImages(ResCcb.getBannerRes());
+        banner.setImages(ResDatas.getBannerRes());
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
@@ -347,10 +339,10 @@ public class HomeFragment extends BaseFragment {
         hap.setOnItemClickListener((adapter, view, position) -> showVideoDialog());
         homeMenuBean b = new homeMenuBean();
         b.datas = new ArrayList<>();
-        for (int i = 0; i < ResCcb.getMenus().size(); i++) {
+        for (int i = 0; i < ResDatas.getMenus().size(); i++) {
             homeMenuBean.Data datas = new homeMenuBean.Data();
-            datas.icon = ResCcb.icon_lol_imangs[i];
-            datas.title = ResCcb.getMenus().get(i);
+            datas.icon = ResDatas.icon_lol_imangs[i];
+            datas.title = ResDatas.getMenus().get(i);
             b.datas.add(datas);
         }
         hap.setNewData(b.datas);

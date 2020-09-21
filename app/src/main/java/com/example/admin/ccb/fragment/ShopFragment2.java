@@ -15,7 +15,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import www.ccb.com.common.base.BaseFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,7 +40,7 @@ public class ShopFragment2 extends BaseFragment {
 
     @Override
     public void loadData() {
-        myAdapter.setNewData(ResCcb.getGoodsImages());
+        myAdapter.setNewData(ResDatas.getGoodsImages());
     }
 
     @Override

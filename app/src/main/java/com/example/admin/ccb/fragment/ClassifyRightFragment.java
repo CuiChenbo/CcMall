@@ -21,7 +21,7 @@ import www.ccb.com.common.base.BaseFragment;
 import com.example.admin.ccb.activity.OrderDetailsActivity;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PhotoDgUtils;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 
 import java.util.Arrays;
 import java.util.List;
@@ -61,8 +61,8 @@ public class ClassifyRightFragment extends BaseFragment {
     public void loadData() {
         mTitle = getArguments().getString("Name");
         rv1Adapter.setNewData(Arrays.asList(datas));
-        randomPosition = new Random().nextInt(ResCcb.getBannerImages().size()-1);
-        GlideImageUtils.DisplayRoundCorner(mContext, ResCcb.getBannerImages().get(randomPosition),ivHead,10);
+        randomPosition = new Random().nextInt(ResDatas.getBannerImages().size()-1);
+        GlideImageUtils.DisplayRoundCorner(mContext, ResDatas.getBannerImages().get(randomPosition),ivHead,10);
     }
     @Override
     public void initListener() {
@@ -76,7 +76,7 @@ public class ClassifyRightFragment extends BaseFragment {
         ivHead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PhotoDgUtils.show(mContext,ResCcb.getBannerImages().get(randomPosition));
+                PhotoDgUtils.show(mContext, ResDatas.getBannerImages().get(randomPosition));
             }
         });
     }
@@ -112,7 +112,7 @@ public class ClassifyRightFragment extends BaseFragment {
         protected void convert(final BaseViewHolder helper, String item) {
              helper.setText(R.id.tvTitle,mTitle+rv1Position+"("+helper.getAdapterPosition()+")");
              if (helper.getAdapterPosition() == 0||helper.getAdapterPosition() == 3||helper.getAdapterPosition() == 5){
-                 GlideImageUtils.display(mContext, ResCcb.getGoodsImages().get(new Random().nextInt(ResCcb.getGoodsImages().size()-1)),(ImageView)helper.getView(R.id.iv_photo));
+                 GlideImageUtils.display(mContext, ResDatas.getGoodsImages().get(new Random().nextInt(ResDatas.getGoodsImages().size()-1)),(ImageView)helper.getView(R.id.iv_photo));
              }else if (helper.getAdapterPosition() == 2){
                  helper.setImageResource(R.id.iv_photo,R.mipmap.spc4);
              }else if (helper.getAdapterPosition() == 4){

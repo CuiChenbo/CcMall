@@ -15,7 +15,7 @@ import www.ccb.com.common.base.BaseActivity;
 import www.ccb.com.common.base.DefaultBaseAdapter;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.utils.PayResult;
-import com.example.admin.ccb.utils.ResCcb;
+import com.example.admin.ccb.utils.ResDatas;
 import com.example.admin.ccb.view.AllListView;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
@@ -49,13 +49,16 @@ public class GoodsInfoActivity extends BaseActivity{
 //        viewPager.setCurrentItem(1);
 //        viewPager.setPageTransformer(false,new ScaleTransformer());
         // 设置数据
-        banner.setPages(ResCcb.getGoodsimages2(), new MZHolderCreator<BannerViewHolder>() {
+        banner.setIndicatorVisible(false);
+
+        banner.setPages(ResDatas.getGoodsimages2(), new MZHolderCreator<BannerViewHolder>() {
             @Override
             public BannerViewHolder createViewHolder() {
                 return new BannerViewHolder();
             }
         });
-        allListView.setAdapter(new DefaultBaseAdapter<Integer>(this,ResCcb.getDetailsImages()) {
+        banner.start();
+        allListView.setAdapter(new DefaultBaseAdapter<Integer>(this,ResDatas.getDetailsImages()) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 Vh vh = null;
@@ -109,7 +112,7 @@ public class GoodsInfoActivity extends BaseActivity{
 
     }
 
-    public class BannerViewHolder implements MZViewHolder<String> {
+    public class BannerViewHolder implements MZViewHolder<Integer> {
         private ImageView mImageView;
         @Override
         public View createView(Context context) {
@@ -120,7 +123,7 @@ public class GoodsInfoActivity extends BaseActivity{
         }
 
         @Override
-        public void onBind(Context context, int position, String data) {
+        public void onBind(Context context, int position, Integer data) {
             // 数据绑定
             GlideImageUtils.display(context,data,mImageView);
         }

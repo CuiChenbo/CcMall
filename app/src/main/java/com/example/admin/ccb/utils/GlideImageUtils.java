@@ -25,6 +25,11 @@ import www.ccb.com.common.utils.UiUtils;
  * Glide图片加载框架  circle
  */
 public class GlideImageUtils {
+
+    private static RequestOptions options = new RequestOptions()
+            .placeholder(R.mipmap.loading)
+            .error(R.mipmap.emptyimage)
+            .centerCrop();
     /**
      * 加载普通图片
      * @param context
@@ -32,10 +37,6 @@ public class GlideImageUtils {
      * @param imageView
      */
     public static void display(Context context, String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.loading)
-                .error(R.mipmap.emptyimage);
         Glide.with(context)
                 .load(url)
                 .apply(options)
@@ -49,10 +50,6 @@ public class GlideImageUtils {
      * @param imageView
      */
     public static void display(Context context, Integer src, ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.loading)
-                .error(R.mipmap.emptyimage);
         Glide.with(context)
                 .load(src)
                 .apply(options)
@@ -66,23 +63,6 @@ public class GlideImageUtils {
      * @param imageView
      */
     public static void displayTransition(Context context, String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.loading)
-                .error(R.mipmap.emptyimage);
-        Glide.with(context)
-                .load(url)
-                .apply(options)
-                .transition(new DrawableTransitionOptions().crossFade())
-                .into(imageView);
-    }
-
-    public static void Display(Context context, String url, ImageView imageView,int failImgRes,boolean isCenterCrop) {
-        RequestOptions options = new RequestOptions()
-                .error(failImgRes);
-        if (isCenterCrop){
-            options.centerCrop();
-        }
         Glide.with(context)
                 .load(url)
                 .apply(options)
@@ -110,12 +90,6 @@ public class GlideImageUtils {
      * @param imageView
      */
     public static void DisplayNoPlaceholder(Context context, String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.loading)
-                .error(R.color.colorTransparent)
-                ;
-
         Glide.with(context)
                 .load(url)
                 .apply(options)
@@ -124,30 +98,14 @@ public class GlideImageUtils {
     }
 
     public static void displayTransitionNoPlace(Context context, String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .error(R.color.colorWhite)
-                ;
-
         Glide.with(context)
                 .load(url)
-//                .placeholder(R.color.colorWhite)
-//                .error(R.color.colorWhite)
-//                .centerCrop()
                 .apply(options)
                 .transition(new DrawableTransitionOptions().crossFade())
                 .into(imageView);
     }
 
     public static void DisplayNoPlaceholderErrorf0f0f0(Context context, String url, ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.color.color_f0f0f0)
-                .error(R.color.color_f0f0f0)
-//                .priority(Priority.HIGH)
-//                .fitCenter()
-                //                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                ;
-
         Glide.with(context)
                 .load(url)
 //                .placeholder(R.color.color_f0f0f0)
@@ -167,11 +125,6 @@ public class GlideImageUtils {
      * @param imageView
      */
     public static void DisplayCircle(final Context context, String url, final ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.emptyimage)
-                .error(R.mipmap.emptyimage)
-                ;
         Glide.with(context)
                 .asBitmap()
                 .load(url)
@@ -196,11 +149,6 @@ public class GlideImageUtils {
      */
     public static void DisplayRoundCorner(final Context context, String url, final ImageView imageView,
                                           final int dpCorner) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.loading)
-                .error(R.mipmap.zanwutupian)
-                ;
         Glide.with(context)
                 .asBitmap()
                 .load(url)
@@ -218,11 +166,6 @@ public class GlideImageUtils {
     }
 
     public static void displayGif(Context context, @DrawableRes int resId, final ImageView imageView) {
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.loading)
-                .error(R.mipmap.emptyimage)
-                ;
         Glide.with(context)
                 .asGif()
                 .apply(options)

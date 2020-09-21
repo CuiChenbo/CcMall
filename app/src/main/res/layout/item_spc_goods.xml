@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:background="@color/defaultBackground"
     android:descendantFocusability="blocksDescendants"
     >
@@ -26,6 +26,7 @@
             android:id="@+id/spc_iv_page"
             android:layout_width="85dp"
             android:layout_height="85dp"
+            android:scaleType="centerCrop"
             android:layout_toRightOf="@id/spc_cb_goods"
             android:layout_alignParentBottom="true"
             android:src="@mipmap/default_icon" />

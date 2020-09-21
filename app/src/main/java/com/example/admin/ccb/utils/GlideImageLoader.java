@@ -25,5 +25,6 @@ public class GlideImageLoader extends ImageLoader {
                 .apply(options)
                 .transition(new DrawableTransitionOptions().crossFade())
                 .into(imageView);
+        
     }
 }

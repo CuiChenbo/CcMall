@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bigkoo.pickerview.OptionsPickerView;
@@ -21,6 +22,9 @@ import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.GoodsInfoActivity;
 import com.example.admin.ccb.activity.ShopHomeActivity;
 import www.ccb.com.common.base.BaseFragment;
+import www.ccb.com.common.utils.UiUtils;
+import www.ccb.com.common.utils.ViewUtils;
+
 import com.example.admin.ccb.bean.ShopPingCartBean;
 import com.example.admin.ccb.utils.ResCcb;
 
@@ -170,6 +174,10 @@ public class SpcFragment extends BaseFragment {
                 }
             });
             RecyclerView rvGoods = helper.getView(R.id.rvGoods);
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) rvGoods.getLayoutParams();
+            layoutParams.height = UiUtils.dp2px(100 * item.carList.size());
+            rvGoods.setLayoutParams(layoutParams);
+
             rvGoods.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
             rvGoods.setHasFixedSize(true); //禁止recyclerview滑动，避免和ScrollView冲突；
             rvGoods.setNestedScrollingEnabled(false); //禁止recyclerview滑动，避免和ScrollView冲突；

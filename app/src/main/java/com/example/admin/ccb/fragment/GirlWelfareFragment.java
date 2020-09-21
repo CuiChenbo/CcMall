@@ -52,7 +52,7 @@ public class GirlWelfareFragment extends BaseCacheFragment {
            ViewGroup.LayoutParams layoutparams = iv.getLayoutParams();
            layoutparams.height = UiUtils.dp2px( item.viewHeight);
            iv.setLayoutParams(layoutparams);
-            GlideImageUtils.display(mContext,item.getUrl(),iv);
+            GlideImageUtils.DisplayRoundCorner(mContext,item.getUrl(),iv , 5);
             iv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -117,7 +117,7 @@ public class GirlWelfareFragment extends BaseCacheFragment {
                 GankGirlV2Bean datas = new Gson().fromJson((String)t, GankGirlV2Bean.class);
                 if (datas.getData() != null){
                     for (int i = 0; i < datas.getData().size(); i++) {
-                        datas.getData().get(i).viewHeight = 260 + random.nextInt(60);
+                        datas.getData().get(i).viewHeight = 210 + random.nextInt(60);
                     }
                     welfaerAdapter.addData(datas.getData());
                     if (datas.getData().size() == 0) welfaerAdapter.loadMoreEnd();

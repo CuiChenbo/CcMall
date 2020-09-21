@@ -114,7 +114,6 @@
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.lzy.net:okserver:2.0.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:annotations:4.5.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.lzy.widget:ninegridview:0.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: cn.yipianfengye.android:zxing-library:2.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.0.3@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design:26.1.0@aar" level="project" />
@@ -151,7 +150,6 @@
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7:27.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:27.0.2@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.chrisbanes.photoview:library:1.2.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.crazysunj:cardslideview:1.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils:27.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.wang.avi:library:1.0.0@aar" level="project" />
@@ -166,6 +164,7 @@
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:27.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.0.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: cn.jzvd:jiaozivideoplayer:7.0.5@aar" level="project" />
+    <orderEntry type="module" module-name="ninegridview" />
     <orderEntry type="module" module-name="common" />
   </component>
 </module>

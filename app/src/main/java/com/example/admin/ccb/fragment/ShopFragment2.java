@@ -47,14 +47,14 @@ public class ShopFragment2 extends BaseFragment {
     public void initListener() {
 
     }
-    class MyAdapter2 extends BaseQuickAdapter<String,BaseViewHolder> {
+    class MyAdapter2 extends BaseQuickAdapter<Integer,BaseViewHolder> {
 
         public MyAdapter2(int layoutResId) {
             super(layoutResId);
         }
 
         @Override
-        protected void convert(BaseViewHolder helper, String item) {
+        protected void convert(BaseViewHolder helper, Integer item) {
             helper.setText(R.id.tv,"水洗小脚牛仔"+helper.getAdapterPosition()+"码")
             .setText(R.id.tv2,"高腰牛仔裤女春秋2018最新款ins超火的裤子韩版近身小脚九分裤显瘦")
             .setText(R.id.tv3,"￥:"+100+helper.getAdapterPosition());

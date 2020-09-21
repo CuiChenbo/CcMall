@@ -42,14 +42,14 @@ public class ShopFragment1 extends BaseFragment {
     public void initListener() {
 
     }
-    class MyAdapter extends BaseQuickAdapter<String,BaseViewHolder>{
+    class MyAdapter extends BaseQuickAdapter<Integer,BaseViewHolder>{
 
         public MyAdapter(int layoutResId) {
             super(layoutResId);
         }
 
         @Override
-        protected void convert(BaseViewHolder helper, String item) {
+        protected void convert(BaseViewHolder helper, Integer item) {
             helper.setText(R.id.tv,"水洗小脚牛仔"+helper.getAdapterPosition()+"码");
             GlideImageUtils.display(mContext,item,(ImageView) helper.getView(R.id.iv));
         }

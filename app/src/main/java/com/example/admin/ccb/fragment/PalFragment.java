@@ -55,12 +55,12 @@ public class PalFragment extends BaseCacheFragment {
             homeGoodsBean.Data data = new homeGoodsBean.Data();
             data.icon = ResCcb.getIconImages().get(random.nextInt(ResCcb.getIconImages().size()));
             data.content = ResCcb.getDatas1().get(i);
-            data.title = ResCcb.getDatas1().get(i).substring(ResCcb.getDatas1().size()-10,ResCcb.getDatas1().size()-1);
-            int jj = random.nextInt(11)+1;
+            data.title = ResCcb.getDatas().get(random.nextInt(ResCcb.getDatas().size()));
+            int jj = random.nextInt(ResCcb.getGoodsImages().size());
             data.images = new ArrayList<>();
             for (int j = 0; j < jj+1; j++) {  //添加条目图片
                 homeGoodsBean.Data.PicList pics = new homeGoodsBean.Data.PicList();
-                pics.pic = ResCcb.getGoodsImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
+                pics.src = ResCcb.getGoodsImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
                 data.images.add(pics);
             }
             homeGoods.datas.add(data);

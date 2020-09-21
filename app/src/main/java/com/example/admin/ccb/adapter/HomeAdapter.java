@@ -54,8 +54,12 @@ import java.util.List;
           .setOnClickListener(R.id.title, new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-                  mContext.startActivity(new Intent(mContext, ShopHomeActivity.class)
-                          , ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,helper.getView(R.id.icon),"TRANSITIONIMAGE").toBundle());
+                  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                      mContext.startActivity(new Intent(mContext, ShopHomeActivity.class)
+                              , ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,helper.getView(R.id.icon),"TRANSITIONIMAGE").toBundle());
+                  }else {
+                      mContext.startActivity(new Intent(mContext, ShopHomeActivity.class));
+                  }
               }
           });
             helper.setImageResource(R.id.icon,item.icon);
@@ -64,8 +68,7 @@ import java.util.List;
             ArrayList<ImageInfo> imageInfo = new ArrayList<>();
                 for (homeGoodsBean.Data.PicList imageDetail : item.images) {
                     ImageInfo info = new ImageInfo();
-                    info.setThumbnailUrl(imageDetail.pic);
-                    info.setBigImageUrl(imageDetail.pic);
+                    info.setSrcUrl(imageDetail.src);
                     imageInfo.add(info);
                 }
             nineGrid.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));

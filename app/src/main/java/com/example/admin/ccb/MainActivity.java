@@ -122,7 +122,6 @@ public class MainActivity extends BaseActivity {
                                 , Manifest.permission.READ_EXTERNAL_STORAGE
                                 , Manifest.permission.ACCESS_FINE_LOCATION
                                 , Manifest.permission.ACCESS_COARSE_LOCATION
-                                , Manifest.permission.READ_PHONE_STATE
                                 , Manifest.permission.CAMERA},
                         1);
             }

@@ -42,11 +42,11 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#666666"
+                android:textColor="@color/color_212121"
                 android:maxLines="1"
                 android:layout_marginLeft="@dimen/dp8"
                 android:ellipsize="end"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 />
       </LinearLayout>
 <!--用户发表的内容和图片-->
@@ -59,11 +59,11 @@
              android:id="@+id/content"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:textColor="@color/color_666666"
+             android:textColor="@color/color_4a4a52"
              android:lineSpacingExtra="@dimen/dp3"
-             android:maxLines="6"
+             android:maxLines="15"
              android:ellipsize="end"
-             android:textSize="13dp"
+             android:textSize="14dp"
              tools:text="xxxx"
              />
          <com.lzy.ninegrid.NineGridView
@@ -71,9 +71,9 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_marginTop="@dimen/side_distance"
-            app:ngv_maxSize="9"
+             app:ngv_maxSize="9"
              app:ngv_gridSpacing="@dimen/dp3"
-             app:ngv_mode="grid"
+             app:ngv_mode="fill"
              ></com.lzy.ninegrid.NineGridView>
       </LinearLayout>
    </LinearLayout>

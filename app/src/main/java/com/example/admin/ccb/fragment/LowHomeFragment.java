@@ -205,7 +205,7 @@ public class LowHomeFragment extends BaseFragment {
             data.images = new ArrayList<>();
             for (int j = 0; j < jj+1; j++) {  //添加条目图片
                 homeGoodsBean.Data.PicList pics = new homeGoodsBean.Data.PicList();
-                pics.pic = ResCcb.getGoodsImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
+                pics.pic = ResCcb.getBannerImages().get(random.nextInt(ResCcb.getGoodsImages().size()-1));
                 data.images.add(pics);
             }
             homeGoods.datas.add(data);

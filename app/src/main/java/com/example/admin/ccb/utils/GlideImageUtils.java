@@ -35,9 +35,26 @@ public class GlideImageUtils {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.loading)
-                .error(R.drawable.ic_default_image);
+                .error(R.mipmap.emptyimage);
         Glide.with(context)
                 .load(url)
+                .apply(options)
+                .into(imageView);
+    }
+
+    /**
+     * 加载普通图片
+     * @param context
+     * @param src
+     * @param imageView
+     */
+    public static void display(Context context, Integer src, ImageView imageView) {
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .placeholder(R.mipmap.loading)
+                .error(R.mipmap.emptyimage);
+        Glide.with(context)
+                .load(src)
                 .apply(options)
                 .into(imageView);
     }
@@ -52,7 +69,7 @@ public class GlideImageUtils {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.loading)
-                .error(R.drawable.ic_default_image);
+                .error(R.mipmap.emptyimage);
         Glide.with(context)
                 .load(url)
                 .apply(options)
@@ -76,7 +93,7 @@ public class GlideImageUtils {
     public static void DisplayHomeGridViewItem(Context context, String url, ImageView imageView) {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
-                .error(R.drawable.ic_default_image)
+                .error(R.mipmap.emptyimage)
                 .transform(new GlideRoundTransform(context, 0, context.getResources().getColor(R.color.colorWhite))) //color_e0e0e0
                 ;
         Glide.with(context).load(url)
@@ -152,8 +169,8 @@ public class GlideImageUtils {
     public static void DisplayCircle(final Context context, String url, final ImageView imageView) {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
-                .placeholder(R.drawable.ic_default_image)
-                .error(R.drawable.ic_default_image)
+                .placeholder(R.mipmap.emptyimage)
+                .error(R.mipmap.emptyimage)
                 ;
         Glide.with(context)
                 .asBitmap()
@@ -204,7 +221,7 @@ public class GlideImageUtils {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.loading)
-                .error(R.drawable.ic_default_image)
+                .error(R.mipmap.emptyimage)
                 ;
         Glide.with(context)
                 .asGif()

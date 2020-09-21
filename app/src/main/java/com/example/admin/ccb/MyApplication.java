@@ -57,6 +57,11 @@ public class MyApplication extends BaseApplication {
         }
 
         @Override
+        public void onDisplayImage(Context context, ImageView imageView, Integer src) {
+            GlideImageUtils.display(context,src,imageView);
+        }
+
+        @Override
         public Bitmap getCacheImage(String url) {
             return null;
         }

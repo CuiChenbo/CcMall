@@ -10,7 +10,7 @@ import com.example.admin.ccb.R;
 import com.youth.banner.loader.ImageLoader;
 
 public class GlideImageLoader extends ImageLoader {
-    ImageView.ScaleType scaleType = ImageView.ScaleType.FIT_XY;
+    ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_CROP;
     public GlideImageLoader(){
     }
     public GlideImageLoader(ImageView.ScaleType scaleType){
@@ -20,7 +20,7 @@ public class GlideImageLoader extends ImageLoader {
     public void displayImage(Context context, Object path, ImageView imageView) {
         imageView.setScaleType(scaleType);
         RequestOptions options = new RequestOptions()
-                .error(R.drawable.ic_default_image);
+                .error(R.mipmap.emptyimage);
         Glide.with(context).load(path)
                 .apply(options)
                 .transition(new DrawableTransitionOptions().crossFade())

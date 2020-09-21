@@ -18,6 +18,7 @@ public class homeGoodsBean {
         public List<PicList> images;
         public static class  PicList{
             public String pic;
+            public Integer src;
         }
     }
 }

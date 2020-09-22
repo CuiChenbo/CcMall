@@ -78,7 +78,7 @@ public class HomeFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_home,container,false);
     }
 
-    private List<String> mDataList = Arrays.asList("微商城","最新动态","微头条","福利","你看我是一个很长很长的标题");
+    private List<String> mDataList = Arrays.asList("微商城","Cc动态","Cc精选","微福利","你看我是一个很长很长的标题");
     private MagicIndicator indicator;
     private NotConflictViewPager mPager;
     private AppBarLayout appBarLayout;
@@ -154,7 +154,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void loadData() {
         setBannerOneDatas();
-        setUpView(ResDatas.getDatas());
+        setUpView(ResDatas.getAds());
         setMenu(ResDatas.getMenus());
         GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
         mFragmentList = new ArrayList<>();
@@ -162,7 +162,7 @@ public class HomeFragment extends BaseFragment {
         mFragmentList.add(new GossipFragment());
         mFragmentList.add(new NewsTopFragment());
         mFragmentList.add(new GirlWelfareFragment());
-        mFragmentList.add(new DoubanInTheatersFragment());
+        mFragmentList.add(new QiuBaiFragment());
         mPager.setAdapter(new Myadapter(getFragmentManager()));
     }
 

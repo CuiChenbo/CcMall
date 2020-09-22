@@ -20,7 +20,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.bean.DoubanBean;
-import com.example.admin.ccb.fragment.DoubanInTheatersFragment;
+import com.example.admin.ccb.fragment.QiuBaiFragment;
 import com.example.admin.ccb.fragment.DoubanTopFragment;
 import com.example.admin.ccb.utils.GlideImageUtils;
 import com.example.admin.ccb.view.NotConflictViewPager;
@@ -114,7 +114,7 @@ public class TVShowsActivity extends BaseActivity {
     protected void initData() {
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new DoubanTopFragment());
-        mFragmentList.add(new DoubanInTheatersFragment());
+        mFragmentList.add(new QiuBaiFragment());
         mPager.setAdapter(new Myadapter(getSupportFragmentManager()));
 
         LinearLayoutManager llm = new LinearLayoutManager(this);

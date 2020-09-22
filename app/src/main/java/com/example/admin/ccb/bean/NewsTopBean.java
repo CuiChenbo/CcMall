@@ -7,10 +7,10 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
 import java.util.List;
 
 public class NewsTopBean {
-    private List<DatasBean> T1348647853363;
+    private List<DatasBean> T1467284926140;
 
     public List<DatasBean> getDatasTop() {
-        return T1348647853363;
+        return T1467284926140;
     }
     private List<DatasBean> T1348648517839;
 

@@ -13,9 +13,9 @@ import java.util.List;
 
 public class PhotoDgUtils {
     public static void show(Context context, List<String> photoLists, int position){
-        new PhotoShowDialog(context,photoLists,position).show();
+        PhotoShowDialog.get(context,photoLists,position).show();
     }
     public static void show(Context context,String photos){
-        new PhotoShowDialog(context,photos).show();
+        PhotoShowDialog.get(context,photos).show();
     }
 }

@@ -123,6 +123,7 @@ public class PhotoShowDialog extends Dialog {
             View view =View.inflate(context, R.layout.item_photo, null);
             PhotoView photoView = view.findViewById(R.id.photo);
                 RequestOptions options = new RequestOptions()
+                        .fitCenter()
                         .placeholder(R.mipmap.loading)
                         .error(R.mipmap.zanwutupian);
                 Glide.with(context)

@@ -27,6 +27,8 @@ public class MyApplication extends BaseApplication {
     private static MyApplication instance;
     private IWXAPI wxapi;
     public static final String APP_ID = "wxd930ea5d5a258f4f";
+    public static final String AMAP_ID = "2a68f8e2a9f7c57c29a563bf50d3051d";
+    public static final String AMAP_WEB_API_ID = "229c3f9914d37931e34605a704bd84e7";
 
     @Override
     public void onCreate() {

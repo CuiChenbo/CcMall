@@ -1,6 +1,7 @@
 package com.example.admin.ccb.fragment;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -26,8 +27,13 @@ import www.ccb.com.common.utils.UiUtils;
 
 import com.example.admin.ccb.bean.ShopPingCartBean;
 import com.example.admin.ccb.utils.ResDatas;
+import com.lzy.ninegrid.ImageInfo;
+import com.lzy.ninegrid.preview.ImagePreviewActivity;
 
+import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -102,33 +108,42 @@ public class SpcFragment extends BaseFragment {
         });
     }
 
+
     private void wheel() {
         OptionsPickerView pvOptions = new  OptionsPickerView.Builder(mContext, new OptionsPickerView.OnOptionsSelectListener() {
             @Override
-            public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
-                //返回的分别是三个级别的选中位置
-                String tx = "";
+            public void onOptionsSelect(int index, int options2, int options3, View v) {
+                ImageInfo aliPay = new ImageInfo();
+                aliPay.setSrcUrl(R.mipmap.ali_pay);
+                ImageInfo wePay = new ImageInfo();
+                wePay.setSrcUrl(R.mipmap.wecart_pay);
+                 List<ImageInfo> pays = Arrays.asList(aliPay , wePay);
+                Intent intent = new Intent(getActivity(), ImagePreviewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(ImagePreviewActivity.IMAGE_INFO, (Serializable) pays);
+                bundle.putInt(ImagePreviewActivity.CURRENT_ITEM, index);
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
             }
         })
-                .setSubmitText("确定")//确定按钮文字
-                .setCancelText("取消")//取消按钮文字
-                .setTitleText("请选择")//标题
+                .setSubmitText("就它了")//确定按钮文字
+                .setCancelText("算了吧")//取消按钮文字
+                .setTitleText("你要结账???")//标题
                 .setSubCalSize(18)//确定和取消文字大小
                 .setTitleSize(20)//标题文字大小
-                .setTitleColor(Color.BLACK)//标题文字颜色
-                .setSubmitColor(Color.BLUE)//确定按钮文字颜色
-                .setCancelColor(Color.BLUE)//取消按钮文字颜色
+                .setTitleColor(getResources().getColor(R.color.color_212121))//标题文字颜色
+                .setSubmitColor(getResources().getColor(R.color.wecart_color))//确定按钮文字颜色
+                .setCancelColor(getResources().getColor(R.color.color_87c489))//取消按钮文字颜色
                 .setTitleBgColor(0xFFffffff)//标题背景颜色 Night mode
                 .setBgColor(0xFFffffff)//滚轮背景颜色 Night mode
-                .setContentTextSize(18)//滚轮文字大小
-                .setLinkage(true)//设置是否联动，默认true
+                .setContentTextSize(20)//滚轮文字大小
                 .setCyclic(false, false, false)//循环与否
                 .setSelectOptions(0, 0, 0)  //设置默认选中项
                 .setOutSideCancelable(false)//点击外部dismiss default true
                 .isDialog(false)//是否显示为对话框样式
                 .build();
 
-        pvOptions.setPicker(spcs.shopList);//添加数据源
+        pvOptions.setPicker(Arrays.asList("支付宝" , "微信"));//添加数据源
         pvOptions.show();
     }
 

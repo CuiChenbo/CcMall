@@ -12,50 +12,50 @@ public class QiuBaiBean {
      * refresh : 12
      */
 
-    private int count;
-    private int err;
-    private int total;
-    private int page;
-    private int refresh;
+    private String count;
+    private String err;
+    private String total;
+    private String page;
+    private String refresh;
     private List<ItemsBean> items;
 
-    public int getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.count = count;
     }
 
-    public int getErr() {
+    public String getErr() {
         return err;
     }
 
-    public void setErr(int err) {
+    public void setErr(String err) {
         this.err = err;
     }
 
-    public int getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
-    public int getPage() {
+    public String getPage() {
         return page;
     }
 
-    public void setPage(int page) {
+    public void setPage(String page) {
         this.page = page;
     }
 
-    public int getRefresh() {
+    public String getRefresh() {
         return refresh;
     }
 
-    public void setRefresh(int refresh) {
+    public void setRefresh(String refresh) {
         this.refresh = refresh;
     }
 
@@ -75,7 +75,7 @@ public class QiuBaiBean {
          * image :
          * tag :
          * published_at : 1572443371
-         * content : 我老公是医生，他给我说，有一个病人喜欢闻自己袜子的味道，得了真菌性肺炎[捂脸]，沙雕处处有啊！
+         * content :沙雕处处有啊！
          * state : publish
          * is_promote : null
          * comments_count : 4
@@ -88,29 +88,29 @@ public class QiuBaiBean {
          * type : promote
          */
 
-        private int created_at;
+        private String created_at;
         private VotesBean votes;
         private String format;
         private String image;
         private String tag;
-        private int published_at;
+        private String published_at;
         private String content;
         private String state;
         private Object is_promote;
-        private int comments_count;
+        private String comments_count;
         private UserBean user;
         private boolean allow_comment;
         private Object is_prefer;
-        private int share_count;
-        private int id;
+        private String share_count;
+        private String id;
         private HotCommentBean hot_comment;
         private String type;
 
-        public int getCreated_at() {
+        public String getCreated_at() {
             return created_at;
         }
 
-        public void setCreated_at(int created_at) {
+        public void setCreated_at(String created_at) {
             this.created_at = created_at;
         }
 
@@ -146,11 +146,11 @@ public class QiuBaiBean {
             this.tag = tag;
         }
 
-        public int getPublished_at() {
+        public String getPublished_at() {
             return published_at;
         }
 
-        public void setPublished_at(int published_at) {
+        public void setPublished_at(String published_at) {
             this.published_at = published_at;
         }
 
@@ -178,11 +178,11 @@ public class QiuBaiBean {
             this.is_promote = is_promote;
         }
 
-        public int getComments_count() {
+        public String getComments_count() {
             return comments_count;
         }
 
-        public void setComments_count(int comments_count) {
+        public void setComments_count(String comments_count) {
             this.comments_count = comments_count;
         }
 
@@ -210,19 +210,19 @@ public class QiuBaiBean {
             this.is_prefer = is_prefer;
         }
 
-        public int getShare_count() {
+        public String getShare_count() {
             return share_count;
         }
 
-        public void setShare_count(int share_count) {
+        public void setShare_count(String share_count) {
             this.share_count = share_count;
         }
 
-        public int getId() {
+        public String getId() {
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(String id) {
             this.id = id;
         }
 
@@ -248,22 +248,22 @@ public class QiuBaiBean {
              * up : 773
              */
 
-            private int down;
-            private int up;
+            private String down;
+            private String up;
 
-            public int getDown() {
+            public String getDown() {
                 return down;
             }
 
-            public void setDown(int down) {
+            public void setDown(String down) {
                 this.down = down;
             }
 
-            public int getUp() {
+            public String getUp() {
                 return up;
             }
 
-            public void setUp(int up) {
+            public void setUp(String up) {
                 this.up = up;
             }
         }
@@ -287,15 +287,15 @@ public class QiuBaiBean {
             private String medium;
             private String thumb;
             private String gender;
-            private int age;
+            private String age;
             private String state;
             private String role;
             private String rel;
             private String astrology;
             private String login;
             private String icon;
-            private int id;
-            private int uid;
+            private String id;
+            private String uid;
 
             public String getMedium() {
                 return medium;
@@ -321,11 +321,11 @@ public class QiuBaiBean {
                 this.gender = gender;
             }
 
-            public int getAge() {
+            public String getAge() {
                 return age;
             }
 
-            public void setAge(int age) {
+            public void setAge(String age) {
                 this.age = age;
             }
 
@@ -377,19 +377,19 @@ public class QiuBaiBean {
                 this.icon = icon;
             }
 
-            public int getId() {
+            public String getId() {
                 return id;
             }
 
-            public void setId(int id) {
+            public void setId(String id) {
                 this.id = id;
             }
 
-            public int getUid() {
+            public String getUid() {
                 return uid;
             }
 
-            public void setUid(int uid) {
+            public void setUid(String uid) {
                 this.uid = uid;
             }
         }
@@ -413,15 +413,15 @@ public class QiuBaiBean {
              */
 
             private Object at_infos;
-            private int floor;
-            private int created_at;
-            private int hot_comment_type;
+            private String floor;
+            private String created_at;
+            private String hot_comment_type;
             private String content;
-            private int parent_id;
-            private int like_count;
+            private String parent_id;
+            private String like_count;
             private UserBeanX user;
-            private int score;
-            private int id;
+            private String score;
+            private String id;
             private List<AttachmentsBean> attachments;
 
             public Object getAt_infos() {
@@ -432,27 +432,27 @@ public class QiuBaiBean {
                 this.at_infos = at_infos;
             }
 
-            public int getFloor() {
+            public String getFloor() {
                 return floor;
             }
 
-            public void setFloor(int floor) {
+            public void setFloor(String floor) {
                 this.floor = floor;
             }
 
-            public int getCreated_at() {
+            public String getCreated_at() {
                 return created_at;
             }
 
-            public void setCreated_at(int created_at) {
+            public void setCreated_at(String created_at) {
                 this.created_at = created_at;
             }
 
-            public int getHot_comment_type() {
+            public String getHot_comment_type() {
                 return hot_comment_type;
             }
 
-            public void setHot_comment_type(int hot_comment_type) {
+            public void setHot_comment_type(String hot_comment_type) {
                 this.hot_comment_type = hot_comment_type;
             }
 
@@ -464,19 +464,19 @@ public class QiuBaiBean {
                 this.content = content;
             }
 
-            public int getParent_id() {
+            public String getParent_id() {
                 return parent_id;
             }
 
-            public void setParent_id(int parent_id) {
+            public void setParent_id(String parent_id) {
                 this.parent_id = parent_id;
             }
 
-            public int getLike_count() {
+            public String getLike_count() {
                 return like_count;
             }
 
-            public void setLike_count(int like_count) {
+            public void setLike_count(String like_count) {
                 this.like_count = like_count;
             }
 
@@ -488,19 +488,19 @@ public class QiuBaiBean {
                 this.user = user;
             }
 
-            public int getScore() {
+            public String getScore() {
                 return score;
             }
 
-            public void setScore(int score) {
+            public void setScore(String score) {
                 this.score = score;
             }
 
-            public int getId() {
+            public String getId() {
                 return id;
             }
 
-            public void setId(int id) {
+            public void setId(String id) {
                 this.id = id;
             }
 
@@ -530,14 +530,14 @@ public class QiuBaiBean {
                 private String medium;
                 private String thumb;
                 private String gender;
-                private int age;
+                private String age;
                 private String state;
                 private String role;
                 private String astrology;
                 private String login;
                 private String icon;
-                private int id;
-                private int uid;
+                private String id;
+                private String uid;
 
                 public String getMedium() {
                     return medium;
@@ -563,11 +563,11 @@ public class QiuBaiBean {
                     this.gender = gender;
                 }
 
-                public int getAge() {
+                public String getAge() {
                     return age;
                 }
 
-                public void setAge(int age) {
+                public void setAge(String age) {
                     this.age = age;
                 }
 
@@ -611,19 +611,19 @@ public class QiuBaiBean {
                     this.icon = icon;
                 }
 
-                public int getId() {
+                public String getId() {
                     return id;
                 }
 
-                public void setId(int id) {
+                public void setId(String id) {
                     this.id = id;
                 }
 
-                public int getUid() {
+                public String getUid() {
                     return uid;
                 }
 
-                public void setUid(int uid) {
+                public void setUid(String uid) {
                     this.uid = uid;
                 }
             }
@@ -684,22 +684,22 @@ public class QiuBaiBean {
                 }
 
                 public static class ImageSizeBean {
-                    private List<Integer> s;
-                    private List<Integer> m;
+                    private List<String> s;
+                    private List<String> m;
 
-                    public List<Integer> getS() {
+                    public List<String> getS() {
                         return s;
                     }
 
-                    public void setS(List<Integer> s) {
+                    public void setS(List<String> s) {
                         this.s = s;
                     }
 
-                    public List<Integer> getM() {
+                    public List<String> getM() {
                         return m;
                     }
 
-                    public void setM(List<Integer> m) {
+                    public void setM(List<String> m) {
                         this.m = m;
                     }
                 }

@@ -5,6 +5,7 @@ import android.os.CountDownTimer;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -28,15 +29,22 @@ import com.example.admin.ccb.MainActivity;
 import com.example.admin.ccb.R;
 
 import www.ccb.com.common.base.BaseActivity;
+import www.ccb.com.common.utils.NumberFormatUtil;
+import www.ccb.com.common.utils.UiUtils;
 
+/**
+ * 闪屏页 + 天气页
+ * isForecast ： false 闪屏页
+ * isForecast ： true 天气页
+ */
 public class SplashActivity extends BaseActivity implements AMapLocationListener, WeatherSearch.OnWeatherSearchListener {
 
     private ImageView imageView;
     private RecyclerView recyclerView;
-    private TextView tvCountTime, tvAddress, tvTime, tvTianQi, tvWendu, tvFengli;
-    private LinearLayout layoutForecast, layouTrea;
+    private TextView tvCountTime, tvAddress, tvTime, tvTianQi, tvWendu, tvFengli , tvTre;
+    private LinearLayout layoutForecast, layouTrea , rootView;
     private CardView cv;
-    private boolean isForecast; //是否显示预报
+    private boolean isWeather; //是否显示预报
     public static final String WEATHER = "WEATHER";
     private CountDownTimer countDownTimer;
 
@@ -48,6 +56,7 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
     @Override
     protected void initView() {
 
+        rootView = findViewById(R.id.rootView);
         imageView = findViewById(R.id.iv);
         recyclerView = findViewById(R.id.rv);
         tvAddress = findViewById(R.id.tvAddress);
@@ -55,6 +64,7 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
         tvTianQi = findViewById(R.id.tvTianQi);
         tvWendu = findViewById(R.id.tvWendu);
         tvFengli = findViewById(R.id.tvFengli);
+        tvTre = findViewById(R.id.tvTre);
         tvCountTime = findViewById(R.id.tvCountTime);
         layoutForecast = findViewById(R.id.layoutForecast);
         layouTrea = findViewById(R.id.layouTrea);
@@ -70,15 +80,31 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
 
     @Override
     protected void initData() {
-        isForecast = getIntent().getBooleanExtra(WEATHER, false);
+        isWeather = getIntent().getBooleanExtra(WEATHER, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(WeatherAdapter);
+        setViewColor();
         goLocation();
         startSplash();
     }
 
+    private void setViewColor() {
+        if (isWeather){
+            imageView.setVisibility(View.GONE);
+            rootView.setBackgroundResource(R.color.ali_color);
+            tvAddress.setPadding(0,0,0, UiUtils.dp2px(80));
+            tvAddress.setTextSize(36);
+            tvAddress.setTextColor(getResources().getColor(R.color.white));
+            tvTre.setTextColor(getResources().getColor(R.color.white));
+            tvTime.setTextColor(getResources().getColor(R.color.white));
+            tvTianQi.setTextColor(getResources().getColor(R.color.white));
+            tvWendu.setTextColor(getResources().getColor(R.color.white));
+            tvFengli.setTextColor(getResources().getColor(R.color.white));
+        }
+    }
+
     private void startSplash() {
-        if (isForecast) return;
+        if (isWeather) return;
 
         countDownTimer = new CountDownTimer(6 * 1000, 1000) {
             @Override
@@ -157,7 +183,7 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
         mweathersearch.setQuery(mquery);
         mweathersearch.searchWeatherAsyn(); //异步搜索
 
-        if (isForecast) {
+        if (isWeather) {
             WeatherSearchQuery mquery2 = new WeatherSearchQuery(city, WeatherSearchQuery.WEATHER_TYPE_FORECAST);
             WeatherSearch mweathersearch2 = new WeatherSearch(this);
             mweathersearch2.setOnWeatherSearchListener(this);
@@ -170,14 +196,14 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
     public void onWeatherLiveSearched(LocalWeatherLiveResult localWeatherLiveResult, int i) {
         if (i == 1000) {
             tvAddress.setText(localWeatherLiveResult.getWeatherLiveQuery().getCity());
-            tvTime.setText(localWeatherLiveResult.getLiveResult().getReportTime() + "发布");
+            tvTime.setText(localWeatherLiveResult.getLiveResult().getReportTime() + "\t发布");
             tvTianQi.setText(localWeatherLiveResult.getLiveResult().getWeather());
             tvWendu.setText(localWeatherLiveResult.getLiveResult().getTemperature() + "°");
             tvFengli.setText(localWeatherLiveResult.getLiveResult().getWindDirection() + "风\t\t" + localWeatherLiveResult.getLiveResult().getWindPower()
                     + "\n湿度\t\t" + localWeatherLiveResult.getLiveResult().getHumidity() + "%");
 
             layouTrea.setVisibility(View.VISIBLE);
-            LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.menu_anim));
+            LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.layout_up_anim));
             layouTrea.setLayoutAnimation(controller);
         }
     }
@@ -187,7 +213,7 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
         if (i == 1000) {
             WeatherAdapter.addData(localWeatherForecastResult.getForecastResult().getWeatherForecast());
             layoutForecast.setVisibility(View.VISIBLE);
-            LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.menu_anim));
+            LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.layout_up_anim));
             recyclerView.setLayoutAnimation(controller);
         }
     }
@@ -195,9 +221,15 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
     private BaseQuickAdapter WeatherAdapter = new BaseQuickAdapter<LocalDayWeatherForecast, BaseViewHolder>(R.layout.item_weather) {
         @Override
         protected void convert(BaseViewHolder helper, LocalDayWeatherForecast item) {
-            helper.setText(R.id.tvTime, item.getDate() + "\t周" + item.getWeek())
-                    .setText(R.id.tvTianQi, item.getDayWeather()
-                            + "\t" + item.getNightTemp() + "°\t/" + item.getDayTemp() + "°");
+            String weather;
+            if (TextUtils.equals(item.getDayWeather() , item.getNightWeather())){
+                weather = item.getDayWeather();
+            }else {
+                weather = item.getDayWeather() +"转"+item.getNightWeather();
+            }
+            helper.setText(R.id.tvTime, item.getDate() + "\t周" + NumberFormatUtil.formatInteger(Integer.parseInt(item.getWeek())))
+                    .setText(R.id.tvTianQi, weather
+                            + "\t\t" + item.getNightTemp() + "°\t/\t" + item.getDayTemp() + "°");
         }
     };
 }

@@ -7,6 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="@dimen/dp15"
+    android:id="@+id/rootView"
     tools:context=".activity.SplashActivity">
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
@@ -55,6 +56,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tvTre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="@dimen/dp10"
@@ -78,7 +80,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="230dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
@@ -89,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/dp16"
                 android:textColor="@color/color_424242"
-                android:textSize="@dimen/dp28"
+                android:textSize="@dimen/dp32"
                 tools:text="天气" />
 
             <Space
@@ -103,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/dp16"
                 android:textColor="@color/color_424242"
-                android:textSize="@dimen/dp28"
+                android:textSize="@dimen/dp32"
                 tools:text="温度" />
         </LinearLayout>
 
@@ -123,6 +125,7 @@
         android:id="@+id/layoutForecast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp25"
         android:visibility="invisible"
         android:orientation="vertical">
 
@@ -132,7 +135,7 @@
             android:paddingTop="@dimen/dp12"
             android:paddingBottom="@dimen/dp18"
             android:text="预报天气"
-            android:textColor="@color/color_232326"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="@dimen/dp16" />
 

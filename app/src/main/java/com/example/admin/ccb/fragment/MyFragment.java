@@ -25,6 +25,7 @@ import www.ccb.com.common.base.BaseFragment;
 
 import com.example.admin.ccb.activity.TestActivity;
 import com.example.admin.ccb.utils.GlideImageUtils;
+import com.example.admin.ccb.utils.ResDatas;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -55,7 +56,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void loadData() {
-        GlideImageUtils.DisplayCircle(mContext,"http://img4.duitang.com/uploads/item/201209/20/20120920160424_QH2jt.thumb.600_0.jpeg",ivPhoto);
+        GlideImageUtils.DisplayCircle(mContext, ResDatas.getGoodsImages().get(3),ivPhoto);
     }
 
     @Override

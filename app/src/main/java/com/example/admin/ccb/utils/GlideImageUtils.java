@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -124,10 +125,23 @@ public class GlideImageUtils {
      * @param url
      * @param imageView
      */
+    /**
+     * 加载图片，并切成圆形
+     *
+     * @param context
+     * @param src
+     * @param imageView
+     */
+    public static void DisplayCircle(final Context context, Integer src, final ImageView imageView) {
+        DisplayCircle(context,src , null, imageView);
+    }
     public static void DisplayCircle(final Context context, String url, final ImageView imageView) {
+        DisplayCircle(context,0 , url, imageView);
+    }
+    public static void DisplayCircle(final Context context,Integer src, String url, final ImageView imageView) {
         Glide.with(context)
                 .asBitmap()
-                .load(url)
+                .load(url == null ? src : url)
                 .apply(options)
                 .into(new BitmapImageViewTarget(imageView) {
                     @Override

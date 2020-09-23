@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:paddingRight="@dimen/dp45"
-    android:paddingLeft="@dimen/dp45"
+    android:paddingRight="@dimen/dp25"
+    android:paddingLeft="@dimen/dp25"
     android:paddingBottom="@dimen/dp16"
     android:layout_height="wrap_content">
 
@@ -12,7 +12,7 @@
         android:id="@+id/tvTime"
         tools:text="202020"
         android:textSize="@dimen/dp14"
-        android:textColor="@color/color_424242"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/tvTianQi"
         tools:text="202020"
         android:textSize="@dimen/dp14"
-        android:textColor="@color/color_424242"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

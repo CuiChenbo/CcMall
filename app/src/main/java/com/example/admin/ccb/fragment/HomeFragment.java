@@ -23,9 +23,11 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -306,7 +308,9 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void setBannerOneDatas() {
-
+//       Animation animation = AnimationUtils.loadAnimation(getActivity() , R.anim.banner_anim);
+//       animation.setInterpolator(new OvershootInterpolator());
+//        banner.setAnimation(animation);
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());

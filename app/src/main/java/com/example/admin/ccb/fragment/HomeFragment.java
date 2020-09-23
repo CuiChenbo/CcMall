@@ -24,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,6 +35,7 @@ import com.example.admin.ccb.R;
 import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.activity.GirlWelfareActivity;
 import com.example.admin.ccb.activity.SearchActivity;
+import com.example.admin.ccb.activity.SplashActivity;
 import com.example.admin.ccb.activity.TVShowsActivity;
 import com.example.admin.ccb.activity.VideoPlayerDouActivity;
 import com.example.admin.ccb.activity.VideoPlayerListActivity;
@@ -77,10 +79,10 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected View initContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home,container,false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-    private List<String> mDataList = Arrays.asList("微商城","Cc动态","Cc精选","微福利","你看我是一个很长很长的标题");
+    private List<String> mDataList = Arrays.asList("微商城", "Cc动态", "Cc精选", "微福利", "你看我是一个很长很长的标题");
     private MagicIndicator indicator;
     private NotConflictViewPager mPager;
     private AppBarLayout appBarLayout;
@@ -92,6 +94,7 @@ public class HomeFragment extends BaseFragment {
     private ImageView ivAd;
     private RelativeLayout llChange;
     private TextView tvSearch;
+
     @Override
     public void initView(View v) {
         appBarLayout = v.findViewById(R.id.appBarLayout);
@@ -119,6 +122,7 @@ public class HomeFragment extends BaseFragment {
             }
 
             long currentTime = 0;
+
             @Override
             public IPagerTitleView getTitleView(Context context, final int i) {
                 ClipPagerTitleView tv = new ClipPagerTitleView(context);
@@ -130,7 +134,7 @@ public class HomeFragment extends BaseFragment {
                     public void onClick(View v) {
                         mPager.setCurrentItem(i);
 
-                        if (mPager.getCurrentItem() == i && System.currentTimeMillis() - currentTime < 300){
+                        if (mPager.getCurrentItem() == i && System.currentTimeMillis() - currentTime < 300) {
                             mFragmentList.get(i).onRefresh();
                             currentTime = 0;
                         }
@@ -149,16 +153,17 @@ public class HomeFragment extends BaseFragment {
             }
         });
         indicator.setNavigator(commonNavigator);
-        ViewPagerHelper.bind(indicator,mPager);
+        ViewPagerHelper.bind(indicator, mPager);
     }
 
     private List<BaseCacheFragment> mFragmentList;
+
     @Override
     public void loadData() {
         setBannerOneDatas();
         setUpView(ResDatas.getAds());
         setMenu(ResDatas.getMenus());
-        GlideImageUtils.displayGif(mContext,R.mipmap.gif1,ivAd);
+        GlideImageUtils.displayGif(mContext, R.mipmap.gif1, ivAd);
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new PalFragment());
         mFragmentList.add(new GossipFragment());
@@ -172,9 +177,10 @@ public class HomeFragment extends BaseFragment {
     private final int MANIFESTPERMISSIONCAMERA = 17;
     private int height;  // 滑动到什么地方完全变色
     private int ScrollUnm = 0;  //滑动的距离总和
+
     @Override
     public void initListener() {
-        swipeRefresh.setColorSchemeColors(getResources().getColor(R.color.main_green),getResources().getColor(R.color.colorOrange),getResources().getColor(R.color.mainColor));
+        swipeRefresh.setColorSchemeColors(getResources().getColor(R.color.main_green), getResources().getColor(R.color.colorOrange), getResources().getColor(R.color.mainColor));
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -188,7 +194,11 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
-        upView.setOnItemClickListener((position, view) -> start(BaseWebViewActivity.class));
+        upView.setOnItemClickListener((position, view) -> {
+            Intent intent = new Intent(getActivity(), SplashActivity.class);
+            intent.putExtra(SplashActivity.WEATHER , true);
+            startActivity(intent);
+        });
         mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
@@ -208,19 +218,19 @@ public class HomeFragment extends BaseFragment {
         });
         mPager.setCurrentItem(0);
 
-        height = UiUtils.dp2px(mContext,200-45);
+        height = UiUtils.dp2px(mContext, 200 - 45);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 ScrollUnm = -verticalOffset; //滑动距离总合
-                if (ScrollUnm<=0){  //在顶部时完全透明
-                    llChange.setBackgroundColor(Color.argb((int) 0, 255,41,76));
-                }else if (ScrollUnm>0&&ScrollUnm<= height){  //在滑动高度中时，设置透明度百分比（当前高度/总高度）
+                if (ScrollUnm <= 0) {  //在顶部时完全透明
+                    llChange.setBackgroundColor(Color.argb((int) 0, 255, 41, 76));
+                } else if (ScrollUnm > 0 && ScrollUnm <= height) {  //在滑动高度中时，设置透明度百分比（当前高度/总高度）
                     double d = (double) ScrollUnm / height;
-                    double alpha = (d*255);
-                    llChange.setBackgroundColor(Color.argb((int) alpha, 255,41,76));
-                }else{ //滑出总高度 完全不透明
-                    llChange.setBackgroundColor(Color.argb((int) 255, 255,41,76));
+                    double alpha = (d * 255);
+                    llChange.setBackgroundColor(Color.argb((int) alpha, 255, 41, 76));
+                } else { //滑出总高度 完全不透明
+                    llChange.setBackgroundColor(Color.argb((int) 255, 255, 41, 76));
                 }
                 if (verticalOffset == 0) {
                     //展开
@@ -304,7 +314,7 @@ public class HomeFragment extends BaseFragment {
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
-                startActivity(new Intent(mContext,GirlWelfareActivity.class));
+                startActivity(new Intent(mContext, GirlWelfareActivity.class));
             }
         });
         //设置banner动画效果
@@ -335,7 +345,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void setMenu(List<String> menu) {
-        LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(getActivity(),R.anim.menu_anim));
+        LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(getActivity(), R.anim.menu_anim));
         menuRecyclerView.setLayoutAnimation(controller);
         menuRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 5));
         HomeMenuAdapter hap = new HomeMenuAdapter(R.layout.item_homemenu);
@@ -354,15 +364,15 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void showVideoDialog() {
-        String[] datas = {"抖音Style","列表Style","自动播放列表Style"};
+        String[] datas = {"抖音Style", "列表Style", "自动播放列表Style"};
         new SingleSelectDialog.Builder(mContext).setItems(datas, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (i == 0){
+                if (i == 0) {
                     startActivity(new Intent(mContext, VideoPlayerDouActivity.class));
-                }else if(i == 1){
+                } else if (i == 1) {
                     startActivity(new Intent(mContext, VideoPlayerListActivity.class));
-                }else {
+                } else {
                     startActivity(new Intent(mContext, VideoPlayerListAutoActivity.class));
                 }
             }

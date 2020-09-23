@@ -1,10 +1,15 @@
 package com.example.admin.ccb.activity;
 
-
 import android.content.Intent;
+import android.os.CountDownTimer;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -28,7 +33,13 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
 
     private ImageView imageView;
     private RecyclerView recyclerView;
-    private TextView tvAddress , tvTime , tvTianQi ,tvWendu , tvFengli;
+    private TextView tvCountTime, tvAddress, tvTime, tvTianQi, tvWendu, tvFengli;
+    private LinearLayout layoutForecast, layouTrea;
+    private CardView cv;
+    private boolean isForecast; //是否显示预报
+    public static final String WEATHER = "WEATHER";
+    private CountDownTimer countDownTimer;
+
     @Override
     public int getContentViewResource() {
         return R.layout.activity_splash;
@@ -44,6 +55,10 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
         tvTianQi = findViewById(R.id.tvTianQi);
         tvWendu = findViewById(R.id.tvWendu);
         tvFengli = findViewById(R.id.tvFengli);
+        tvCountTime = findViewById(R.id.tvCountTime);
+        layoutForecast = findViewById(R.id.layoutForecast);
+        layouTrea = findViewById(R.id.layouTrea);
+        cv = findViewById(R.id.cv);
 
     }
 
@@ -53,33 +68,49 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
 
     }
 
-   private BaseQuickAdapter WeatherAdapter = new BaseQuickAdapter<LocalDayWeatherForecast, BaseViewHolder>(R.layout.item_weather) {
-        @Override
-        protected void convert(BaseViewHolder helper, LocalDayWeatherForecast item) {
-             helper.setText(R.id.tvTime , item.getDate()+"\t周"+item.getWeek())
-                     .setText(R.id.tvTianQi , item.getDayWeather()
-                             + "\t"+item.getNightTemp()+ "°\t/"+item.getDayTemp()+ "°");
-        }
-    };
-
     @Override
     protected void initData() {
+        isForecast = getIntent().getBooleanExtra(WEATHER, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(WeatherAdapter);
         goLocation();
-   imageView.postDelayed(new Runnable() {
-       @Override
-       public void run() {
-           startActivity(new Intent(SplashActivity.this , MainActivity.class));
-           finish();
-       }
-   }, 3500L);
+        startSplash();
+    }
+
+    private void startSplash() {
+        if (isForecast) return;
+
+        countDownTimer = new CountDownTimer(6 * 1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tvCountTime.setText(millisUntilFinished / 1000 + "s");
+            }
+
+            @Override
+            public void onFinish() {
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
+            }
+        };
+        countDownTimer.start();
+
+        cv.setVisibility(View.VISIBLE);
+        tvCountTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
+                countDownTimer.cancel();
+                countDownTimer = null;
+            }
+        });
     }
 
     //声明mlocationClient对象
     public AMapLocationClient mlocationClient;
     //声明mLocationOption对象
     public AMapLocationClientOption mLocationOption = null;
+
     private void goLocation() {
         //获取位置信息
         mlocationClient = new AMapLocationClient(this);
@@ -99,7 +130,6 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
     }
 
 
-
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
         if (aMapLocation != null) {
@@ -111,41 +141,63 @@ public class SplashActivity extends BaseActivity implements AMapLocationListener
     @Override
     protected void onDestroy() {
         super.onDestroy();
-      if (mlocationClient != null) mlocationClient.onDestroy();
+        if (mlocationClient != null) mlocationClient.onDestroy();
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+            countDownTimer = null;
+        }
     }
 
 
-    private void getWeather(String city){
+    private void getWeather(String city) {
         //检索参数为城市和天气类型，实况天气为WEATHER_TYPE_LIVE、天气预报为WEATHER_TYPE_FORECAST
         WeatherSearchQuery mquery = new WeatherSearchQuery(city, WeatherSearchQuery.WEATHER_TYPE_LIVE);
-        WeatherSearch mweathersearch=new WeatherSearch(this);
+        WeatherSearch mweathersearch = new WeatherSearch(this);
         mweathersearch.setOnWeatherSearchListener(this);
         mweathersearch.setQuery(mquery);
         mweathersearch.searchWeatherAsyn(); //异步搜索
 
-        WeatherSearchQuery mquery2 = new WeatherSearchQuery(city, WeatherSearchQuery.WEATHER_TYPE_FORECAST);
-        WeatherSearch mweathersearch2=new WeatherSearch(this);
-        mweathersearch2.setOnWeatherSearchListener(this);
-        mweathersearch2.setQuery(mquery2);
-        mweathersearch2.searchWeatherAsyn(); //异步搜索
+        if (isForecast) {
+            WeatherSearchQuery mquery2 = new WeatherSearchQuery(city, WeatherSearchQuery.WEATHER_TYPE_FORECAST);
+            WeatherSearch mweathersearch2 = new WeatherSearch(this);
+            mweathersearch2.setOnWeatherSearchListener(this);
+            mweathersearch2.setQuery(mquery2);
+            mweathersearch2.searchWeatherAsyn(); //异步搜索
+        }
     }
 
     @Override
     public void onWeatherLiveSearched(LocalWeatherLiveResult localWeatherLiveResult, int i) {
-        if (i == 1000){
+        if (i == 1000) {
             tvAddress.setText(localWeatherLiveResult.getWeatherLiveQuery().getCity());
-            tvTime.setText(localWeatherLiveResult.getLiveResult().getReportTime()+"发布");
+            tvTime.setText(localWeatherLiveResult.getLiveResult().getReportTime() + "发布");
             tvTianQi.setText(localWeatherLiveResult.getLiveResult().getWeather());
-            tvWendu.setText(localWeatherLiveResult.getLiveResult().getTemperature()+"°");
-            tvFengli.setText(localWeatherLiveResult.getLiveResult().getWindDirection()+"风\t\t"+localWeatherLiveResult.getLiveResult().getWindPower()
-            +"\n湿度\t\t"+localWeatherLiveResult.getLiveResult().getHumidity()+"%");
+            tvWendu.setText(localWeatherLiveResult.getLiveResult().getTemperature() + "°");
+            tvFengli.setText(localWeatherLiveResult.getLiveResult().getWindDirection() + "风\t\t" + localWeatherLiveResult.getLiveResult().getWindPower()
+                    + "\n湿度\t\t" + localWeatherLiveResult.getLiveResult().getHumidity() + "%");
+
+            layouTrea.setVisibility(View.VISIBLE);
+            LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.menu_anim));
+            layouTrea.setLayoutAnimation(controller);
         }
     }
 
     @Override
     public void onWeatherForecastSearched(LocalWeatherForecastResult localWeatherForecastResult, int i) {
-        if (i == 1000){
+        if (i == 1000) {
             WeatherAdapter.addData(localWeatherForecastResult.getForecastResult().getWeatherForecast());
+            layoutForecast.setVisibility(View.VISIBLE);
+            LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.menu_anim));
+            recyclerView.setLayoutAnimation(controller);
         }
     }
+
+    private BaseQuickAdapter WeatherAdapter = new BaseQuickAdapter<LocalDayWeatherForecast, BaseViewHolder>(R.layout.item_weather) {
+        @Override
+        protected void convert(BaseViewHolder helper, LocalDayWeatherForecast item) {
+            helper.setText(R.id.tvTime, item.getDate() + "\t周" + item.getWeek())
+                    .setText(R.id.tvTianQi, item.getDayWeather()
+                            + "\t" + item.getNightTemp() + "°\t/" + item.getDayTemp() + "°");
+        }
+    };
 }

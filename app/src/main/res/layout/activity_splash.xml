@@ -8,102 +8,137 @@
     android:orientation="vertical"
     android:padding="@dimen/dp15"
     tools:context=".activity.SplashActivity">
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:visibility="invisible"
+        android:layout_gravity="right"
+        app:cardCornerRadius="@dimen/dp25"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50">
+        <TextView
+            android:id="@+id/tvCountTime"
+            android:text="0s"
+            android:gravity="center"
+            android:textColor="@color/color_212121"
+            android:textSize="@dimen/dp15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
 
     <ImageView
         android:id="@+id/iv"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp100"
-        android:layout_marginTop="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp10"
         android:src="@mipmap/qq" />
 
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/dp12"
-        android:textColor="@color/color_212121"
-        android:textSize="@dimen/dp26"
-        tools:text="地区" />
-
     <LinearLayout
+        android:id="@+id/layouTrea"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="@dimen/dp10"
-            android:paddingBottom="@dimen/dp16"
-            android:textColor="@color/color_424242"
-            android:textSize="@dimen/dp14"
-            android:text="实况天气" />
-
-        <TextView
-            android:id="@+id/tvTime"
+            android:id="@+id/tvAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:paddingRight="@dimen/dp10"
-            android:paddingBottom="@dimen/dp16"
-            android:textColor="@color/color_424242"
-            android:textSize="@dimen/dp14"
-            tools:text="实况" />
+            android:gravity="center"
+            android:padding="@dimen/dp12"
+            android:textColor="@color/color_212121"
+            android:textSize="@dimen/dp26"
+            tools:text="地区" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dp10"
+                android:paddingBottom="@dimen/dp16"
+                android:text="实况天气"
+                android:textColor="@color/color_232326"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp16" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingRight="@dimen/dp10"
+                android:paddingBottom="@dimen/dp16"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/dp15"
+                tools:text="实况" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTianQi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp16"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/dp28"
+                tools:text="天气" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvWendu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp16"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/dp28"
+                tools:text="温度" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFengli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/dp6"
+            android:paddingLeft="@dimen/dp60"
+            android:textColor="@color/color_424242"
+            android:textSize="@dimen/dp15"
+            tools:text="风\n力" />
     </LinearLayout>
+
 
     <LinearLayout
+        android:id="@+id/layoutForecast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/dp60"
-        android:paddingRight="@dimen/dp60"
-        >
+        android:visibility="invisible"
+        android:orientation="vertical">
+
         <TextView
-            android:id="@+id/tvTianQi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/dp16"
-            android:textColor="@color/color_424242"
-            android:textSize="@dimen/dp28"
-            tools:text="天气" />
-        <Space
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="0dp" />
-        <TextView
-            android:id="@+id/tvWendu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/dp16"
-            android:textColor="@color/color_424242"
-            android:textSize="@dimen/dp28"
-            tools:text="温度" />
+            android:paddingTop="@dimen/dp12"
+            android:paddingBottom="@dimen/dp18"
+            android:text="预报天气"
+            android:textColor="@color/color_232326"
+            android:textStyle="bold"
+            android:textSize="@dimen/dp16" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvFengli"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/dp60"
-        android:textColor="@color/color_424242"
-        android:textSize="@dimen/dp14"
-        android:lineSpacingExtra="@dimen/dp6"
-        tools:text="风\n力" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/dp12"
-        android:paddingBottom="@dimen/dp18"
-        android:textColor="@color/color_424242"
-        android:textSize="@dimen/dp14"
-        android:text="预报天气" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-
 </LinearLayout>

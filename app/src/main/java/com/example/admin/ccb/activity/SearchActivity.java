@@ -1,5 +1,6 @@
 package com.example.admin.ccb.activity;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -54,9 +55,21 @@ public class SearchActivity extends BaseActivity {
         tagFlowLayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
             @Override
             public boolean onTagClick(View view, int position, FlowLayout parent) {
-                ToastUtils.showToast(mContext,"点击了条目"+position+":"+ ResDatas.searchLists[position]);
+                Intent intent = new Intent(mContext, SplashActivity.class);
+                intent.putExtra(SplashActivity.WEATHER , true);
+                startActivity(intent);
+                ToastUtils.showToast(mContext,"啥都没有搜索到,给你看个天气吧");
                 et.setText(ResDatas.searchLists[position]);
                 return true;
+            }
+        });
+        findViewById(R.id.ivSearch).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SplashActivity.class);
+                intent.putExtra(SplashActivity.WEATHER , true);
+                startActivity(intent);
+                ToastUtils.showToast(mContext,"啥都没有搜索到,给你看个天气吧");
             }
         });
     }

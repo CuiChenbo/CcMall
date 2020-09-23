@@ -23,6 +23,8 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -333,16 +335,18 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void setMenu(List<String> menu) {
+        LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(getActivity(),R.anim.menu_anim));
+        menuRecyclerView.setLayoutAnimation(controller);
         menuRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 5));
         HomeMenuAdapter hap = new HomeMenuAdapter(R.layout.item_homemenu);
         menuRecyclerView.setAdapter(hap);
         hap.setOnItemClickListener((adapter, view, position) -> showVideoDialog());
         homeMenuBean b = new homeMenuBean();
         b.datas = new ArrayList<>();
-        for (int i = 0; i < ResDatas.getMenus().size(); i++) {
+        for (int i = 0; i < menu.size(); i++) {
             homeMenuBean.Data datas = new homeMenuBean.Data();
             datas.icon = ResDatas.icon_lol_imangs[i];
-            datas.title = ResDatas.getMenus().get(i);
+            datas.title = menu.get(i);
             b.datas.add(datas);
         }
         hap.setNewData(b.datas);

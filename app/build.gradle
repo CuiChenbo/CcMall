@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         debug {
-            storeFile file('D:\\AndroidProject\\Demo_Cc\\CcMall\\ccmall.jks')
+            storeFile file('..\\ccmall.jks')
             storePassword 'qwer1234'
             keyPassword 'qwer1234'
             keyAlias = 'CcMall'
@@ -11,11 +11,11 @@ android {
     }
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.admin.ccb"
+        applicationId "com.ccb.ccmall"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -28,7 +28,7 @@ android {
         manifestPlaceholders = [
                 APP_ICON     : "@mipmap/ic_launcher.png",
                 APP_LABEL    : "@string/app_name",
-                JPUSH_PKGNAME: "com.example.admin.ccb",
+                JPUSH_PKGNAME: "com.ccb.ccmall",
                 JPUSH_APPKEY : "2c1c46659616a1abb5529845",
                 JPUSH_CHANNEL: "Offical",
                 qqappid      : "1106653585"

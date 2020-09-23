@@ -26,16 +26,17 @@
                 android:layout_height="@dimen/dp36"
                 android:layout_marginLeft="@dimen/dp5"
                 android:id="@+id/iv"
+                android:layout_marginTop="@dimen/dp5"
                 />
 
             <TextView
                 android:id="@+id/tvt"
                 tools:text="TITLE"
-                android:layout_marginTop="@dimen/dp6"
+                android:layout_marginTop="@dimen/dp12"
                 android:layout_marginLeft="@dimen/dp8"
                 android:layout_toRightOf="@id/iv"
-                android:textColor="@color/main_black"
-                android:textSize="18dp"
+                android:textColor="@color/third_gray"
+                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -43,10 +44,10 @@
                 android:id="@+id/tv"
                 android:layout_below="@id/iv"
                 tools:text="00000000000"
-                android:paddingTop="12dp"
+                android:padding="6dp"
                 android:lineSpacingExtra="3dp"
                 android:textColor="@color/main_text"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>

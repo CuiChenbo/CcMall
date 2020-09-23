@@ -87,7 +87,7 @@ public class GirlWelfareFragment extends BaseCacheFragment {
     private List<Object> params = Arrays.asList("page",page,"count","10");
     @Override
     public void loadData() {
-        okGetRequest("1" , UrlFactory.GirlUrl,params);
+        okGetRequestWeb("1" , UrlFactory.GirlUrl,params);
     }
 
     @Override
@@ -102,7 +102,7 @@ public class GirlWelfareFragment extends BaseCacheFragment {
             @Override
             public void onLoadMoreRequested() {
                 params.set(1 , ++page);
-                okGetRequest("1" , UrlFactory.GirlUrl,params);
+                okGetRequestWeb("1" , UrlFactory.GirlUrl,params);
             }
         },mRv);
     }

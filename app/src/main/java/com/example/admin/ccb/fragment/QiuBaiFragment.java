@@ -19,6 +19,12 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.bean.QiuBaiBean;
 import com.example.admin.ccb.utils.GlideImageUtils;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.HttpParams;
+import com.lzy.okgo.model.Response;
+
+import java.util.Random;
 
 import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.utils.GsonUtils;
@@ -30,7 +36,7 @@ public class QiuBaiFragment extends BaseCacheFragment {
 
     @Override
     protected View initContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_douban,container,false);
+        return inflater.inflate(R.layout.activity_douban, container, false);
     }
 
     @Override
@@ -42,7 +48,7 @@ public class QiuBaiFragment extends BaseCacheFragment {
         mRv.setAdapter(mAdapter);
     }
 
-    class QiuBaiAdapter extends BaseQuickAdapter<QiuBaiBean.ItemsBean,BaseViewHolder> {
+    class QiuBaiAdapter extends BaseQuickAdapter<QiuBaiBean.ItemsBean, BaseViewHolder> {
 
         public QiuBaiAdapter(int layoutResId) {
             super(layoutResId);
@@ -50,14 +56,14 @@ public class QiuBaiFragment extends BaseCacheFragment {
 
         @Override
         protected void convert(BaseViewHolder helper, QiuBaiBean.ItemsBean item) {
-            helper.setText(R.id.tv , item.getContent());
+            helper.setText(R.id.tv, item.getContent());
             ImageView iv = helper.getView(R.id.iv);
             if (item.getUser() != null) {
                 helper.setText(R.id.tvt, item.getUser().getLogin());
                 GlideImageUtils.DisplayCircle(getActivity(), item.getUser().getThumb(), iv);
-            }else {
+            } else {
                 helper.setText(R.id.tvt, "糗友");
-                GlideImageUtils.display(getActivity(),R.mipmap.emptyimage, iv);
+                GlideImageUtils.display(getActivity(), R.mipmap.emptyimage, iv);
             }
 
         }
@@ -65,10 +71,17 @@ public class QiuBaiFragment extends BaseCacheFragment {
 
 
     private int page = 1;
-    private int count = 20;
+    private int count = 12;
+
+    private Random random = new Random();
     @Override
     public void loadData() {
-        okGetRequest("QiuBai",UrlFactory.QiuBaiUrl+"?type=text&page="+page+"&count="+count);
+        HttpParams params = new HttpParams();
+        params.put("type", "text");
+        params.put("page", (++page));
+        params.put("count", count);
+        params.put("readarticles", "[12360"+random.nextInt(9999)+"]");
+        okGetRequest("QiuBai", UrlFactory.QiuBaiUrl, params);
     }
 
     @Override
@@ -79,35 +92,40 @@ public class QiuBaiFragment extends BaseCacheFragment {
 
     @Override
     public void initListener() {
-         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
-             @Override
-             public void onLoadMoreRequested() {
-                 okGetRequest("QiuBai",UrlFactory.QiuBaiUrl+"?type=text&page="+(++page)+"&count="+count);
-             }
-         },mRv);
+        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                HttpParams params = new HttpParams();
+                params.put("type", "text");
+                params.put("page", (++page));
+                params.put("count", count);
+                params.put("readarticles", "[12360"+random.nextInt(9999)+"]");
+                okGetRequest("QiuBai", UrlFactory.QiuBaiUrl, params);
+            }
+        }, mRv);
     }
 
 
     @Override
     protected void okResponseSuccess(String whit, Object t) {
         super.okResponseSuccess(whit, t);
-        if (!TextUtils.equals(whit,"QiuBai"))return;
-        try{
-            QiuBaiBean datas = GsonUtils.fromJson(t.toString() , QiuBaiBean.class);
+        if (!TextUtils.equals(whit, "QiuBai")) return;
+        try {
+            QiuBaiBean datas = GsonUtils.fromJson(t.toString(), QiuBaiBean.class);
             mAdapter.addData(datas.getItems());
-            if (datas.getItems()!=null&&datas.getItems().size()>0){
+            if (datas.getItems() != null && datas.getItems().size() > 0) {
                 mAdapter.loadMoreComplete();
-            }else{
+            } else {
                 mAdapter.loadMoreEnd();
             }
-        }catch (Exception e){
-           e.fillInStackTrace();
+        } catch (Exception e) {
+            e.fillInStackTrace();
             mAdapter.loadMoreFail();
         }
     }
 
     @Override
-    protected void okResponseError(String flag , String error) {
+    protected void okResponseError(String flag, String error) {
         super.okResponseFinish(flag);
         TextView tv = new TextView(getActivity());
         tv.setGravity(Gravity.CENTER);

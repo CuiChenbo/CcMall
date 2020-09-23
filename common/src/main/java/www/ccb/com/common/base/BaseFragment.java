@@ -108,14 +108,14 @@ public abstract class BaseFragment extends Fragment {
     public abstract void initListener();
 
     public void okGetRequest(String url) {
-        okGetRequest(null, url, null);
+        okGetRequestWeb(null, url, null);
     }
 
     public void okGetRequest(String with, String url) {
-        okGetRequest(with, url, null);
+        okGetRequestWeb(with, url, null);
     }
 
-    public void okGetRequest(String with, String url, List<Object> params) {
+    public void okGetRequestWeb(String with, String url, List<Object> params) {
         if (TextUtils.isEmpty(with)) with = url;
         String finalWith = with;
         if (params != null) {
@@ -124,6 +124,35 @@ public abstract class BaseFragment extends Fragment {
             }
         }
         OkGo.<String>get(url).execute(new StringCallback() {
+            @Override
+            public void onStart(com.lzy.okgo.request.base.Request<String, ? extends com.lzy.okgo.request.base.Request> request) {
+                super.onStart(request);
+            }
+
+            @Override
+            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                L.out(finalWith + "请求结果:__", response.body());
+                okResponseSuccess(finalWith, response.body());
+            }
+
+            @Override
+            public void onError(com.lzy.okgo.model.Response<String> response) {
+                super.onError(response);
+                okResponseError(finalWith, response.body());
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                okResponseFinish(finalWith);
+            }
+        });
+    }
+
+    public void okGetRequest(String with, String url, HttpParams params) {
+        if (TextUtils.isEmpty(with)) with = url;
+        String finalWith = with;
+        OkGo.<String>get(url).params(params).execute(new StringCallback() {
             @Override
             public void onStart(com.lzy.okgo.request.base.Request<String, ? extends com.lzy.okgo.request.base.Request> request) {
                 super.onStart(request);

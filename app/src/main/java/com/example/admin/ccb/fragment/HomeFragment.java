@@ -23,18 +23,14 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
-import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.admin.ccb.R;
-import com.example.admin.ccb.activity.BaseWebViewActivity;
 import com.example.admin.ccb.activity.GirlWelfareActivity;
 import com.example.admin.ccb.activity.SearchActivity;
 import com.example.admin.ccb.activity.SplashActivity;
@@ -84,7 +80,7 @@ public class HomeFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-    private List<String> mDataList = Arrays.asList("微商城", "Cc动态", "Cc精选", "微福利", "你看我是一个很长很长的标题");
+    private List<String> mDataList = Arrays.asList("微商城","HAPPY", "Cc动态", "Cc精选", "微福利", "给你看个段子吧");
     private MagicIndicator indicator;
     private NotConflictViewPager mPager;
     private AppBarLayout appBarLayout;
@@ -168,6 +164,7 @@ public class HomeFragment extends BaseFragment {
         GlideImageUtils.displayGif(mContext, R.mipmap.gif1, ivAd);
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new PalFragment());
+        mFragmentList.add(new QiuBaiImgFragment());
         mFragmentList.add(new GossipFragment());
         mFragmentList.add(new NewsTopFragment());
         mFragmentList.add(new GirlWelfareFragment());

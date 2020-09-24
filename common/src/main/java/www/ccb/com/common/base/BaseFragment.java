@@ -108,11 +108,11 @@ public abstract class BaseFragment extends Fragment {
     public abstract void initListener();
 
     public void okGetRequest(String url) {
-        okGetRequestWeb(null, url, null);
+        okGetRequest(null, url);
     }
 
     public void okGetRequest(String with, String url) {
-        okGetRequestWeb(with, url, null);
+        okGetRequest(with, url, null);
     }
 
     public void okGetRequestWeb(String with, String url, List<Object> params) {

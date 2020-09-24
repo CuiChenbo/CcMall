@@ -223,4 +223,38 @@ public class GlideImageUtils {
 
                 });
     }
+
+    /**
+     * 加载普通图片
+     * @param context
+     * @param url
+     * @param imageView
+     */
+    public static void display(Context context, String url, ImageView imageView , boolean noCrop) {
+       RequestOptions options = new RequestOptions()
+                .placeholder(R.mipmap.loading)
+                .error(R.mipmap.emptyimage);
+
+        Glide.with(context)
+                .load(url)
+                .apply(options)
+                .into(imageView);
+    }
+
+    /**
+     * 加载普通图片
+     * @param context
+     * @param src
+     * @param imageView
+     */
+    public static void display(Context context, Integer src, ImageView imageView , boolean noCrop) {
+        RequestOptions options = new RequestOptions()
+                .placeholder(R.mipmap.loading)
+                .error(R.mipmap.emptyimage);
+
+        Glide.with(context)
+                .load(src)
+                .apply(options)
+                .into(imageView);
+    }
 }

@@ -7,7 +7,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.ccb.R;
 import com.example.admin.ccb.bean.homeMenuBean;
-import com.example.admin.ccb.utils.GlideImageUtils;
 
 /**
  * @Author cuiChenBo

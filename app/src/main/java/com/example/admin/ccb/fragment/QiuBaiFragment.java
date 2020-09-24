@@ -78,7 +78,7 @@ public class QiuBaiFragment extends BaseCacheFragment {
     public void loadData() {
         HttpParams params = new HttpParams();
         params.put("type", "text");
-        params.put("page", (++page));
+        params.put("page", page);
         params.put("count", count);
         params.put("readarticles", "[12360"+random.nextInt(9999)+"]");
         okGetRequest("QiuBai", UrlFactory.QiuBaiUrl, params);

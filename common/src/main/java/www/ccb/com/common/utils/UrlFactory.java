@@ -32,9 +32,10 @@ public class UrlFactory {
     /**
      * 糗事百科
      * http://m2.qiushibaike.com/article/list/{type}?type=refresh&page={page}&count={count}
-     * 参数type为类型，latest最新、text文本、image图片、video视频
+     * 参数type为类型，latest最新、text文本、imgrank图片、video视频
      * 参数page为页码；参数count为每页数量
      * 示例：http://m2.qiushibaike.com/article/list/text?type=refresh&page=1&count=12
      */
-    public static String QiuBaiUrl = "http://m2.qiushibaike.com/article/list/text";
+    public static String QiuBaiUrl = "https://m2.qiushibaike.com/article/list/text";
+    public static String QiuBaiImgUrl = "https://m2.qiushibaike.com/article/list/imgrank";
 }

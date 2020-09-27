@@ -80,12 +80,13 @@ public class NineGridView extends ViewGroup {
                     gridHeight = tileMaxHeight;
                 } else if (mImageInfo.size() == 2 || mImageInfo.size() == 4) {
                     gridWidth = (totalWidth - gridSpacing) / 2;
-                    gridHeight = (int) (tileMaxHeight * 0.7);
+                    gridHeight = (int) (tileMaxHeight * 0.7); //自定义高度（单张高度的0.7倍）
                 } else {
                     gridWidth = (totalWidth - gridSpacing * 2) / 3;
-                    gridHeight = (int) (tileMaxHeight * 0.5);
+                    gridHeight = (int) (tileMaxHeight * 0.5); //自定义高度
+//                    gridHeight = gridWidth ; //宽高相等
                 }
-            } else {
+            } else { // 其它样式（朋友圈 、 QQ空间）
                 if (mImageInfo.size() == 1) {
                     gridWidth = singleImageSize > totalWidth ? totalWidth : singleImageSize;
                     gridHeight = (int) (gridWidth / singleImageRatio);

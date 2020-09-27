@@ -29,6 +29,7 @@ import java.util.Random;
 import www.ccb.com.common.base.BaseCacheFragment;
 import www.ccb.com.common.utils.GsonUtils;
 import www.ccb.com.common.utils.UrlFactory;
+import www.ccb.com.common.widget.FlowedTextView;
 
 public class QiuBaiFragment extends BaseCacheFragment {
     private RecyclerView mRv;
@@ -56,7 +57,6 @@ public class QiuBaiFragment extends BaseCacheFragment {
 
         @Override
         protected void convert(BaseViewHolder helper, QiuBaiBean.ItemsBean item) {
-            helper.setText(R.id.tv, item.getContent());
             ImageView iv = helper.getView(R.id.iv);
             if (item.getUser() != null) {
                 helper.setText(R.id.tvt, item.getUser().getLogin());
@@ -65,7 +65,20 @@ public class QiuBaiFragment extends BaseCacheFragment {
                 helper.setText(R.id.tvt, "糗友");
                 GlideImageUtils.display(getActivity(), R.mipmap.emptyimage, iv);
             }
+            FlowedTextView tv = helper.getView(R.id.tv);
+            tv.setUnfold(item.isUnfold);
 
+            tv.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    QiuBaiBean.ItemsBean newItem = item;
+                    newItem.isUnfold = true;
+                    mAdapter.setData(helper.getAdapterPosition() ,newItem);
+                    return true;
+                }
+            });
+            tv.setText(item.getContent());
+//            helper.setGone(R.id.tvHine , tv.isOverFlowed());
         }
     }
 

@@ -13,13 +13,11 @@ import android.widget.TextView;
 
 import com.example.admin.ccb.R;
 import www.ccb.com.common.base.BaseActivity;
-import com.example.admin.ccb.fragment.ShopFragment1;
-import com.example.admin.ccb.fragment.ShopFragment2;
+import com.example.admin.ccb.fragment.ShopFragment;
 import com.example.admin.ccb.view.NotConflictViewPager;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
-import net.lucode.hackware.magicindicator.buildins.UIUtil;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
@@ -98,8 +96,8 @@ private TextView tvName;
     @Override
     protected void initData() {
         mFragmentList = new ArrayList<>();
-        mFragmentList.add(new ShopFragment1());
-        mFragmentList.add(new ShopFragment2());
+        mFragmentList.add(ShopFragment.getInstance("grid"));
+        mFragmentList.add(ShopFragment.getInstance("line"));
         mPager.setAdapter(new Myadapter(getSupportFragmentManager()));
     }
 

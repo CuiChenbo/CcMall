@@ -105,6 +105,7 @@ public class QiuBaiBean {
         private String id;
         private HotCommentBean hot_comment;
         private String type;
+        public boolean isUnfold ;
 
         public String getCreated_at() {
             return created_at;

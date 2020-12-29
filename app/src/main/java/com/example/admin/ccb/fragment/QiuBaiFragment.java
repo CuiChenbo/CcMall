@@ -3,6 +3,7 @@ package com.example.admin.ccb.fragment;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -24,6 +25,7 @@ import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
 
+import java.util.List;
 import java.util.Random;
 
 import www.ccb.com.common.base.BaseCacheFragment;
@@ -50,6 +52,14 @@ public class QiuBaiFragment extends BaseCacheFragment {
     }
 
     class QiuBaiAdapter extends BaseQuickAdapter<QiuBaiBean.ItemsBean, BaseViewHolder> {
+
+        public QiuBaiAdapter(int layoutResId, @Nullable List<QiuBaiBean.ItemsBean> data) {
+            super(layoutResId, data);
+        }
+
+        public QiuBaiAdapter(@Nullable List<QiuBaiBean.ItemsBean> data) {
+            super(data);
+        }
 
         public QiuBaiAdapter(int layoutResId) {
             super(layoutResId);
@@ -78,7 +88,6 @@ public class QiuBaiFragment extends BaseCacheFragment {
                 }
             });
             tv.setText(item.getContent());
-//            helper.setGone(R.id.tvHine , tv.isOverFlowed());
         }
     }
 

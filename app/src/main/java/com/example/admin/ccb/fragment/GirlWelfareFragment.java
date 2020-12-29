@@ -45,6 +45,12 @@ public class GirlWelfareFragment extends BaseCacheFragment {
         public WelfaerAdapter(int layoutResId) {
             super(layoutResId);
         }
+        private int hei;
+        public WelfaerAdapter(int layoutResId , int hei) {
+            super(layoutResId);
+            this.hei = hei;
+        }
+
 
         @Override
         protected void convert(BaseViewHolder helper, GankGirlV2Bean.DataBean item) {
